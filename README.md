@@ -15,8 +15,8 @@ Server verhält sich das Formular wie live.)
 
 | Pfad | Inhalt |
 | --- | --- |
-| `index.html` | Startseite (fertig, Entwurf v1) |
-| `recruiting.html` u. a. | Unterseiten – aktuell Platzhalter, Ausbau nach Freigabe |
+| `index.html` | Startseite (Entwurf v2) |
+| `recruiting.html` u. a. | Unterseiten – alle gebaut (Leistungen, Über uns, Ergebnisse, Karriere, Blog, Bewerberpool) |
 | `impressum.html`, `datenschutz.html`, `agb.html` | Legal-Seiten (übernommen, Stand 08/2026) |
 | `assets/css/foundation.css` | **CI-Foundation** – Design-Tokens & Komponenten (eingefroren) |
 | `assets/js/main.js` | Basis-Interaktionen inkl. Formular → Make-Webhook |

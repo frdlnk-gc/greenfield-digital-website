@@ -3,57 +3,459 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Media Branding – Greenfield Digital</title>
-  <meta name="description" content="Social-Media-Marketing, das deine Marke zum Platzhirschen in der Region macht.">
+  <title>Social Media Branding für die grüne Branche – Greenfield Digital</title>
+  <meta name="description" content="Social Media Marketing für GaLaBau, Pflanzenhandel und Kultivierung: Content, der Bewerber begeistert und deine Marke zum Platzhirschen der Region macht.">
+  <!-- TODO vor Go-Live auf greenfield-digital.de: noindex entfernen! -->
   <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0CAE80">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/foundation.css">
-  <!--
-    PLATZHALTER-SEITE.
-    Diese Unterseite wird nach Freigabe der Startseite gemäß docs/DESIGN-SPEC.md
-    ("SEITE: social-media.html") gebaut. Bitte Aufbau, Formular-Regeln und Tabus aus AGENTS.md beachten.
-  -->
   <style>
-    .ph-wrap {
-      min-height: calc(100vh - var(--nav-h));
-      display: flex; align-items: center; justify-content: center;
-      padding: calc(var(--nav-h) + 40px) 24px 60px;
-      background:
-        radial-gradient(600px 400px at 85% 10%, rgba(11,174,127,.07), transparent),
-        radial-gradient(500px 380px at 10% 90%, rgba(11,174,127,.06), transparent);
+    .partner-mini {
+      display: inline-flex; flex-wrap: wrap; align-items: center; gap: 16px;
+      margin-top: 28px;
+      background: rgba(255, 255, 255, .94);
+      border-radius: var(--r-md);
+      padding: 12px 18px;
+      box-shadow: var(--shadow-md);
     }
-    .ph-card { max-width: 560px; text-align: center; padding: 56px 44px; }
-    .ph-card h1 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); margin-bottom: 14px; }
-    .ph-card p { color: var(--muted); margin-bottom: 30px; }
+    .partner-mini span { font-weight: 700; color: var(--ink); font-size: .9rem; }
+    .partner-mini img { height: 34px; width: auto; }
+    .case-grid, .ph-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .case-col, .ph-col {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: 30px 28px;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .ph-col { position: relative; padding-top: 38px; }
+    .ph-col .btn { margin-top: auto; align-self: flex-start; }
+    .case-tag {
+      align-self: flex-start;
+      background: var(--mint); color: var(--green-700);
+      font-size: .85rem; font-weight: 700;
+      padding: 5px 14px; border-radius: var(--r-pill);
+      margin-bottom: 10px;
+    }
+    .case-col.is-highlight, .ph-col.is-highlight {
+      background: var(--grad-deep);
+      border-color: transparent;
+      color: rgba(255, 255, 255, .88);
+    }
+    .case-col.is-highlight h4, .ph-col.is-highlight h4, .ph-col.is-highlight .ph-sub { color: #fff; }
+    .case-col.is-highlight .case-tag { background: rgba(46, 207, 161, .2); color: var(--green-bright); }
+    .ph-sub { color: var(--muted); font-size: .95rem; margin-bottom: 14px; }
+    .ph-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--green); color: #fff;
+      font-size: .82rem; font-weight: 700;
+      padding: 6px 16px; border-radius: var(--r-pill);
+      box-shadow: var(--shadow-green);
+      white-space: nowrap;
+    }
+    ul.checks.on-dark li { color: rgba(255, 255, 255, .92); }
+    ul.checks.on-dark li::before { background-color: rgba(46, 207, 161, .2); }
+    ul.checks.is-neutral li::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237C8C84' stroke-width='3.4' stroke-linecap='round'%3E%3Cpath d='M18 6 6 18M6 6l12 12'/%3E%3C/svg%3E");
+      background-color: var(--platinum);
+    }
+    @media (max-width: 900px) { .case-grid, .ph-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
+
   <header class="site-nav" id="nav">
     <div class="inner">
       <a class="brand" href="index.html" aria-label="Greenfield Digital – Startseite">
         <span class="mark"><svg viewBox="0 0 56 94" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 2 C40 14 55 32 56 54 C56.6 66 45 76 28 81 C11 76 -0.6 66 0 54 C1 32 16 14 28 2 Z"/><path d="M28 7 V94"/><path d="M28 19 L41 9 M28 31 L52 20 M28 44 L55 33 M28 57 L53 47 M28 69 L48 60 M28 78 L40 71"/><path d="M28 19 L15 9 M28 31 L4 20 M28 44 L1 33 M28 57 L3 47 M28 69 L8 60 M28 78 L16 71"/></svg></span>
         <span class="word">Greenfield</span>
       </a>
-      <a class="btn btn--outline" href="index.html">Zurück zur Startseite</a>
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-links" id="navLinks">
+          <li class="has-drop">
+            <a href="index.html#leistungen" class="active">Leistungen
+              <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+            <ul class="drop">
+              <li><a href="recruiting.html">Recruiting<small>Nachhaltige Personalgewinnung</small></a></li>
+              <li><a href="neukundengewinnung.html">Neukundengewinnung<small>Planbar neue Aufträge</small></a></li>
+              <li><a href="social-media.html">Social Media Branding<small>Platzhirsch in der Region</small></a></li>
+              <li><a href="digitalisierung.html">Digitalisierung &amp; KI<small>Prozesse neu gedacht</small></a></li>
+            </ul>
+          </li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="ergebnisse.html">Ergebnisse</a></li>
+          <li><a href="blog.html">Ressourcen</a></li>
+          <li><a href="karriere.html">Karriere</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <a class="btn btn--primary nav-cta-desktop" href="#kontakt">Jetzt starten</a>
+        <button class="nav-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
     </div>
   </header>
-  <main class="ph-wrap">
-    <div class="ph-card card">
-      <span class="pill">In Arbeit</span>
-      <h1>Social Media Branding</h1>
-      <p>Social-Media-Marketing, das deine Marke zum Platzhirschen in der Region macht.<br><br>Diese Unterseite entsteht gerade – das Design steht bereits fest.</p>
-      <a class="btn btn--primary" href="index.html#kontakt">Jetzt Kontakt aufnehmen</a>
-    </div>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-card reveal in">
+          <div class="bg" style="background-image:url('assets/img/feature-1.jpg')" aria-hidden="true"></div>
+          <div class="hero-inner">
+            <span class="pill pill--glow"><span class="dot"></span>Der Grüne Platzhirsch</span>
+            <h1>Social Media Marketing für GaLaBau, Pflanzenhandel und <span class="accent">Kultivierung</span></h1>
+            <p class="sub">Inhalte, die viral gehen, Bewerber begeistern, Kunden überzeugen und dein Image auf ein neues Level heben.</p>
+            <div class="hero-actions"><a class="btn btn--white is-green-text" href="#kontakt">Kostenlose Social-Media-Beratung</a><a class="btn btn--ghost" href="#case">Zur Case Study<span class="arr">→</span></a></div>
+          </div>
+          <div class="partner-mini reveal" style="--d:.2s">
+              <span>Exklusiver Verbands-Partner</span>
+              <img src="assets/img/partner-1.png" alt="Verbandspartner – Die Experten für Garten &amp; Landschaft">
+              <img src="assets/img/partner-2.png" alt="Verband Deutscher Garten-Center">
+              <img src="assets/img/partner-3.png" alt="Bund deutscher Baumschulen e.V.">
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tint">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Herausforderungen</span>
+          <h2>Kommen dir diese Herausforderungen bekannt <span class="mark-u">vor?<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+        </div>
+        <div class="steps-grid cols-3">
+          <div class="step-card reveal">
+            <span class="num">!</span>
+            <h4>Kaum Sichtbarkeit</h4>
+            <p>Dein Betrieb leistet Top-Arbeit – aber online sieht das kaum jemand. Die Konkurrenz ist präsenter.</p>
+          </div>
+          <div class="step-card reveal" style="--d:.1s">
+            <span class="num">!</span>
+            <h4>Zu wenig Bewerber</h4>
+            <p>Stellenanzeigen verpuffen. Du erreichst nicht die Fachkräfte, die wirklich zu dir passen.</p>
+          </div>
+          <div class="step-card reveal" style="--d:.2s">
+            <span class="num">!</span>
+            <h4>Keine Zeit für Content</h4>
+            <p>Social Media frisst Zeit – und ohne Strategie bleiben die Ergebnisse aus.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="case">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Case Study</span>
+          <h2>Von 0 auf 430.000 Views in <span class="mark-u">4 Monaten<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+        </div>
+        <div class="case-grid">
+          <div class="case-col reveal">
+            <span class="case-tag">Herausforderung</span>
+            <h4>Ausgangslage des Betriebs</h4>
+            <ul class="checks is-neutral">
+              <li>Keine Reichweite</li>
+              <li>Kaum Bewerbungen</li>
+              <li>Schwache Arbeitgebermarke</li>
+            </ul>
+          </div>
+          <div class="case-col reveal" style="--d:.12s">
+            <span class="case-tag">Lösung</span>
+            <h4>Unser Vorgehen</h4>
+            <ul class="checks">
+              <li>Content-Strategie &amp; Plan</li>
+              <li>Professionelle Produktion</li>
+              <li>Performance-gesteuerte Ausspielung</li>
+            </ul>
+          </div>
+          <div class="case-col is-highlight reveal" style="--d:.24s">
+            <span class="case-tag">Ergebnis</span>
+            <h4>Nach 4 Monaten</h4>
+            <ul class="checks on-dark">
+              <li>430.000+ Views</li>
+              <li>Deutlich mehr Bewerbungen</li>
+              <li>Starke regionale Marke</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tint">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Positionierung</span>
+          <h2>Der Grüne <span class="mark-u">Platzhirsch<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+          <p class="sub">Drei Wege, deine Marke in der Region unverwechselbar zu machen.</p>
+        </div>
+        <div class="ph-grid">
+          <div class="ph-col reveal">
+            <h4>Sichtbar werden</h4>
+            <p class="ph-sub">Der Einstieg</p>
+            <ul class="checks">
+              <li>Profil-Aufbau &amp; Setup</li>
+              <li>Erste Content-Serien</li>
+              <li>Regionale Reichweite</li>
+            </ul>
+            <a class="btn btn--outline" href="#kontakt">Mehr erfahren</a>
+          </div>
+          <div class="ph-col is-highlight reveal" style="--d:.12s">
+            <span class="ph-badge">Unser Bestseller</span>
+            <h4>Platzhirsch werden</h4>
+            <p class="ph-sub">Für ambitionierte Betriebe</p>
+            <ul class="checks on-dark">
+              <li>Vollständige Content-Strategie</li>
+              <li>Professionelle Video-Produktion</li>
+              <li>Performance &amp; Reporting</li>
+            </ul>
+            <a class="btn btn--white is-green-text" href="#kontakt">Jetzt starten</a>
+          </div>
+          <div class="ph-col reveal" style="--d:.24s">
+            <h4>Marktführer bleiben</h4>
+            <p class="ph-sub">Für Skalierer</p>
+            <ul class="checks">
+              <li>Multi-Channel-Strategie</li>
+              <li>Kontinuierliche Produktion</li>
+              <li>Laufende Optimierung</li>
+            </ul>
+            <a class="btn btn--outline" href="#kontakt">Mehr erfahren</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="kundenstimmen">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Kundenstimmen</span>
+          <h2>Das sagen unsere <span class="mark-u">Kunden<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+          <p class="sub">Über 730 zufriedene Unternehmen vertrauen auf unsere Expertise</p>
+        </div>
+        <div class="testi-card reveal">
+          <div class="bg" aria-hidden="true"></div>
+          <span class="tag">Starke Social-Media-Präsenz in der grünen Branche</span>
+          <div class="who">
+            <span class="logo-chip"><img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen"></span>
+            <div>
+              <strong>Wörlein Baumschulen</strong>
+              <span>Partnerbetrieb aus der grünen Branche</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-more reveal">
+          <a class="btn-link" href="ergebnisse.html" style="font-size:1.1rem;">Weitere Kundenstimmen <span class="arr">→</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Unser Team</span>
+          <h2>Die Experten hinter deinem <span class="mark-u">Content<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+          <p class="sub">Ein eingespieltes Team aus Strategie, Produktion und Performance – spezialisiert auf die grüne Branche.</p>
+        </div>
+        <div class="steps-grid cols-3">
+          <div class="step-card reveal">
+            <span class="num">S</span>
+            <h4>Content- &amp; Social-Strategie</h4>
+            <p>Planung, Themen und Redaktionsplan – damit dein Content auf klare Ziele einzahlt.</p>
+          </div>
+          <div class="step-card reveal" style="--d:.1s">
+            <span class="num">P</span>
+            <h4>Video &amp; Foto vor Ort</h4>
+            <p>Professionelle Produktion direkt auf deiner Baustelle oder in deinem Betrieb.</p>
+          </div>
+          <div class="step-card reveal" style="--d:.2s">
+            <span class="num">A</span>
+            <h4>Ausspielung &amp; Reporting</h4>
+            <p>Datengetriebene Ausspielung und transparente Reports – wir optimieren laufend.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tint" id="kontakt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">In der grünen Branche zu Hause</span>
+          <h2>Greenfield Digital – sprich mit uns</h2>
+          <p class="sub">Lass uns gemeinsam deine Marke sichtbar machen. Im kostenlosen Erstgespräch klären wir deinen Bedarf.</p>
+        </div>
+        <div class="contact-card card reveal">
+          <div class="founder-strip">
+            <img src="assets/img/frederik-linke.jpg" alt="Frederik Linke">
+            <div>
+              <strong>Frederik Linke</strong>
+              <span>Geschäftsführer von Greenfield Digital</span>
+            </div>
+          </div>
+          <form data-webhook="https://hook.eu1.make.com/dpi3yxzn8knq3wimr36vg9hg64oz5l7h" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="sm-name">Name *</label>
+                <input type="text" id="sm-name" name="name" placeholder="Max Mustermann" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="sm-unternehmen">Unternehmen *</label>
+                <input type="text" id="sm-unternehmen" name="unternehmen" placeholder="Mustermann GmbH" required autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="sm-email">E-Mail *</label>
+                <input type="email" id="sm-email" name="email" placeholder="max@mustermann.de" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="sm-telefon">Telefon</label>
+                <input type="tel" id="sm-telefon" name="telefon" placeholder="+49 123 456789" autocomplete="tel">
+              </div>
+              <div class="field full">
+                <label for="sm-nachricht">Deine Nachricht (optional)</label>
+                <textarea id="sm-nachricht" name="nachricht" rows="5" placeholder="Erzähl uns mehr über dein Projekt..."></textarea>
+              </div>
+              <div class="hp-field" aria-hidden="true">
+                <label for="sm-website">Website</label>
+                <input type="text" id="sm-website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+              <div class="full note-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <div>
+                  <strong>Schnelle Antwort garantiert</strong>
+                  <p>Wir melden uns innerhalb von 48 Stunden persönlich bei dir zurück</p>
+                </div>
+              </div>
+              <div class="full">
+                <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Kostenlose Beratung anfragen</button>
+                <p class="form-note">Deine Daten werden vertraulich behandelt und nicht an Dritte weitergegeben</p>
+                <div class="trust-dots form-trust">
+                  <span>Unverbindlich</span>
+                  <span>Kostenlos</span>
+                  <span>48h Antwortzeit</span>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="form-success" hidden>
+            <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <h3>Danke für deine Anfrage!</h3>
+            <p>Wir haben alles erhalten und melden uns innerhalb von 48 Stunden persönlich bei dir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:64px; padding-bottom:64px;">
+      <div class="container">
+        <p class="logos-head reveal" style="text-align:center; color:var(--muted); font-weight:600; margin-bottom:34px;">Unsere erfolgreichen Projekte</p>
+      </div>
+      <div class="marquee reveal">
+        <div class="marquee-track">
+          <img src="assets/img/logo-vivawest.png" alt="Vivawest" loading="lazy">
+          <img src="assets/img/logo-wisag.png" alt="WISAG" loading="lazy">
+          <img src="assets/img/logo-stadtgruen.png" alt="Stadtgrün Potsdam" loading="lazy">
+          <img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen" loading="lazy">
+          <img src="assets/img/logo-freiraum.png" alt="Freiraum" loading="lazy">
+          <img src="assets/img/logo-fu.png" alt="flöter &amp; uszkureit" loading="lazy">
+          <img src="assets/img/logo-scheldmann.png" alt="Scheidtmann" loading="lazy">
+          <img src="assets/img/logo-spaeth.png" alt="Späth" loading="lazy">
+          <img src="assets/img/logo-huben.png" alt="Pflanzenhandel Huben" loading="lazy">
+          <img src="assets/img/logo-blumenmetzger.png" alt="Blumen Metzger" loading="lazy">
+          <img src="assets/img/logo-streb.png" alt="Streb" loading="lazy">
+          <img src="assets/img/logo-stanze.png" alt="Stanze Gartencenter" loading="lazy">
+          <img src="assets/img/logo-jensen.png" alt="Jensen Landschaftsarchitekten" loading="lazy">
+          <!-- Zweiter Durchlauf für die Endlos-Schleife -->
+          <img src="assets/img/logo-vivawest.png" alt="" loading="lazy">
+          <img src="assets/img/logo-wisag.png" alt="" loading="lazy">
+          <img src="assets/img/logo-stadtgruen.png" alt="" loading="lazy">
+          <img src="assets/img/logo-woerlein.png" alt="" loading="lazy">
+          <img src="assets/img/logo-freiraum.png" alt="" loading="lazy">
+          <img src="assets/img/logo-fu.png" alt="" loading="lazy">
+          <img src="assets/img/logo-scheldmann.png" alt="" loading="lazy">
+          <img src="assets/img/logo-spaeth.png" alt="" loading="lazy">
+          <img src="assets/img/logo-huben.png" alt="" loading="lazy">
+          <img src="assets/img/logo-blumenmetzger.png" alt="" loading="lazy">
+          <img src="assets/img/logo-streb.png" alt="" loading="lazy">
+          <img src="assets/img/logo-stanze.png" alt="" loading="lazy">
+          <img src="assets/img/logo-jensen.png" alt="" loading="lazy">
+        </div>
+      </div>
+    </section>
+    <section class="cta-band">
+      <div class="bg" style="background-image:url('assets/img/cta-bg.jpg')" aria-hidden="true"></div>
+      <div class="container reveal">
+        <h2>Bereit, zum Platzhirsch zu werden?</h2>
+        <p>Vereinbare jetzt ein kostenloses Erstgespräch und mach deine Marke sichtbar.</p>
+        <a class="btn btn--white is-green-text btn--lg" href="#kontakt">Kostenloses Gespräch vereinbaren</a>
+      </div>
+    </section>
+
   </main>
-  <script>
-    var nav = document.getElementById('nav');
-    window.addEventListener('scroll', function () {
-      nav.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
-  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="cols">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="mark"><svg viewBox="0 0 56 94" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 2 C40 14 55 32 56 54 C56.6 66 45 76 28 81 C11 76 -0.6 66 0 54 C1 32 16 14 28 2 Z"/><path d="M28 7 V94"/><path d="M28 19 L41 9 M28 31 L52 20 M28 44 L55 33 M28 57 L53 47 M28 69 L48 60 M28 78 L40 71"/><path d="M28 19 L15 9 M28 31 L4 20 M28 44 L1 33 M28 57 L3 47 M28 69 L8 60 M28 78 L16 71"/></svg></span>
+            <span class="word">Greenfield</span>
+          </a>
+          <p style="font-size:.98rem;">Wachstums-Marktführer in der grünen Branche. Spezialisiert auf GaLaBau, Pflanzenhandel, Kulturbetriebe und verwandte Bereiche.</p>
+          <div class="social-row">
+            <a href="https://www.instagram.com/greenfield_digital/" target="_blank" rel="noopener" aria-label="Greenfield Digital auf Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+          <a class="btn btn--primary" href="index.html#kontakt">Bedarfsanalyse</a>
+        </div>
+        <div>
+          <h4>Leistungen</h4>
+          <ul>
+            <li><a href="recruiting.html">Recruiting</a></li>
+            <li><a href="neukundengewinnung.html">Neukunden</a></li>
+            <li><a href="social-media.html">Social Media Branding</a></li>
+            <li><a href="digitalisierung.html">Digitalisierung</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="ergebnisse.html">Erfolgsgeschichten</a></li>
+            <li><a href="bewerberpool.html">Bewerberpool</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="karriere.html">Karriere</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li style="display:flex; gap:10px;">
+              <svg style="flex:0 0 18px; margin-top:5px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Hansaring 61<br>50670 Köln<br>Deutschland</span>
+            </li>
+            <li style="display:flex; gap:10px; align-items:center;">
+              <svg style="flex:0 0 18px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <a href="mailto:hello@greenfield-digital.de">hello@greenfield-digital.de</a>
+            </li>
+            <li style="display:flex; gap:10px; align-items:center;">
+              <svg style="flex:0 0 18px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+4922195018825">+49 (0) 221 95 01 88 25</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 Greenfield Digital. Alle Rechte vorbehalten.</span>
+        <span style="display:flex; gap:24px;">
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="agb.html">AGB</a>
+          <a href="impressum.html">Impressum</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

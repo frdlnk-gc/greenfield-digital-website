@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bewerberpool – Greenfield Digital</title>
+  <meta name="description" content="Durchsuchen Sie den Greenfield-Bewerberpool: qualifizierte Fachkräfte aus GaLaBau, Pflanzenhandel und Kultivierung in Ihrer Region.">
+  <!-- TODO vor Go-Live auf greenfield-digital.de: noindex entfernen! -->
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0CAE80">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/foundation.css">
+  <style>
+    .pool-hero {
+      padding: calc(var(--nav-h) + 60px) 24px 40px;
+      text-align: center;
+      background:
+        radial-gradient(600px 400px at 85% 5%, rgba(12, 174, 128, .08), transparent),
+        radial-gradient(500px 380px at 8% 30%, rgba(12, 174, 128, .06), transparent);
+    }
+    .pool-hero h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 14px; }
+    .pool-hero .sub { color: var(--muted); font-size: 1.12rem; }
+    .pool-card { max-width: 720px; margin: 40px auto 0; padding: 36px; }
+    .pool-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .pool-progress { margin-top: 28px; }
+    .pool-progress .head { display: flex; justify-content: space-between; font-weight: 600; color: var(--ink); font-size: .95rem; margin-bottom: 10px; }
+    .pool-progress .head .state { color: var(--green-700); }
+    .pool-bar { height: 8px; border-radius: 99px; background: var(--mint); overflow: hidden; }
+    .pool-bar i { display: block; height: 100%; width: 0; background: var(--green); border-radius: 99px; transition: width .5s ease; }
+    .pool-steps { margin-top: 18px; }
+    .pool-steps li { display: flex; gap: 12px; align-items: flex-start; padding: 9px 0; opacity: .35; transition: opacity .4s ease; }
+    .pool-steps li.on { opacity: 1; }
+    .pool-steps .ic {
+      flex: 0 0 22px; height: 22px; border-radius: 50%;
+      background: var(--mint) center / 12px no-repeat;
+    }
+    .pool-steps li.done .ic {
+      background-color: var(--green);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+    }
+    .pool-steps b { display: block; color: var(--ink); font-size: .98rem; }
+    .pool-steps span { font-size: .88rem; color: var(--muted); }
+    .pool-result { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 26px; }
+    .pool-count { display: flex; align-items: baseline; gap: 12px; }
+    .pool-count .n { font-size: 2.6rem; font-weight: 800; color: var(--ink); }
+    .pool-map { position: relative; border-radius: var(--r-md); overflow: hidden; margin: 22px 0; }
+    .cand { display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+    .cand:last-child { border-bottom: 0; }
+    .cand .av {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: var(--green); color: #fff;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex: 0 0 46px;
+    }
+    .cand b { display: block; color: var(--ink); }
+    .cand .dist { margin-left: auto; color: var(--muted); font-size: .9rem; }
+    .cand .chips { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px; padding-left: 60px; }
+    .cand .chips span { background: var(--mint); color: var(--green-700); font-size: .82rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; }
+    .pool-note { text-align: center; color: var(--muted); font-size: .88rem; margin-top: 18px; }
+    @media (max-width: 640px) {
+      .pool-row { grid-template-columns: 1fr; }
+      .pool-card { padding: 24px 18px; }
+      .cand .chips { padding-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-nav" id="nav">
+    <div class="inner">
+      <a class="brand" href="index.html" aria-label="Greenfield Digital – Startseite">
+        <span class="mark"><svg viewBox="0 0 56 94" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 2 C40 14 55 32 56 54 C56.6 66 45 76 28 81 C11 76 -0.6 66 0 54 C1 32 16 14 28 2 Z"/><path d="M28 7 V94"/><path d="M28 19 L41 9 M28 31 L52 20 M28 44 L55 33 M28 57 L53 47 M28 69 L48 60 M28 78 L40 71"/><path d="M28 19 L15 9 M28 31 L4 20 M28 44 L1 33 M28 57 L3 47 M28 69 L8 60 M28 78 L16 71"/></svg></span>
+        <span class="word">Greenfield</span>
+      </a>
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-links" id="navLinks">
+          <li class="has-drop">
+            <a href="index.html#leistungen">Leistungen
+              <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+            <ul class="drop">
+              <li><a href="recruiting.html">Recruiting<small>Nachhaltige Personalgewinnung</small></a></li>
+              <li><a href="neukundengewinnung.html">Neukundengewinnung<small>Planbar neue Aufträge</small></a></li>
+              <li><a href="social-media.html">Social Media Branding<small>Platzhirsch in der Region</small></a></li>
+              <li><a href="digitalisierung.html">Digitalisierung &amp; KI<small>Prozesse neu gedacht</small></a></li>
+            </ul>
+          </li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="ergebnisse.html" class="active">Ergebnisse</a></li>
+          <li><a href="blog.html">Ressourcen</a></li>
+          <li><a href="karriere.html">Karriere</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <a class="btn btn--primary nav-cta-desktop" href="index.html#kontakt">Jetzt starten</a>
+        <button class="nav-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="pool-hero">
+      <div class="container">
+        <span class="pill reveal in">Bewerbertool</span>
+        <h1 class="reveal in">Greenfield Digital Bewerberpool</h1>
+        <p class="sub reveal in">Finden Sie qualifizierte Fachkräfte in Ihrer Region.</p>
+
+        <div class="pool-card card reveal in" style="text-align:left;">
+          <form id="poolForm" novalidate>
+            <div class="form-grid" style="gap:18px;">
+              <div class="field full">
+                <label for="p-branche">Branche</label>
+                <select id="p-branche" name="branche" required>
+                  <option>Garten- &amp; Landschaftsbau</option>
+                  <option>Pflanzenhandel</option>
+                  <option>Baumschule / Kultivierung</option>
+                  <option>Dachbegrünung</option>
+                  <option>Kommunaler Grünbau</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="p-position">Position</label>
+                <select id="p-position" name="position">
+                  <option>Landschaftsgärtner/in</option>
+                  <option>Vorarbeiter/in</option>
+                  <option>Baumkletterer/in</option>
+                  <option>Maschinist/in</option>
+                  <option>Garten- &amp; Landschaftspflege</option>
+                  <option>Auszubildende/r</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="p-quali">Mindest-Qualifikation</label>
+                <select id="p-quali" name="quali">
+                  <option value="">Keine Vorgabe</option>
+                  <option>Ausbildung abgeschlossen</option>
+                  <option>2+ Jahre Erfahrung</option>
+                  <option>5+ Jahre Erfahrung</option>
+                  <option>Meister / Techniker</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="p-plz">Postleitzahl</label>
+                <input type="text" id="p-plz" name="plz" inputmode="numeric" pattern="[0-9]{4,5}" placeholder="12345" required>
+              </div>
+              <div class="field">
+                <label for="p-umkreis">Umkreis</label>
+                <select id="p-umkreis" name="umkreis">
+                  <option value="10">10 km</option>
+                  <option value="25">25 km</option>
+                  <option value="50" selected>50 km</option>
+                  <option value="100">100 km</option>
+                </select>
+              </div>
+              <div class="full">
+                <button type="submit" class="btn btn--primary btn--lg" style="width:100%;" id="poolBtn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                  Jetzt durchsuchen
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="pool-progress" id="poolProgress" hidden>
+            <div class="head"><span>Suchfortschritt</span><span class="state" id="poolState">Läuft</span></div>
+            <div class="pool-bar"><i id="poolBar"></i></div>
+            <ul class="pool-steps">
+              <li><span class="ic"></span><div><b>Datenbank wird durchsucht</b><span>21.200+ Bewerbungen werden analysiert</span></div></li>
+              <li><span class="ic"></span><div><b>Qualifikationen werden abgeglichen</b><span>Filter werden angewendet</span></div></li>
+              <li><span class="ic"></span><div><b>Ergebnisse werden zusammengestellt</b><span>Beste Übereinstimmungen zuerst</span></div></li>
+            </ul>
+          </div>
+
+          <div class="pool-result" id="poolResult" hidden>
+            <div class="pool-count"><span class="n" id="poolCount">0</span><span>verfügbare Kandidaten im Umkreis</span></div>
+            <p style="margin-top:14px;"><strong id="poolRecent" style="color:var(--green-700);">0</strong> Personen mit ausgewählten Merkmalen haben sich in den letzten 30 Tagen über Greenfield Digital beworben.</p>
+            <div class="pool-map">
+              <img src="assets/img/dach-karte.jpg" alt="Karte mit qualifizierten Bewerbern in der Region" loading="lazy">
+              <span class="map-dot" style="top:38%; left:40%" aria-hidden="true"></span>
+              <span class="map-dot" style="top:52%; left:48%" aria-hidden="true"></span>
+              <span class="map-dot" style="top:45%; left:56%" aria-hidden="true"></span>
+            </div>
+            <div class="cand">
+              <span class="av">MK</span>
+              <div><b>M. K.</b><span style="font-size:.92rem;">Landschaftsgärtner</span></div>
+              <span class="dist">8 km</span>
+              <div class="chips"><span>5 Jahre Erfahrung</span><span>Führerschein BE</span><span>Motorsäge</span></div>
+            </div>
+            <div class="cand">
+              <span class="av">SL</span>
+              <div><b>S. L.</b><span style="font-size:.92rem;">Garten- &amp; Landschaftspflege</span></div>
+              <span class="dist">12 km</span>
+              <div class="chips"><span>4 Jahre Erfahrung</span><span>Führerschein B</span><span>Grünpflege</span></div>
+            </div>
+            <div class="cand">
+              <span class="av">TM</span>
+              <div><b>T. M.</b><span style="font-size:.92rem;">Baumkletterer</span></div>
+              <span class="dist">15 km</span>
+              <div class="chips"><span>7 Jahre Erfahrung</span><span>Motorsäge</span><span>Kletterschein</span></div>
+            </div>
+            <p class="pool-note">Daten basieren auf aktiven Nutzern.</p>
+            <a class="btn btn--primary btn--lg" style="width:100%; margin-top:18px;" href="index.html#kontakt">Kandidaten kennenlernen<span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta-band">
+      <div class="bg" style="background-image:url('assets/img/cta-bg.jpg')" aria-hidden="true"></div>
+      <div class="container reveal">
+        <h2>Bereit für dein grünes Wachstum?</h2>
+        <p>Vereinbare jetzt ein kostenloses Erstgespräch – wir bringen dich mit passenden Fachkräften zusammen.</p>
+        <a class="btn btn--white is-green-text btn--lg" href="index.html#kontakt">Kostenloses Gespräch vereinbaren</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="cols">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="mark"><svg viewBox="0 0 56 94" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 2 C40 14 55 32 56 54 C56.6 66 45 76 28 81 C11 76 -0.6 66 0 54 C1 32 16 14 28 2 Z"/><path d="M28 7 V94"/><path d="M28 19 L41 9 M28 31 L52 20 M28 44 L55 33 M28 57 L53 47 M28 69 L48 60 M28 78 L40 71"/><path d="M28 19 L15 9 M28 31 L4 20 M28 44 L1 33 M28 57 L3 47 M28 69 L8 60 M28 78 L16 71"/></svg></span>
+            <span class="word">Greenfield</span>
+          </a>
+          <p style="font-size:.98rem;">Wachstums-Marktführer in der grünen Branche. Spezialisiert auf GaLaBau, Pflanzenhandel, Kulturbetriebe und verwandte Bereiche.</p>
+          <div class="social-row">
+            <a href="https://www.instagram.com/greenfield_digital/" target="_blank" rel="noopener" aria-label="Greenfield Digital auf Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+          <a class="btn btn--primary" href="index.html#kontakt">Bedarfsanalyse</a>
+        </div>
+        <div>
+          <h4>Leistungen</h4>
+          <ul>
+            <li><a href="recruiting.html">Recruiting</a></li>
+            <li><a href="neukundengewinnung.html">Neukunden</a></li>
+            <li><a href="social-media.html">Social Media Branding</a></li>
+            <li><a href="digitalisierung.html">Digitalisierung</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="ergebnisse.html">Erfolgsgeschichten</a></li>
+            <li><a href="bewerberpool.html">Bewerberpool</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="karriere.html">Karriere</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li style="display:flex; gap:10px;">
+              <svg style="flex:0 0 18px; margin-top:5px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Hansaring 61<br>50670 Köln<br>Deutschland</span>
+            </li>
+            <li style="display:flex; gap:10px; align-items:center;">
+              <svg style="flex:0 0 18px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <a href="mailto:hello@greenfield-digital.de">hello@greenfield-digital.de</a>
+            </li>
+            <li style="display:flex; gap:10px; align-items:center;">
+              <svg style="flex:0 0 18px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+4922195018825">+49 (0) 221 95 01 88 25</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 Greenfield Digital. Alle Rechte vorbehalten.</span>
+        <span style="display:flex; gap:24px;">
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="agb.html">AGB</a>
+          <a href="impressum.html">Impressum</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    (function () {
+      var form = document.getElementById('poolForm');
+      var progress = document.getElementById('poolProgress');
+      var result = document.getElementById('poolResult');
+      var bar = document.getElementById('poolBar');
+      var stateEl = document.getElementById('poolState');
+      var steps = Array.prototype.slice.call(document.querySelectorAll('.pool-steps li'));
+      var btn = document.getElementById('poolBtn');
+
+      /* Demo-Rechner: leitet plausible Werte aus dem 21.200+-Pool ab */
+      var BRANCHE_ANTEIL = {
+        'Garten- & Landschaftsbau': 0.42,
+        'Pflanzenhandel': 0.17,
+        'Baumschule / Kultivierung': 0.14,
+        'Dachbegrünung': 0.08,
+        'Kommunaler Grünbau': 0.19
+      };
+      var UMKREIS_FAKTOR = { '10': 0.05, '25': 0.14, '50': 0.31, '100': 0.62 };
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        btn.disabled = true;
+        btn.textContent = 'Suche läuft …';
+        progress.hidden = false;
+        result.hidden = true;
+        steps.forEach(function (s) { s.classList.remove('on', 'done'); });
+        stateEl.textContent = 'Läuft';
+        bar.style.width = '0%';
+
+        var timeline = [
+          [200, 18, 0], [900, 46, 0, true], [1100, 52, 1], [1900, 78, 1, true],
+          [2100, 86, 2], [2700, 100, 2, true]
+        ];
+        timeline.forEach(function (t) {
+          setTimeout(function () {
+            bar.style.width = t[1] + '%';
+            var st = steps[t[2]];
+            st.classList.add('on');
+            if (t[3]) st.classList.add('done');
+          }, t[0]);
+        });
+
+        setTimeout(function () {
+          stateEl.textContent = 'Abgeschlossen';
+          btn.textContent = '✓ Suche abgeschlossen';
+
+          var branche = form.branche.value;
+          var umkreis = form.umkreis.value;
+          var quali = form.quali.value;
+          var plz = form.plz.value || '50000';
+          var seed = 0;
+          for (var i = 0; i < plz.length; i++) seed += plz.charCodeAt(i);
+          var qualiFaktor = { '': 1, 'Ausbildung abgeschlossen': .62, '2+ Jahre Erfahrung': .48, '5+ Jahre Erfahrung': .27, 'Meister / Techniker': .09 }[quali] || 1;
+          var basis = 21200 * (BRANCHE_ANTEIL[branche] || 0.2) * (UMKREIS_FAKTOR[umkreis] || 0.3) * qualiFaktor;
+          var jitter = 0.9 + ((seed % 21) / 100);
+          var count = Math.max(14, Math.round(basis * jitter / 10) * 10);
+          var recent = Math.max(3, Math.round(count * 0.1));
+
+          document.getElementById('poolCount').textContent = count.toLocaleString('de-DE');
+          document.getElementById('poolRecent').textContent = recent.toLocaleString('de-DE');
+          result.hidden = false;
+          result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          btn.disabled = false;
+          setTimeout(function () { btn.textContent = 'Erneut suchen'; }, 2400);
+        }, 3100);
+      });
+    })();
+  </script>
+</body>
+</html>

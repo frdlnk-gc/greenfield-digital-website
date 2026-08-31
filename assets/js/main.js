@@ -7,9 +7,6 @@
 (function () {
   'use strict';
 
-  /* Ziel-Webhook für das Anfrage-Formular (Make → Slack #gd-anfragen) */
-  var ANFRAGE_WEBHOOK = 'https://hook.eu1.make.com/dpi3yxzn8knq3wimr36vg9hg64oz5l7h';
-
   /* ---------- Navigation: Schatten beim Scrollen ---------- */
   var nav = document.getElementById('nav');
   function onScroll() {
@@ -99,12 +96,11 @@
     });
   }
 
-  /* ---------- Anfrage-Formular ---------- */
-  var form = document.getElementById('anfrageForm');
-  var successBox = document.getElementById('formSuccess');
-  var submitBtn = document.getElementById('submitBtn');
-
-  if (form) {
+  /* ---------- Formulare (alle mit data-webhook) ----------
+     Jedes Formular mit data-webhook="https://hook.eu1.make.com/…" wird
+     als JSON an Make gesendet. Erfolgs-Box: nächstes .form-success-Element
+     im selben Container. Pflichtfelder über required-Attribute. */
+  document.querySelectorAll('form[data-webhook]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -112,47 +108,55 @@
       var hp = form.querySelector('input[name="website"]');
       if (hp && hp.value) return;
 
-      /* Native Validierung nutzen */
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
 
-      var chips = Array.prototype.slice
-        .call(form.querySelectorAll('input[name="herausforderung"]:checked'))
-        .map(function (c) { return c.value; });
+      /* Felder generisch einsammeln; Checkbox-Gruppen werden verbunden */
+      var payload = {};
+      var fd = new FormData(form);
+      fd.forEach(function (value, key) {
+        if (key === 'website') return;
+        var v = String(value).trim();
+        if (payload[key]) {
+          payload[key] = payload[key] + ', ' + v;
+        } else {
+          payload[key] = v;
+        }
+      });
+      payload.seite = document.title;
+      payload.url = window.location.href;
+      payload.zeit = new Date().toLocaleString('de-DE');
 
-      var payload = {
-        name: form.querySelector('#f-name').value.trim(),
-        unternehmen: form.querySelector('#f-unternehmen').value.trim(),
-        email: form.querySelector('#f-email').value.trim(),
-        telefon: form.querySelector('#f-telefon').value.trim(),
-        herausforderung: chips.join(', '),
-        nachricht: form.querySelector('#f-nachricht').value.trim(),
-        seite: document.title,
-        url: window.location.href,
-        zeit: new Date().toLocaleString('de-DE')
-      };
+      var submitBtn = form.querySelector('[type="submit"]');
+      var originalLabel = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Wird gesendet…';
+      }
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Wird gesendet…';
-
-      fetch(ANFRAGE_WEBHOOK, {
+      fetch(form.getAttribute('data-webhook'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       })
         .then(function (res) {
           if (!res.ok) throw new Error('Webhook-Fehler ' + res.status);
+          var box = form.parentElement.querySelector('.form-success');
           form.hidden = true;
-          successBox.hidden = false;
-          successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          if (box) {
+            box.hidden = false;
+            box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
         })
         .catch(function () {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Kostenlose Beratung anfragen';
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalLabel;
+          }
           alert('Das hat leider nicht geklappt. Bitte versuch es noch einmal oder schreib uns direkt an hello@greenfield-digital.de');
         });
     });
-  }
+  });
 })();

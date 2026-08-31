@@ -3,57 +3,490 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recruiting – Greenfield Digital</title>
-  <meta name="description" content="Nachhaltige Personalgewinnung für die grüne Branche – der komplette Recruiting-Prozess von Greenfield Digital.">
+  <title>Recruiting für die grüne Branche – Greenfield Digital</title>
+  <meta name="description" content="Nachhaltige Personalgewinnung für GaLaBau, Baumschulen und Pflanzenhandel: vorqualifizierte Bewerber, planbare Kosten, 100%-Garantie.">
+  <!-- TODO vor Go-Live auf greenfield-digital.de: noindex entfernen! -->
   <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0CAE80">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/foundation.css">
-  <!--
-    PLATZHALTER-SEITE.
-    Diese Unterseite wird nach Freigabe der Startseite gemäß docs/DESIGN-SPEC.md
-    ("SEITE: recruiting.html") gebaut. Bitte Aufbau, Formular-Regeln und Tabus aus AGENTS.md beachten.
-  -->
   <style>
-    .ph-wrap {
-      min-height: calc(100vh - var(--nav-h));
-      display: flex; align-items: center; justify-content: center;
-      padding: calc(var(--nav-h) + 40px) 24px 60px;
-      background:
-        radial-gradient(600px 400px at 85% 10%, rgba(11,174,127,.07), transparent),
-        radial-gradient(500px 380px at 10% 90%, rgba(11,174,127,.06), transparent);
+    .partner-mini {
+      display: inline-flex; flex-wrap: wrap; align-items: center; gap: 16px;
+      margin-top: 28px;
+      background: rgba(255, 255, 255, .94);
+      border-radius: var(--r-md);
+      padding: 12px 18px;
+      box-shadow: var(--shadow-md);
     }
-    .ph-card { max-width: 560px; text-align: center; padding: 56px 44px; }
-    .ph-card h1 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); margin-bottom: 14px; }
-    .ph-card p { color: var(--muted); margin-bottom: 30px; }
+    .partner-mini span { font-weight: 700; color: var(--ink); font-size: .9rem; }
+    .partner-mini img { height: 34px; width: auto; }
+    .tp-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: center; }
+    .tp-list { margin-bottom: 34px; }
+    .tp-list li { display: flex; gap: 18px; margin-bottom: 24px; }
+    .tp-num {
+      flex: 0 0 46px; height: 46px;
+      border-radius: 50%;
+      background: var(--mint); color: var(--green-700);
+      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .tp-list h4 { margin-bottom: 4px; }
+    .tp-list p { font-size: .98rem; }
+    @media (max-width: 900px) { .tp-grid { grid-template-columns: 1fr; } .phone-mock { display: none; } }
   </style>
 </head>
 <body>
+
   <header class="site-nav" id="nav">
     <div class="inner">
       <a class="brand" href="index.html" aria-label="Greenfield Digital – Startseite">
         <span class="mark"><svg viewBox="0 0 56 94" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 2 C40 14 55 32 56 54 C56.6 66 45 76 28 81 C11 76 -0.6 66 0 54 C1 32 16 14 28 2 Z"/><path d="M28 7 V94"/><path d="M28 19 L41 9 M28 31 L52 20 M28 44 L55 33 M28 57 L53 47 M28 69 L48 60 M28 78 L40 71"/><path d="M28 19 L15 9 M28 31 L4 20 M28 44 L1 33 M28 57 L3 47 M28 69 L8 60 M28 78 L16 71"/></svg></span>
         <span class="word">Greenfield</span>
       </a>
-      <a class="btn btn--outline" href="index.html">Zurück zur Startseite</a>
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-links" id="navLinks">
+          <li class="has-drop">
+            <a href="index.html#leistungen" class="active">Leistungen
+              <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+            <ul class="drop">
+              <li><a href="recruiting.html">Recruiting<small>Nachhaltige Personalgewinnung</small></a></li>
+              <li><a href="neukundengewinnung.html">Neukundengewinnung<small>Planbar neue Aufträge</small></a></li>
+              <li><a href="social-media.html">Social Media Branding<small>Platzhirsch in der Region</small></a></li>
+              <li><a href="digitalisierung.html">Digitalisierung &amp; KI<small>Prozesse neu gedacht</small></a></li>
+            </ul>
+          </li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="ergebnisse.html">Ergebnisse</a></li>
+          <li><a href="blog.html">Ressourcen</a></li>
+          <li><a href="karriere.html">Karriere</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <a class="btn btn--primary nav-cta-desktop" href="#kontakt">Jetzt starten</a>
+        <button class="nav-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
     </div>
   </header>
-  <main class="ph-wrap">
-    <div class="ph-card card">
-      <span class="pill">In Arbeit</span>
-      <h1>Recruiting</h1>
-      <p>Nachhaltige Personalgewinnung für die grüne Branche – der komplette Recruiting-Prozess von Greenfield Digital.<br><br>Diese Unterseite entsteht gerade – das Design steht bereits fest.</p>
-      <a class="btn btn--primary" href="index.html#kontakt">Jetzt Kontakt aufnehmen</a>
-    </div>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-card reveal in">
+          <div class="bg" style="background-image:url('assets/img/feature-3.jpg')" aria-hidden="true"></div>
+          <div class="hero-inner">
+            <span class="pill pill--glow"><span class="dot"></span>Marktführer im Grünen Recruiting</span>
+            <h1>Nachhaltige Personalgewinnung für <span class="accent">GaLaBau</span></h1>
+            <p class="sub">Wir finden qualifizierte grüne Fachkräfte und überzeugen sie von deinem Betrieb – mit Reichweite, starkem Content und KI-gestützten Prozessen.</p>
+            <div class="hero-actions"><a class="btn btn--white is-green-text" href="#kontakt">Kostenlose Recruiting-Beratung</a><a class="btn btn--ghost" href="#prozess">So funktioniert&rsquo;s<span class="arr">→</span></a></div>
+          </div>
+          <div class="partner-mini reveal" style="--d:.2s">
+              <span>Exklusiver Verbands-Partner</span>
+              <img src="assets/img/partner-1.png" alt="Verbandspartner – Die Experten für Garten &amp; Landschaft">
+              <img src="assets/img/partner-2.png" alt="Verband Deutscher Garten-Center">
+              <img src="assets/img/partner-3.png" alt="Bund deutscher Baumschulen e.V.">
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:64px; padding-bottom:64px;">
+      <div class="container">
+        <p class="logos-head reveal" style="text-align:center; color:var(--muted); font-weight:600; margin-bottom:34px;">Über 700 Betriebe konnten von unserer Expertise profitieren</p>
+      </div>
+      <div class="marquee reveal">
+        <div class="marquee-track">
+          <img src="assets/img/logo-vivawest.png" alt="Vivawest" loading="lazy">
+          <img src="assets/img/logo-wisag.png" alt="WISAG" loading="lazy">
+          <img src="assets/img/logo-stadtgruen.png" alt="Stadtgrün Potsdam" loading="lazy">
+          <img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen" loading="lazy">
+          <img src="assets/img/logo-freiraum.png" alt="Freiraum" loading="lazy">
+          <img src="assets/img/logo-fu.png" alt="flöter &amp; uszkureit" loading="lazy">
+          <img src="assets/img/logo-scheldmann.png" alt="Scheidtmann" loading="lazy">
+          <img src="assets/img/logo-spaeth.png" alt="Späth" loading="lazy">
+          <img src="assets/img/logo-huben.png" alt="Pflanzenhandel Huben" loading="lazy">
+          <img src="assets/img/logo-blumenmetzger.png" alt="Blumen Metzger" loading="lazy">
+          <img src="assets/img/logo-streb.png" alt="Streb" loading="lazy">
+          <img src="assets/img/logo-stanze.png" alt="Stanze Gartencenter" loading="lazy">
+          <img src="assets/img/logo-jensen.png" alt="Jensen Landschaftsarchitekten" loading="lazy">
+          <!-- Zweiter Durchlauf für die Endlos-Schleife -->
+          <img src="assets/img/logo-vivawest.png" alt="" loading="lazy">
+          <img src="assets/img/logo-wisag.png" alt="" loading="lazy">
+          <img src="assets/img/logo-stadtgruen.png" alt="" loading="lazy">
+          <img src="assets/img/logo-woerlein.png" alt="" loading="lazy">
+          <img src="assets/img/logo-freiraum.png" alt="" loading="lazy">
+          <img src="assets/img/logo-fu.png" alt="" loading="lazy">
+          <img src="assets/img/logo-scheldmann.png" alt="" loading="lazy">
+          <img src="assets/img/logo-spaeth.png" alt="" loading="lazy">
+          <img src="assets/img/logo-huben.png" alt="" loading="lazy">
+          <img src="assets/img/logo-blumenmetzger.png" alt="" loading="lazy">
+          <img src="assets/img/logo-streb.png" alt="" loading="lazy">
+          <img src="assets/img/logo-stanze.png" alt="" loading="lazy">
+          <img src="assets/img/logo-jensen.png" alt="" loading="lazy">
+        </div>
+      </div>
+    </section>
+    <section class="section section--tint" id="prozess" style="padding-top:72px;">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Der intelligente Recruiting-Prozess</span>
+          <h2>Mehr Bewerbungen. Weniger <span class="mark-u">Aufwand.<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+          <p class="sub">Unser bewährter Prozess bringt dir die passenden Fachkräfte – schneller, günstiger und treffsicherer als klassische Stellenanzeigen.</p>
+        </div>
+        <div class="feature-row reveal">
+          <div class="media"><img src="assets/img/feature-1.jpg" alt="Entspannter Betriebsinhaber – Recruiting ohne Zeitaufwand" loading="lazy"></div>
+          <div>
+            <p class="kicker">01 — Effizienz</p>
+            <h3>Weniger Zeitaufwand</h3>
+            <p>Wir übernehmen die komplette Bewerbergewinnung – von der Anzeige bis zur Vorqualifizierung. Du sprichst nur noch mit Kandidaten, die wirklich passen.</p>
+            <ul class="checks">
+              <li>Komplette Prozess-Übernahme</li>
+              <li>Vorqualifizierte Bewerber</li>
+              <li>Kein administrativer Aufwand</li>
+            </ul>
+          </div>
+        </div>
+        <div class="feature-row reveal">
+          <div class="media"><img src="assets/img/kunden-700.jpg" alt="Beratung im Grünbetrieb – planbare Recruiting-Kosten" loading="lazy"></div>
+          <div>
+            <p class="kicker">02 — Wirtschaftlichkeit</p>
+            <h3>Niedrigere Kosten</h3>
+            <p>Statt teurer Personalvermittler und Streuverlusten setzen wir auf zielgerichtetes Performance-Marketing. So senkst du deine Kosten pro Einstellung deutlich.</p>
+            <ul class="checks">
+              <li>Planbare Kosten pro Einstellung</li>
+              <li>Keine Vermittlungsprovisionen</li>
+              <li>Messbarer Return on Invest</li>
+            </ul>
+          </div>
+        </div>
+        <div class="feature-row reveal">
+          <div class="media"><img src="assets/img/feature-2.jpg" alt="Team plant Recruiting-Kampagne für passende Bewerbungen" loading="lazy"></div>
+          <div>
+            <p class="kicker">03 — Qualität</p>
+            <h3>Passendere Bewerbungen</h3>
+            <p>Durch präzises Targeting erreichen wir genau die Fachkräfte, die zu deinem Betrieb passen – fachlich und menschlich. Das senkt die Fluktuation nachhaltig.</p>
+            <ul class="checks">
+              <li>Präzises Zielgruppen-Targeting</li>
+              <li>Höhere Bewerber-Qualität</li>
+              <li>Geringere Fluktuation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section " id="touchpoint">
+      <div class="container">
+        <div class="tp-grid">
+          <div>
+            <div class="section-head left reveal" style="margin-bottom:34px;">
+              <span class="pill">So funktioniert Touchpoint-Recruiting</span>
+              <h2>In vier Schritten zur passenden <span class="mark-u">Fachkraft<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+            </div>
+            <ol class="tp-list">
+              <li class="reveal"><span class="tp-num">01</span><div><h4>Erster Eindruck</h4><p>Wir platzieren deinen Betrieb authentisch dort, wo deine Wunschkandidaten ihre Zeit verbringen – mit Content, der hängen bleibt.</p></div></li>
+              <li class="reveal" style="--d:.1s"><span class="tp-num">02</span><div><h4>Wiederholte Sichtbarkeit</h4><p>Durch gezieltes Retargeting bleibst du im Kopf. Kandidaten sehen dich mehrfach – und bauen Vertrauen auf.</p></div></li>
+              <li class="reveal" style="--d:.2s"><span class="tp-num">03</span><div><h4>Interaktion &amp; Bewerbung</h4><p>Ein einfacher, mobiler Bewerbungsprozess macht es Interessenten leicht, in wenigen Klicks Kontakt aufzunehmen.</p></div></li>
+              <li class="reveal" style="--d:.3s"><span class="tp-num">04</span><div><h4>Vertrauen &amp; Nahbarkeit</h4><p>Echte Einblicke in deinen Betrieb schaffen Nähe und Vertrauen – die Basis für langfristige Einstellungen.</p></div></li>
+            </ol>
+            <a class="btn btn--primary reveal" style="--d:.35s" href="#kontakt">Jetzt in 30 Tagen neue Bewerber gewinnen<span class="arr">→</span></a>
+          </div>
+            <div class="phone-mock reveal" aria-hidden="true">
+              <div class="screen">
+                <div class="notch"></div>
+                <div class="pm-img"></div>
+                <div class="pm-card">
+                  <div class="pm-bar w80"></div>
+                  <div class="pm-bar w60"></div>
+                  <div class="pm-bar solid"></div>
+                </div>
+                <div class="pm-card">
+                  <div class="pm-bar w60"></div>
+                  <div class="pm-bar w80"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tint">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Einfacher Prozess</span>
+          <h2>Einfacher Prozess, starke <span class="mark-u">Ergebnisse<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <span class="num">1</span>
+            <h4>Erstgespräch</h4>
+            <p>Wir analysieren deinen Bedarf, deine Zielgruppe und deine Positionierung als Arbeitgeber.</p>
+          </div>
+          <div class="step-card reveal" style="--d:.1s">
+            <span class="num">2</span>
+            <h4>Kandidatensuche</h4>
+            <p>Wir entwickeln Kampagnen und Content, der genau deine Wunschkandidaten erreicht.</p>
+          </div>
+          <div class="step-card reveal" style="--d:.2s">
+            <span class="num">3</span>
+            <h4>Vorqualifizierung</h4>
+            <p>Wir prüfen Eignung und Motivation – du sprichst nur mit wirklich passenden Bewerbern.</p>
+          </div>
+          <div class="step-card reveal" style="--d:.3s">
+            <span class="num">4</span>
+            <h4>Einstellung &amp; Onboarding</h4>
+            <p>Wir begleiten dich bis zur erfolgreichen Einstellung und einem reibungslosen Start.</p>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:40px;" class="reveal">
+          <a class="btn btn--primary btn--lg" href="#kontakt">Kostenloses Erstgespräch sichern<span class="arr">→</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="region">
+      <div class="container">
+        <div class="map-grid">
+          <div class="map-visual reveal">
+            <img src="assets/img/dach-karte.jpg" alt="Karte des DACH-Raums mit Standorten von Greenfield-Partnerbetrieben" loading="lazy">
+            <span class="map-dot" style="top:22%; left:33%" aria-hidden="true"></span>
+            <span class="map-dot" style="top:46%; left:24%" aria-hidden="true"></span>
+            <span class="map-dot" style="top:63%; left:52%" aria-hidden="true"></span>
+            <span class="map-dot" style="top:84%; left:74%" aria-hidden="true"></span>
+            <span class="map-dot" style="top:34%; left:58%" aria-hidden="true"></span>
+            <span class="map-dot" style="top:88%; left:30%" aria-hidden="true"></span>
+          </div>
+          <div>
+            <div class="section-head left reveal" style="margin-bottom:34px;">
+              <span class="pill">Greenfield in Zahlen</span>
+              <h2>Verwurzelt im gesamten DACH-Raum</h2>
+            </div>
+            <div class="map-stats">
+              <div class="stat-card reveal">
+                <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></span>
+                <div class="num"><span data-count="700">0</span>+</div>
+                <div class="label">Partnerbetriebe</div>
+                <p class="desc">ausschließlich in der grünen Branche</p>
+              </div>
+              <div class="stat-card reveal" style="--d:.1s">
+                <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8L12 2z"/></svg></span>
+                <div class="num"><span data-count="20">0</span>+</div>
+                <div class="label">Experten im Team</div>
+                <p class="desc">Recruiting, Marketing, Branding &amp; Development</p>
+              </div>
+              <div class="stat-card reveal" style="--d:.15s">
+                <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+                <div class="num"><span data-count="9">0</span>+</div>
+                <div class="label">Jahre Erfahrung</div>
+                <p class="desc">aus und für die Grüne Branche</p>
+              </div>
+              <div class="stat-card reveal" style="--d:.25s">
+                <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4.9-4.5 2.3A5.6 5.6 0 0 0 7.5 3 5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg></span>
+                <div class="num"><span data-count="92">0</span>%</div>
+                <div class="label">unserer Kunden</div>
+                <p class="desc">vertrauen uns in mehr als einer Dienstleistung</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="kundenstimmen">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Kundenstimmen</span>
+          <h2>Das sagen unsere <span class="mark-u">Kunden<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+          <p class="sub">Über 730 zufriedene Unternehmen vertrauen auf unsere Expertise</p>
+        </div>
+        <div class="testi-card reveal">
+          <div class="bg" aria-hidden="true"></div>
+          <span class="tag">Erfolgreiche Personalgewinnung in der grünen Branche</span>
+          <div class="who">
+            <span class="logo-chip"><img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen"></span>
+            <div>
+              <strong>Wörlein Baumschulen</strong>
+              <span>Partnerbetrieb aus der grünen Branche</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-more reveal">
+          <a class="btn-link" href="ergebnisse.html" style="font-size:1.1rem;">Weitere Kundenstimmen <span class="arr">→</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="section ">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">FAQ</span>
+          <h2>Fragen &amp; Antworten</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal">
+            <summary>Wie schnell bekomme ich erste Bewerbungen?</summary>
+            <div class="faq-body">In der Regel innerhalb der ersten 7–14 Tage nach Kampagnenstart. Den genauen Zeitrahmen besprechen wir im Erstgespräch.</div>
+          </details>
+          <details class="reveal">
+            <summary>Für welche Betriebe eignet sich euer Recruiting?</summary>
+            <div class="faq-body">Für alle Betriebe der grünen Branche – GaLaBau, Baumschulen, Pflanzenhandel, Kulturbetriebe und verwandte Bereiche.</div>
+          </details>
+          <details class="reveal">
+            <summary>Was kostet das Recruiting?</summary>
+            <div class="faq-body">Das hängt von deinem Bedarf ab. Im kostenlosen Erstgespräch erstellen wir dir ein transparentes, planbares Angebot.</div>
+          </details>
+          <details class="reveal">
+            <summary>Was bedeutet die 100%-Garantie?</summary>
+            <div class="faq-body">Wir nehmen deine Mitarbeitersuche ernst und arbeiten so lange mit dir, bis das vereinbarte Ergebnis erreicht ist.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tint" id="kontakt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Jetzt Unterstützung anfordern</span>
+          <h2>Du benötigst Unterstützung?</h2>
+          <p class="sub">Unser bewährter Prozess für deine Fachkräftegewinnung. Lass uns über deinen Bedarf sprechen.</p>
+        </div>
+        <div class="contact-card card reveal">
+          <div class="founder-strip">
+            <img src="assets/img/frederik-linke.jpg" alt="Frederik Linke">
+            <div>
+              <strong>Frederik Linke</strong>
+              <span>Geschäftsführer von Greenfield Digital</span>
+            </div>
+          </div>
+          <form data-webhook="https://hook.eu1.make.com/dpi3yxzn8knq3wimr36vg9hg64oz5l7h" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="rec-name">Name *</label>
+                <input type="text" id="rec-name" name="name" placeholder="Max Mustermann" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="rec-unternehmen">Unternehmen *</label>
+                <input type="text" id="rec-unternehmen" name="unternehmen" placeholder="Mustermann GmbH" required autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="rec-email">E-Mail *</label>
+                <input type="email" id="rec-email" name="email" placeholder="max@mustermann.de" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="rec-telefon">Telefon</label>
+                <input type="tel" id="rec-telefon" name="telefon" placeholder="+49 123 456789" autocomplete="tel">
+              </div>
+              <div class="field full">
+                <label for="rec-nachricht">Deine Nachricht (optional)</label>
+                <textarea id="rec-nachricht" name="nachricht" rows="5" placeholder="Erzähl uns mehr über dein Projekt..."></textarea>
+              </div>
+              <div class="hp-field" aria-hidden="true">
+                <label for="rec-website">Website</label>
+                <input type="text" id="rec-website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+              <div class="full note-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <div>
+                  <strong>Schnelle Antwort garantiert</strong>
+                  <p>Wir melden uns innerhalb von 48 Stunden persönlich bei dir zurück</p>
+                </div>
+              </div>
+              <div class="full">
+                <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Kostenlose Beratung anfragen</button>
+                <p class="form-note">Deine Daten werden vertraulich behandelt und nicht an Dritte weitergegeben</p>
+                <div class="trust-dots form-trust">
+                  <span>Unverbindlich</span>
+                  <span>Kostenlos</span>
+                  <span>48h Antwortzeit</span>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="form-success" hidden>
+            <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <h3>Danke für deine Anfrage!</h3>
+            <p>Wir haben alles erhalten und melden uns innerhalb von 48 Stunden persönlich bei dir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta-band">
+      <div class="bg" style="background-image:url('assets/img/cta-bg.jpg')" aria-hidden="true"></div>
+      <div class="container reveal">
+        <h2>Bereit für dein grünes Wachstum?</h2>
+        <p>Vereinbare jetzt ein kostenloses Erstgespräch und gewinne planbar neue Fachkräfte.</p>
+        <a class="btn btn--white is-green-text btn--lg" href="#kontakt">Kostenloses Gespräch vereinbaren</a>
+      </div>
+    </section>
+
   </main>
-  <script>
-    var nav = document.getElementById('nav');
-    window.addEventListener('scroll', function () {
-      nav.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
-  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="cols">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="mark"><svg viewBox="0 0 56 94" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 2 C40 14 55 32 56 54 C56.6 66 45 76 28 81 C11 76 -0.6 66 0 54 C1 32 16 14 28 2 Z"/><path d="M28 7 V94"/><path d="M28 19 L41 9 M28 31 L52 20 M28 44 L55 33 M28 57 L53 47 M28 69 L48 60 M28 78 L40 71"/><path d="M28 19 L15 9 M28 31 L4 20 M28 44 L1 33 M28 57 L3 47 M28 69 L8 60 M28 78 L16 71"/></svg></span>
+            <span class="word">Greenfield</span>
+          </a>
+          <p style="font-size:.98rem;">Wachstums-Marktführer in der grünen Branche. Spezialisiert auf GaLaBau, Pflanzenhandel, Kulturbetriebe und verwandte Bereiche.</p>
+          <div class="social-row">
+            <a href="https://www.instagram.com/greenfield_digital/" target="_blank" rel="noopener" aria-label="Greenfield Digital auf Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+          <a class="btn btn--primary" href="index.html#kontakt">Bedarfsanalyse</a>
+        </div>
+        <div>
+          <h4>Leistungen</h4>
+          <ul>
+            <li><a href="recruiting.html">Recruiting</a></li>
+            <li><a href="neukundengewinnung.html">Neukunden</a></li>
+            <li><a href="social-media.html">Social Media Branding</a></li>
+            <li><a href="digitalisierung.html">Digitalisierung</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="ergebnisse.html">Erfolgsgeschichten</a></li>
+            <li><a href="bewerberpool.html">Bewerberpool</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="karriere.html">Karriere</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li style="display:flex; gap:10px;">
+              <svg style="flex:0 0 18px; margin-top:5px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Hansaring 61<br>50670 Köln<br>Deutschland</span>
+            </li>
+            <li style="display:flex; gap:10px; align-items:center;">
+              <svg style="flex:0 0 18px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <a href="mailto:hello@greenfield-digital.de">hello@greenfield-digital.de</a>
+            </li>
+            <li style="display:flex; gap:10px; align-items:center;">
+              <svg style="flex:0 0 18px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+4922195018825">+49 (0) 221 95 01 88 25</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 Greenfield Digital. Alle Rechte vorbehalten.</span>
+        <span style="display:flex; gap:24px;">
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="agb.html">AGB</a>
+          <a href="impressum.html">Impressum</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

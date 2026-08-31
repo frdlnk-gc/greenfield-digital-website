@@ -3,57 +3,430 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ergebnisse & Kundenstimmen – Greenfield Digital</title>
-  <meta name="description" content="Über 700 zufriedene Kunden aus der grünen Branche – Erfolgsgeschichten und Bewertungen.">
+  <title>Kundenstimmen & Ergebnisse – Greenfield Digital</title>
+  <meta name="description" content="Über 750 Kunden aus der grünen Branche vertrauen Greenfield Digital: echte Referenzen mit Bewerbungszahlen, Zeit bis zur Einstellung und besetzten Stellen.">
+  <!-- TODO vor Go-Live auf greenfield-digital.de: noindex entfernen! -->
   <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0CAE80">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/foundation.css">
-  <!--
-    PLATZHALTER-SEITE.
-    Diese Unterseite wird nach Freigabe der Startseite gemäß docs/DESIGN-SPEC.md
-    ("SEITE: ergebnisse.html") gebaut. Bitte Aufbau, Formular-Regeln und Tabus aus AGENTS.md beachten.
-  -->
   <style>
-    .ph-wrap {
-      min-height: calc(100vh - var(--nav-h));
-      display: flex; align-items: center; justify-content: center;
-      padding: calc(var(--nav-h) + 40px) 24px 60px;
-      background:
-        radial-gradient(600px 400px at 85% 10%, rgba(11,174,127,.07), transparent),
-        radial-gradient(500px 380px at 10% 90%, rgba(11,174,127,.06), transparent);
+    .partner-mini {
+      display: inline-flex; flex-wrap: wrap; align-items: center; gap: 16px;
+      margin-top: 28px;
+      background: rgba(255, 255, 255, .94);
+      border-radius: var(--r-md);
+      padding: 12px 18px;
+      box-shadow: var(--shadow-md);
     }
-    .ph-card { max-width: 560px; text-align: center; padding: 56px 44px; }
-    .ph-card h1 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); margin-bottom: 14px; }
-    .ph-card p { color: var(--muted); margin-bottom: 30px; }
+    .partner-mini span { font-weight: 700; color: var(--ink); font-size: .9rem; }
+    .partner-mini img { height: 34px; width: auto; }
+    .google-card { display: grid; grid-template-columns: 1fr 1.2fr; overflow: hidden; }
+    .google-card .g-left {
+      padding: 48px 40px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; gap: 8px;
+    }
+    .google-card .g-score { font-size: 3rem; font-weight: 800; color: var(--ink); line-height: 1; }
+    .google-card .g-score small { font-size: 1.2rem; color: var(--muted); font-weight: 600; }
+    .google-card .g-stars { display: flex; gap: 4px; color: #F6BB06; }
+    .google-card .g-stars svg { width: 26px; height: 26px; }
+    .google-card .g-sub { color: var(--text); font-weight: 600; }
+    .google-card .g-right {
+      background: var(--mint-soft);
+      border-left: 1px solid var(--line);
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      align-items: center; justify-items: center;
+      gap: 18px; padding: 34px;
+    }
+    .google-card .g-right img { max-height: 42px; width: auto; max-width: 120px; filter: grayscale(1); opacity: .7; transition: .3s; }
+    .google-card .g-right img:hover { filter: none; opacity: 1; }
+    @media (max-width: 700px) {
+      .google-card { grid-template-columns: 1fr; }
+      .google-card .g-right { border-left: 0; border-top: 1px solid var(--line); grid-template-columns: 1fr 1fr; padding: 24px; }
+    }
+    .pool-teaser {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 24px; padding: 40px 44px;
+    }
+    .pool-teaser h3 { margin: 4px 0 8px; }
+    .pool-teaser p { max-width: 560px; }
+    @media (max-width: 700px) { .pool-teaser { padding: 28px 22px; } .pool-teaser .btn { width: 100%; } }
   </style>
 </head>
 <body>
+
   <header class="site-nav" id="nav">
     <div class="inner">
       <a class="brand" href="index.html" aria-label="Greenfield Digital – Startseite">
         <span class="mark"><svg viewBox="0 0 56 94" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 2 C40 14 55 32 56 54 C56.6 66 45 76 28 81 C11 76 -0.6 66 0 54 C1 32 16 14 28 2 Z"/><path d="M28 7 V94"/><path d="M28 19 L41 9 M28 31 L52 20 M28 44 L55 33 M28 57 L53 47 M28 69 L48 60 M28 78 L40 71"/><path d="M28 19 L15 9 M28 31 L4 20 M28 44 L1 33 M28 57 L3 47 M28 69 L8 60 M28 78 L16 71"/></svg></span>
         <span class="word">Greenfield</span>
       </a>
-      <a class="btn btn--outline" href="index.html">Zurück zur Startseite</a>
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-links" id="navLinks">
+          <li class="has-drop">
+            <a href="index.html#leistungen">Leistungen
+              <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+            <ul class="drop">
+              <li><a href="recruiting.html">Recruiting<small>Nachhaltige Personalgewinnung</small></a></li>
+              <li><a href="neukundengewinnung.html">Neukundengewinnung<small>Planbar neue Aufträge</small></a></li>
+              <li><a href="social-media.html">Social Media Branding<small>Platzhirsch in der Region</small></a></li>
+              <li><a href="digitalisierung.html">Digitalisierung &amp; KI<small>Prozesse neu gedacht</small></a></li>
+            </ul>
+          </li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="ergebnisse.html" class="active">Ergebnisse</a></li>
+          <li><a href="blog.html">Ressourcen</a></li>
+          <li><a href="karriere.html">Karriere</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <a class="btn btn--primary nav-cta-desktop" href="#kontakt">Jetzt starten</a>
+        <button class="nav-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
     </div>
   </header>
-  <main class="ph-wrap">
-    <div class="ph-card card">
-      <span class="pill">In Arbeit</span>
-      <h1>Ergebnisse & Kundenstimmen</h1>
-      <p>Über 700 zufriedene Kunden aus der grünen Branche – Erfolgsgeschichten und Bewertungen.<br><br>Diese Unterseite entsteht gerade – das Design steht bereits fest.</p>
-      <a class="btn btn--primary" href="index.html#kontakt">Jetzt Kontakt aufnehmen</a>
-    </div>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-card reveal in">
+          <div class="bg" style="background-image:url('assets/img/kunden-700.jpg')" aria-hidden="true"></div>
+          <div class="hero-inner">
+            <span class="pill pill--glow"><span class="dot"></span>Wir halten, was wir versprechen</span>
+            <h1>Kundenstimmen aus der <span class="accent">Grünen Branche</span></h1>
+            <p class="sub">Über 750 Kunden vertrauen bereits auf unsere Expertise – und das aus gutem Grund.</p>
+            <div class="hero-actions"><a class="btn btn--white is-green-text" href="#kontakt">Werde unsere nächste Erfolgsgeschichte</a><a class="btn btn--ghost" href="#referenzen">Zu den Referenzen<span class="arr">→</span></a></div>
+          </div>
+          <div class="partner-mini reveal" style="--d:.2s">
+              <span>Exklusiver Verbands-Partner</span>
+              <img src="assets/img/partner-1.png" alt="Verbandspartner – Die Experten für Garten &amp; Landschaft">
+              <img src="assets/img/partner-2.png" alt="Verband Deutscher Garten-Center">
+              <img src="assets/img/partner-3.png" alt="Bund deutscher Baumschulen e.V.">
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tint" id="kundenstimmen">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Kundenstimmen</span>
+          <h2>Das sagen unsere <span class="mark-u">Kunden<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+          <p class="sub">Über 730 zufriedene Unternehmen vertrauen auf unsere Expertise</p>
+        </div>
+        <div class="testi-card reveal">
+          <div class="bg" aria-hidden="true"></div>
+          <span class="tag">Neuanlage eines privaten Gartenparadieses</span>
+          <div class="who">
+            <span class="logo-chip"><img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen"></span>
+            <div>
+              <strong>Wörlein Baumschulen</strong>
+              <span>Partnerbetrieb aus der grünen Branche</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-more reveal" hidden>
+          <a class="btn-link" href="ergebnisse.html" style="font-size:1.1rem;">Weitere Kundenstimmen <span class="arr">→</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="referenzen">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Mehr Zufriedenheiten</span>
+          <h2>Echte Betriebe. Echte <span class="mark-u">Ergebnisse.<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+          <p class="sub">Ein Auszug aus über 700 Partnerschaften – mit dem, was am Ende zählt: Bewerbungen, Geschwindigkeit und Einstellungen.</p>
+        </div>
+        <div class="ref-grid">
+          <article class="ref-card reveal" style="--d:.0s">
+            <div class="ref-logo"><img src="assets/img/logo-freiraum.png" alt="FREIRAUM Gartenarchitektur GmbH" loading="lazy"></div>
+            <h4>FREIRAUM Gartenarchitektur GmbH</h4>
+            <p class="who">Wolfgang Schmidt – Geschäftsführer</p>
+            <ul><li>78 qualifizierte Bewerbungen</li><li>54 Tage bis Einstellung</li><li>2 Bauleiter + 1 Vorarbeiter eingestellt</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.1s">
+            <div class="ref-logo"><img src="assets/img/logo-wisag.png" alt="WISAG Garten- &amp; Landschaftspflege" loading="lazy"></div>
+            <h4>WISAG Garten- &amp; Landschaftspflege</h4>
+            <p class="who">Henning Russ – Geschäftsführer</p>
+            <ul><li>261 qualifizierte Bewerbungen</li><li>87 Tage bis Einstellung</li><li>5 Facharbeiter eingestellt</li><li>2 Vorarbeiter &amp; 1 Bauleiter eingestellt</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.2s">
+            <div class="ref-logo"><span class="wordmark">Lorberg</span></div>
+            <h4>Lorberg Quality Plants GmbH &amp; Co.</h4>
+            <p class="who">Daniel Sieber – Geschäftsführer</p>
+            <ul><li>20 qualifizierte Bewerbungen</li><li>30 Tage bis Einstellung</li><li>1 Gärtner / Landschaftsarchitekt eingestellt</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.3s">
+            <div class="ref-logo"><span class="wordmark">INTERMARKT THIELEN</span></div>
+            <h4>Intermarkt Thielen</h4>
+            <p class="who">Tim Drabe – Geschäftsführer</p>
+            <ul><li>287 qualifizierte Bewerbungen</li><li>58 Tage bis Einstellung</li><li>4 Versand- / Hallenmitarbeiter</li><li>2 LKW-Fahrer</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.0s">
+            <div class="ref-logo"><span class="wordmark">Köpsel Team</span></div>
+            <h4>Eckhard Köpsel GmbH</h4>
+            <p class="who">Florian Köpsel – Geschäftsführer</p>
+            <ul><li>12 qualifizierte Bewerbungen</li><li>52 Tage bis Einstellung</li><li>1 Vorarbeiter</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.1s">
+            <div class="ref-logo"><span class="wordmark">GRÖBNER</span></div>
+            <h4>Gröbner Landwirtschaft</h4>
+            <p class="who">Christian Fuchs – Geschäftsführer, HR</p>
+            <ul><li>108 qualifizierte Bewerbungen</li><li>120 Tage bis Einstellung</li><li>3 Landwirte</li><li>2 Tierwirte</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.2s">
+            <div class="ref-logo"><img src="assets/img/logo-huben.png" alt="Pflanzenhandel Huben GmbH" loading="lazy"></div>
+            <h4>Pflanzenhandel Huben GmbH</h4>
+            <p class="who">Carlo Huben – Geschäftsführer</p>
+            <ul><li>96 qualifizierte Bewerbungen</li><li>47 Tage bis Einstellung</li><li>1 stellv. Verkaufsleitung eingestellt</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.3s">
+            <div class="ref-logo"><img src="assets/img/logo-vivawest.png" alt="Vivawest Wohnen GmbH" loading="lazy"></div>
+            <h4>Vivawest Wohnen GmbH</h4>
+            <p class="who">Kevin Erkens – Geschäftsführer</p>
+            <ul><li>257 qualifizierte Bewerbungen</li><li>128 Tage bis Einstellung</li><li>5 Facharbeiter</li><li>2 Vorarbeiter eingestellt</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.0s">
+            <div class="ref-logo"><span class="wordmark">August Lüdemann</span></div>
+            <h4>August Lüdemann Forst- und Landschaft</h4>
+            <p class="who">Claus Jule-Heinrich – Geschäftsführer</p>
+            <ul><li>241 qualifizierte Bewerbungen</li><li>6 Monate bis Einstellung</li><li>1 Produktionsleiter Forstbetrieb</li><li>1 Einsatzleiter Wiederbewaldung</li><li>3 Fahrer</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.1s">
+            <div class="ref-logo"><img src="assets/img/logo-mauer.png" alt="Mauer GmbH Gartenlandschaftsbau" loading="lazy"></div>
+            <h4>Mauer GmbH Gartenlandschaftsbau</h4>
+            <p class="who">Torsten Klein – Geschäftsführer</p>
+            <ul><li>74 qualifizierte Bewerbungen</li><li>30 Tage bis Einstellung</li><li>1 Assistenz der Geschäftsleitung</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.2s">
+            <div class="ref-logo"><img src="assets/img/logo-stanze.png" alt="Stanze Gartencenter" loading="lazy"></div>
+            <h4>Stanze Gartencenter</h4>
+            <p class="who">Alexander Jakob – Geschäftsführer</p>
+            <ul><li>67 qualifizierte Bewerbungen</li><li>42 Tage bis Einstellung</li><li>1 Leitung Garten- &amp; Landschaftsbau</li><li>1 Leitung Café</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.3s">
+            <div class="ref-logo"><span class="wordmark">Schulz &amp; Brammen</span></div>
+            <h4>Schulz &amp; Brammen Garten- und Landschaft</h4>
+            <p class="who">Robin Schulz – Geschäftsführer</p>
+            <ul><li>14 qualifizierte Bewerbungen</li><li>36 Tage bis Einstellung</li><li>1 Meister GaLaBau</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.0s">
+            <div class="ref-logo"><img src="assets/img/logo-jensen.png" alt="Jensen Landschaftsarchitekten" loading="lazy"></div>
+            <h4>Jensen Landschaftsarchitekten</h4>
+            <p class="who">Sebastian Jensen – Inhaber</p>
+            <ul><li>10 qualifizierte Bewerbungen</li><li>14 Tage bis Einstellung</li><li>1 Landschaftsarchitekt</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.1s">
+            <div class="ref-logo"><span class="wordmark">Grönfingers</span></div>
+            <h4>Grönfingers Rostocks Gartenfachmarkt</h4>
+            <p class="who">Eckhard Heinemann – Inhaber</p>
+            <ul><li>117 qualifizierte Bewerbungen</li><li>60 Tage bis Einstellung</li><li>1 Verkaufsgärtner Zimmerpflanzen</li><li>1 Produktionsgärtner</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.2s">
+            <div class="ref-logo"><img src="assets/img/logo-spaeth.png" alt="Späth'sche Baumschulen Handel" loading="lazy"></div>
+            <h4>Späth'sche Baumschulen Handel</h4>
+            <p class="who">Holger Zahn – Geschäftsführer</p>
+            <ul><li>226 qualifizierte Bewerbungen</li><li>62 Tage bis Einstellung</li><li>1 Gärtner für den Gartenservice</li><li>1 Leitung der Buchhaltung</li></ul>
+          </article>
+          <article class="ref-card reveal" style="--d:.3s">
+            <div class="ref-logo"><img src="assets/img/logo-fu.png" alt="Flöter &amp; Uszkureit Garten- &amp; Landschaft" loading="lazy"></div>
+            <h4>Flöter &amp; Uszkureit Garten- &amp; Landschaft</h4>
+            <p class="who">Anne Strobel – Geschäftsführerin</p>
+            <ul><li>43 qualifizierte Bewerbungen</li><li>38 Tage bis Einstellung</li><li>1 Facharbeiter GaLaBau eingestellt</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section section--tint" style="padding-top:64px; padding-bottom:64px;">
+      <div class="container">
+        <div class="google-card card reveal">
+          <div class="g-left">
+            <svg width="42" height="42" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
+            <div class="g-score"><span style="color:var(--green)">4.9</span> <small>/5</small></div>
+            <div class="g-stars" aria-label="5 von 5 Sternen">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="g-sub">40+ Google Bewertungen</div>
+            <a class="btn-link" href="https://www.google.com/search?q=Greenfield+Digital+K%C3%B6ln+Bewertungen" target="_blank" rel="noopener">Alle ansehen <span class="arr">→</span></a>
+          </div>
+          <div class="g-right">
+            <img src="assets/img/logo-vivawest.png" alt="Vivawest" loading="lazy">
+            <img src="assets/img/logo-fu.png" alt="flöter &amp; uszkureit" loading="lazy">
+            <img src="assets/img/logo-stadtgruen.png" alt="Stadtgrün Potsdam" loading="lazy">
+            <img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen" loading="lazy">
+            <img src="assets/img/logo-wisag.png" alt="WISAG" loading="lazy">
+            <img src="assets/img/logo-freiraum.png" alt="Freiraum" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="pool-teaser card reveal">
+          <div>
+            <span class="pill">Bewerbertool</span>
+            <h3>Wie viele Fachkräfte gibt es in deiner Region?</h3>
+            <p>Durchsuche unseren Bewerberpool nach Branche, Position und Umkreis – und sieh selbst, wie viele qualifizierte Kandidaten aktiv sind.</p>
+          </div>
+          <a class="btn btn--primary btn--lg" href="bewerberpool.html">Bewerberpool öffnen<span class="arr">→</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="kontakt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Werde unsere nächste Erfolgsgeschichte</span>
+          <h2>Du benötigst Unterstützung?</h2>
+          <p class="sub">Lass uns über deine Ziele sprechen. Im kostenlosen Erstgespräch zeigen wir dir, was möglich ist.</p>
+        </div>
+        <div class="contact-card card reveal">
+          <div class="founder-strip">
+            <img src="assets/img/frederik-linke.jpg" alt="Frederik Linke">
+            <div>
+              <strong>Frederik Linke</strong>
+              <span>Geschäftsführer von Greenfield Digital</span>
+            </div>
+          </div>
+          <form data-webhook="https://hook.eu1.make.com/dpi3yxzn8knq3wimr36vg9hg64oz5l7h" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="erg-name">Name *</label>
+                <input type="text" id="erg-name" name="name" placeholder="Max Mustermann" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="erg-unternehmen">Unternehmen *</label>
+                <input type="text" id="erg-unternehmen" name="unternehmen" placeholder="Mustermann GmbH" required autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="erg-email">E-Mail *</label>
+                <input type="email" id="erg-email" name="email" placeholder="max@mustermann.de" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="erg-telefon">Telefon</label>
+                <input type="tel" id="erg-telefon" name="telefon" placeholder="+49 123 456789" autocomplete="tel">
+              </div>
+              <div class="field full">
+                <label for="erg-nachricht">Deine Nachricht (optional)</label>
+                <textarea id="erg-nachricht" name="nachricht" rows="5" placeholder="Erzähl uns mehr über dein Projekt..."></textarea>
+              </div>
+              <div class="hp-field" aria-hidden="true">
+                <label for="erg-website">Website</label>
+                <input type="text" id="erg-website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+              <div class="full note-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <div>
+                  <strong>Schnelle Antwort garantiert</strong>
+                  <p>Wir melden uns innerhalb von 48 Stunden persönlich bei dir zurück</p>
+                </div>
+              </div>
+              <div class="full">
+                <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Kostenlose Beratung anfragen</button>
+                <p class="form-note">Deine Daten werden vertraulich behandelt und nicht an Dritte weitergegeben</p>
+                <div class="trust-dots form-trust">
+                  <span>Unverbindlich</span>
+                  <span>Kostenlos</span>
+                  <span>48h Antwortzeit</span>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="form-success" hidden>
+            <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <h3>Danke für deine Anfrage!</h3>
+            <p>Wir haben alles erhalten und melden uns innerhalb von 48 Stunden persönlich bei dir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta-band">
+      <div class="bg" style="background-image:url('assets/img/cta-bg.jpg')" aria-hidden="true"></div>
+      <div class="container reveal">
+        <h2>Bereit für dein grünes Wachstum?</h2>
+        <p>Vereinbare jetzt ein kostenloses Erstgespräch und werde unsere nächste Erfolgsgeschichte.</p>
+        <a class="btn btn--white is-green-text btn--lg" href="#kontakt">Kostenloses Gespräch vereinbaren</a>
+      </div>
+    </section>
+
   </main>
-  <script>
-    var nav = document.getElementById('nav');
-    window.addEventListener('scroll', function () {
-      nav.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
-  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="cols">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="mark"><svg viewBox="0 0 56 94" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 2 C40 14 55 32 56 54 C56.6 66 45 76 28 81 C11 76 -0.6 66 0 54 C1 32 16 14 28 2 Z"/><path d="M28 7 V94"/><path d="M28 19 L41 9 M28 31 L52 20 M28 44 L55 33 M28 57 L53 47 M28 69 L48 60 M28 78 L40 71"/><path d="M28 19 L15 9 M28 31 L4 20 M28 44 L1 33 M28 57 L3 47 M28 69 L8 60 M28 78 L16 71"/></svg></span>
+            <span class="word">Greenfield</span>
+          </a>
+          <p style="font-size:.98rem;">Wachstums-Marktführer in der grünen Branche. Spezialisiert auf GaLaBau, Pflanzenhandel, Kulturbetriebe und verwandte Bereiche.</p>
+          <div class="social-row">
+            <a href="https://www.instagram.com/greenfield_digital/" target="_blank" rel="noopener" aria-label="Greenfield Digital auf Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+          <a class="btn btn--primary" href="index.html#kontakt">Bedarfsanalyse</a>
+        </div>
+        <div>
+          <h4>Leistungen</h4>
+          <ul>
+            <li><a href="recruiting.html">Recruiting</a></li>
+            <li><a href="neukundengewinnung.html">Neukunden</a></li>
+            <li><a href="social-media.html">Social Media Branding</a></li>
+            <li><a href="digitalisierung.html">Digitalisierung</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="ergebnisse.html">Erfolgsgeschichten</a></li>
+            <li><a href="bewerberpool.html">Bewerberpool</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="karriere.html">Karriere</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li style="display:flex; gap:10px;">
+              <svg style="flex:0 0 18px; margin-top:5px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Hansaring 61<br>50670 Köln<br>Deutschland</span>
+            </li>
+            <li style="display:flex; gap:10px; align-items:center;">
+              <svg style="flex:0 0 18px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <a href="mailto:hello@greenfield-digital.de">hello@greenfield-digital.de</a>
+            </li>
+            <li style="display:flex; gap:10px; align-items:center;">
+              <svg style="flex:0 0 18px;" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+4922195018825">+49 (0) 221 95 01 88 25</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 Greenfield Digital. Alle Rechte vorbehalten.</span>
+        <span style="display:flex; gap:24px;">
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="agb.html">AGB</a>
+          <a href="impressum.html">Impressum</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

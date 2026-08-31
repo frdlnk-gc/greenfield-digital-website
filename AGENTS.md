@@ -51,13 +51,15 @@ Texte, Logos, Brand-Guidelines) hat hier nichts verloren.
 - Formulare senden per `fetch` ein **JSON per POST an einen Make-Webhook**, der die Anfrage in
   den Slack-Channel **#gd-anfragen** postet. Muster: Anfrage-Formular in `index.html` +
   `assets/js/main.js`.
+- Formulare tragen `data-webhook="…"` – `assets/js/main.js` verarbeitet alle generisch
+  (Honeypot, Validierung, Erfolgs-Box = nächstes `.form-success` im selben Container).
 - Kunden-Anfrage-Webhook (Szenario "GD Website: Anfrage → Slack #gd-anfragen", Make 7172958):
   `https://hook.eu1.make.com/dpi3yxzn8knq3wimr36vg9hg64oz5l7h`
-- Feldnamen im Payload: `name, unternehmen, email, telefon, herausforderung, nachricht, seite, url, zeit`.
-  Neue Formulare halten sich an dieses Schema (zusätzliche Felder ok – Make-Szenario dann ergänzen).
+  Payload: `name, unternehmen, email, telefon, herausforderung, nachricht, seite, url, zeit`.
+- Bewerbungs-Webhook (Szenario "GD Website: Bewerbung → Slack #gd-anfragen", Make 7174910):
+  `https://hook.eu1.make.com/wmkdkgrwjhk398vxmnmn8k2fd4ig7qcc`
+  Payload: `vorname, nachname, email, telefon, stelle, bereich, motivation, unterlagen, seite, url, zeit`.
 - **Jedes Formular braucht das Honeypot-Feld** (`input name="website"`, versteckt) – siehe `index.html`.
-- Bewerber-Formulare (Karriere/Stellendetail) bekommen einen **eigenen** Webhook – nicht den
-  Kunden-Webhook mitbenutzen.
 
 ## Landingpages (ausgekoppelt)
 
@@ -77,17 +79,32 @@ Buttons durch – Formular-Sendungen nie an bloßes Laden koppeln).
 5. Konflikte in `foundation.css` oder `index.html` → kurz im Slack-Channel
    **#team-greenfield-digital** klären statt drüberbügeln.
 
+## Seitenstatus (Stand 31.08.2026)
+
+Alle Seiten sind gebaut: Startseite, Recruiting, Neukundengewinnung, Social Media,
+Digitalisierung, Über uns, Ergebnisse (16 echte Referenzen), Karriere (4 Stellen +
+Initiativbewerbung), Stellendetail (Content &amp; Marketing Manager), Blog + Blog-Artikel
+(Lavendel), Bewerberpool (animiertes Demo-Tool) sowie die Legal-Seiten.
+
 ## Offene Punkte (Stand 31.08.2026)
 
-- **GO-LIVE-CHECKLISTE:** `<meta name="robots" content="noindex">` aus `index.html` entfernen,
-  sobald die Seite auf greenfield-digital.de läuft (steht dort nur für die Entwurfsphase
-  auf github.io).
-
-- Unterseiten sind Platzhalter – Ausbau nach Freigabe der Startseite (Reihenfolge: Freddy).
-- Design-Frames fehlen laut Spec noch für: **Über uns**, **Digitalisierung**.
-- Team-Namen im Design sind Platzhalter (Untitled UI) → echte Team-Daten von Freddy nötig.
+- **GO-LIVE-CHECKLISTE:** `<meta name="robots" content="noindex">` aus ALLEN Seiten entfernen
+  und die og:image-Domain in `index.html` umstellen, sobald die Seite auf
+  greenfield-digital.de läuft (noindex steht dort nur für die Entwurfsphase auf github.io).
+- Slack-Anbindung: In **#gd-anfragen** muss die Make-App einmal per `/invite` hinzugefügt
+  werden, sonst laufen Formular-Nachrichten in die Make-Queue statt in den Channel.
+- Blog: nur der Lavendel-Artikel ist ausgeschrieben; die übrigen Karten stehen auf
+  „Erscheint in Kürze" → Artikel nachliefern.
+- Stellendetail existiert nur für Content &amp; Marketing Manager; die anderen 3 Job-Karten
+  springen zur Initiativbewerbung (Stelle wird vorausgefüllt) → weitere Detailseiten bei Bedarf.
+- Team-Fotos: keine KI-/Stock-Gesichter verwenden – Team-Sektionen arbeiten bewusst mit
+  Rollen statt Namen, bis echte Fotos/Namen von Freddy kommen.
 - Founder-Foto liegt nur klein vor (`assets/img/frederik-linke.jpg`, 160px) → hochauflösendes
   Original nachliefern.
 - Social-Icons: nur Instagram verlinkt (echtes Profil). Facebook/TikTok erst einbauen, wenn
   die echten Profil-URLs vorliegen.
 - Google-Bewertungslink zeigt auf die Google-Suche → durch echten g.page-Link ersetzen.
+- GrünTeam-Logo war als Datei defekt und ist entfernt → saubere Version nachliefern.
+- Bewerberpool ist ein Demo-Tool (Zahlen abgeleitet aus Pool-Durchschnittswerten,
+  kein Live-DB-Zugriff) – Verhalten wie im Design vorgesehen.
+- Bewerberpool nutzt bewusst Sie-Ansprache (B2B-Tool laut Design), Rest der Website Du.
