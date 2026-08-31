@@ -11,7 +11,7 @@
   <meta property="og:description" content="Webentwicklung, Prozess-Automatisierung, KI-Integration und Dashboards für GaLaBau, Pflanzenhandel und Kulturbetriebe.">
   <meta property="og:type" content="website">
   <!-- TODO Go-Live: og:image-Domain auf greenfield-digital.de umstellen -->
-  <meta property="og:image" content="https://frdlnk-gc.github.io/greenfield-digital-website/assets/img/blog-1.jpg">
+  <meta property="og:image" content="https://frdlnk-gc.github.io/greenfield-digital-website/assets/img/gen-digital.jpg">
   <meta name="theme-color" content="#0CAE80">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
@@ -20,6 +20,58 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/foundation.css">
+  <style>
+    .flow-wrap { display: flex; align-items: stretch; gap: 0; }
+    .flow-node {
+      flex: 1;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      padding: 24px 20px;
+      text-align: center;
+      position: relative;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+    .flow-node:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: rgba(12, 174, 128, .4); }
+    .flow-node .icon-chip { margin: 0 auto 12px; }
+    .flow-node b { display: block; color: var(--ink); font-size: 1rem; margin-bottom: 6px; }
+    .flow-node p { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+    .flow-line {
+      flex: 0 0 54px;
+      align-self: center;
+      height: 3px;
+      position: relative;
+      background-image: repeating-linear-gradient(90deg, var(--green) 0 8px, transparent 8px 16px);
+      background-size: 16px 3px;
+      animation: flow-dash 1s linear infinite;
+    }
+    .flow-line::after {
+      content: "";
+      position: absolute; top: 50%; left: 0;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px rgba(12, 174, 128, .8);
+      transform: translateY(-50%);
+      animation: flow-dot 2.4s ease-in-out infinite;
+    }
+    @keyframes flow-dash { to { background-position: 16px 0; } }
+    @keyframes flow-dot { 0% { left: -4px; opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { left: calc(100% - 5px); opacity: 0; } }
+    .flow-result { margin-top: 34px; text-align: center; }
+    @media (max-width: 900px) {
+      .flow-wrap { flex-direction: column; }
+      .flow-line {
+        flex-basis: 40px; align-self: center;
+        width: 3px; height: 40px;
+        background-image: repeating-linear-gradient(180deg, var(--green) 0 8px, transparent 8px 16px);
+        background-size: 3px 16px;
+        animation: flow-dash-v 1s linear infinite;
+      }
+      .flow-line::after { left: 50%; top: 0; transform: translateX(-50%); animation: flow-dot-v 2.4s ease-in-out infinite; }
+      @keyframes flow-dash-v { to { background-position: 0 16px; } }
+      @keyframes flow-dot-v { 0% { top: -4px; opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { top: calc(100% - 5px); opacity: 0; } }
+    }
+  </style>
 </head>
 <body>
 
@@ -62,7 +114,7 @@
     <section class="page-hero">
       <div class="container">
         <div class="hero-card reveal in">
-          <div class="bg" style="background-image:url('assets/img/blog-1.jpg')" aria-hidden="true"></div>
+          <div class="bg" style="background-image:url('assets/img/gen-digital.jpg')" aria-hidden="true"></div>
           <div class="hero-inner">
             <span class="pill pill--glow"><span class="dot"></span>Prozesse neu gedacht</span>
             <h1>Digitalisierung &amp; KI für <span class="accent">moderne grüne Betriebe.</span></h1>
@@ -111,6 +163,43 @@
             <h4>Strategische Beratung</h4>
             <p>Wir analysieren deine Abläufe und zeigen dir, wo Digitalisierung den größten Hebel hat – ohne Buzzword-Bingo.</p>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="pill">Live-Beispiel</span>
+          <h2>So arbeitet Automatisierung für <span class="mark-u">dich<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+          <p class="sub">Vom ersten Klick bis zum informierten Team – ohne dass jemand bei dir etwas anfassen muss.</p>
+        </div>
+        <div class="flow-wrap">
+          <div class="flow-node reveal">
+            <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+            <b>Anfrage kommt rein</b>
+            <p>Über deine Website, eine Landingpage oder eine Anzeige.</p>
+          </div>
+          <div class="flow-line reveal" aria-hidden="true"></div>
+          <div class="flow-node reveal" style="--d:.15s">
+            <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93L12.5 10h-1l-.25-.07A4.001 4.001 0 0 1 12 2z"/><rect x="4" y="10" width="16" height="12" rx="3"/><circle cx="9" cy="16" r="1.3"/><circle cx="15" cy="16" r="1.3"/></svg></span>
+            <b>KI qualifiziert vor</b>
+            <p>Antwortet sofort, stellt die richtigen Fragen und filtert Unpassendes heraus.</p>
+          </div>
+          <div class="flow-line reveal" aria-hidden="true"></div>
+          <div class="flow-node reveal" style="--d:.3s">
+            <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9.5 15.5 2 2 3.5-3.5"/></svg></span>
+            <b>Termin steht im Kalender</b>
+            <p>Qualifizierte Anfragen buchen sich direkt in deine freien Zeiten ein.</p>
+          </div>
+          <div class="flow-line reveal" aria-hidden="true"></div>
+          <div class="flow-node reveal" style="--d:.45s">
+            <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <b>Dein Team weiß Bescheid</b>
+            <p>Die Info landet automatisch dort, wo dein Team sie liest – ohne Zettelwirtschaft.</p>
+          </div>
+        </div>
+        <div class="flow-result reveal">
+          <a class="btn btn--primary btn--lg" href="#kontakt">Zeig mir das für meinen Betrieb<span class="arr">→</span></a>
         </div>
       </div>
     </section>

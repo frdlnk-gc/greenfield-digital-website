@@ -7,6 +7,18 @@
 (function () {
   'use strict';
 
+  /* ---------- Scroll-Fortschrittsbalken ---------- */
+  var progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  progressBar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(progressBar);
+  function updateProgress() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
   /* ---------- Navigation: Schatten beim Scrollen ---------- */
   var nav = document.getElementById('nav');
   function onScroll() {

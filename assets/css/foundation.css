@@ -684,51 +684,153 @@ ul.checks li::before {
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq .faq-body { padding: 0 24px 20px; color: var(--text); }
 
-/* ---------- Phone-Mockup (abstrakt) ---------- */
+/* ---------- Phone-Mockup (realistisch) ---------- */
 .phone-mock {
-  width: min(280px, 78vw);
+  width: min(310px, 82vw);
   margin: 0 auto;
-  background: var(--forest);
-  border-radius: 38px;
-  padding: 14px;
-  box-shadow: var(--shadow-lg);
+  background: linear-gradient(160deg, #17211D, #060A08);
+  border-radius: 48px;
+  padding: 9px;
+  box-shadow:
+    0 40px 90px rgba(6, 33, 26, .38),
+    inset 0 1px 1px rgba(255, 255, 255, .18),
+    inset 0 -1px 1px rgba(0, 0, 0, .6);
+  position: relative;
+  animation: phone-float 9s ease-in-out infinite;
+}
+@keyframes phone-float {
+  0%, 100% { transform: perspective(1300px) rotateY(-9deg) rotateX(2.5deg) translateY(0); }
+  50% { transform: perspective(1300px) rotateY(-7deg) rotateX(1.5deg) translateY(-12px); }
 }
 .phone-mock .screen {
-  background: #fff;
-  border-radius: 26px;
-  padding: 18px 14px;
-  min-height: 420px;
-  display: flex; flex-direction: column; gap: 12px;
+  background: #F7FAF8;
+  border-radius: 40px;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex; flex-direction: column;
+  position: relative;
 }
-.phone-mock .notch {
-  width: 90px; height: 8px;
-  background: var(--line);
+.phone-mock .statusbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 22px 6px;
+  font-size: .72rem; font-weight: 700; color: var(--ink);
+}
+.phone-mock .statusbar .sb-icons { display: flex; gap: 4px; align-items: center; }
+.phone-mock .statusbar .sb-icons i {
+  display: block; background: var(--ink); border-radius: 2px;
+}
+.phone-mock .statusbar .sb-icons .i1 { width: 15px; height: 9px; border-radius: 3px; opacity: .9; }
+.phone-mock .statusbar .sb-icons .i2 { width: 3px; height: 9px; opacity: .55; }
+.phone-mock .island {
+  position: absolute; top: 9px; left: 50%; transform: translateX(-50%);
+  width: 86px; height: 22px;
+  background: #060A08;
   border-radius: 99px;
-  margin: 0 auto 6px;
+  z-index: 3;
 }
-.phone-mock .pm-card {
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 12px;
+.phone-mock .reel {
+  position: relative;
+  margin: 6px 10px 10px;
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 4 / 4.6;
 }
-.phone-mock .pm-bar {
-  height: 10px; border-radius: 99px;
-  background: var(--mint);
-  margin-bottom: 8px;
-}
-.phone-mock .pm-bar.w60 { width: 60%; }
-.phone-mock .pm-bar.w80 { width: 80%; }
-.phone-mock .pm-bar.solid { background: var(--green); height: 34px; margin-top: 4px; margin-bottom: 0; }
-.phone-mock .pm-img {
-  height: 110px; border-radius: 12px;
-  background: var(--grad-deep);
-  position: relative; overflow: hidden;
-}
-.phone-mock .pm-img::after {
+.phone-mock .reel img { width: 100%; height: 100%; object-fit: cover; }
+.phone-mock .reel::after {
   content: "";
   position: absolute; inset: 0;
-  background: radial-gradient(90px 60px at 70% 30%, rgba(46, 207, 161, .5), transparent);
+  background: linear-gradient(185deg, transparent 55%, rgba(4, 20, 14, .55));
 }
+.phone-mock .reel .cap {
+  position: absolute; left: 12px; bottom: 12px; right: 52px; z-index: 2;
+}
+.phone-mock .reel .cap i {
+  display: block; height: 7px; border-radius: 99px;
+  background: rgba(255, 255, 255, .85);
+  margin-top: 6px;
+}
+.phone-mock .reel .cap .c2 { width: 62%; opacity: .7; }
+.phone-mock .reel .acts {
+  position: absolute; right: 10px; bottom: 12px; z-index: 2;
+  display: flex; flex-direction: column; gap: 10px;
+  color: #fff;
+}
+.phone-mock .reel .acts svg { width: 22px; height: 22px; filter: drop-shadow(0 1px 3px rgba(0,0,0,.4)); }
+.phone-mock .pm-job {
+  margin: 0 10px 10px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 13px 14px;
+  opacity: 0; transform: translateY(14px);
+}
+.phone-mock .pm-job .tagline {
+  display: inline-block;
+  background: var(--mint); color: var(--green-700);
+  font-size: .62rem; font-weight: 700;
+  padding: 3px 9px; border-radius: 99px;
+  margin-bottom: 6px;
+}
+.phone-mock .pm-job b { display: block; font-size: .84rem; color: var(--ink); line-height: 1.3; }
+.phone-mock .pm-job small { color: var(--muted); font-size: .72rem; display: block; margin-bottom: 9px; }
+.phone-mock .pm-job .pm-btn {
+  background: var(--green); color: #fff;
+  font-size: .76rem; font-weight: 700;
+  text-align: center;
+  padding: 9px 10px; border-radius: 11px;
+}
+.phone-mock .pm-person {
+  margin: 0 10px 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 11px 14px;
+  display: flex; align-items: center; gap: 10px;
+  opacity: 0; transform: translateY(14px);
+}
+.phone-mock .pm-person .av {
+  width: 34px; height: 34px; border-radius: 50%; flex: 0 0 34px;
+  background: var(--green); color: #fff;
+  font-size: .72rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.phone-mock .pm-person b { display: block; font-size: .78rem; color: var(--ink); line-height: 1.25; }
+.phone-mock .pm-person small { color: var(--muted); font-size: .68rem; }
+.phone-mock .pm-person .ok {
+  margin-left: auto;
+  width: 22px; height: 22px; border-radius: 50%; flex: 0 0 22px;
+  background: var(--mint) center / 11px no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230CAE80' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+}
+.phone-mock.play .pm-job { animation: pm-in .7s .5s cubic-bezier(.16, 1, .3, 1) forwards; }
+.phone-mock.play .pm-person { animation: pm-in .7s .9s cubic-bezier(.16, 1, .3, 1) forwards; }
+@keyframes pm-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.pm-toast {
+  position: absolute;
+  top: 96px; right: -70px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  padding: 10px 14px;
+  display: flex; align-items: center; gap: 9px;
+  font-size: .84rem; font-weight: 600; color: var(--ink);
+  opacity: 0;
+  white-space: nowrap;
+  z-index: 4;
+}
+.pm-toast .dot-ok {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--mint) center / 11px no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230CAE80' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+}
+.phone-mock.play .pm-toast { animation: toast-loop 7s ease-in-out 1.4s infinite; }
+@keyframes toast-loop {
+  0%, 4% { opacity: 0; transform: translateY(10px) scale(.92); }
+  9%, 52% { opacity: 1; transform: none; }
+  60%, 100% { opacity: 0; transform: translateY(-8px) scale(.96); }
+}
+@media (max-width: 1100px) { .pm-toast { right: -8px; } }
 
 /* ---------- Karten-Sektion (DACH) ---------- */
 .map-grid {
@@ -962,23 +1064,27 @@ ul.checks li::before {
 @media (max-width: 700px) {
   .page-hero .hero-card { display: block; }
   .page-hero .partner-mini {
-    display: flex; flex-wrap: wrap; justify-content: center;
+    display: flex;
     margin: 0 26px 30px; max-width: calc(100% - 52px);
   }
-  .page-hero .partner-mini span { flex-basis: 100%; text-align: center; }
+  .page-hero .partner-mini .pm-logos { flex-wrap: wrap; gap: 16px; }
   .page-hero .partner-mini img { height: 26px; }
 }
 
 /* ---------- Verbandspartner-Mini-Leiste (geteilte Komponente) ---------- */
 .partner-mini {
-  display: inline-flex; flex-wrap: wrap; align-items: center; gap: 16px;
-  margin-top: 28px;
-  background: rgba(255, 255, 255, .94);
+  display: inline-flex; flex-direction: column; align-items: center; gap: 12px;
+  margin-top: 30px;
+  background: rgba(255, 255, 255, .96);
   border-radius: var(--r-md);
-  padding: 12px 18px;
-  box-shadow: var(--shadow-md);
+  padding: 16px 24px 14px;
+  box-shadow: var(--shadow-lg);
 }
-.partner-mini span { font-weight: 700; color: var(--ink); font-size: .9rem; }
+.partner-mini > span {
+  font-weight: 700; color: var(--ink); font-size: .85rem;
+  letter-spacing: .04em; text-transform: uppercase;
+}
+.partner-mini .pm-logos { display: flex; align-items: center; justify-content: center; gap: 26px; }
 .partner-mini img { height: 34px; width: auto; }
 
 /* ---------- Orbit-Element („Ihr Unternehmen im Mittelpunkt") ---------- */
@@ -1183,3 +1289,14 @@ ul.checks li::before {
 .logo-grid .lg-tile:hover img { filter: none; opacity: 1; }
 @media (max-width: 1024px) { .logo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .logo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .logo-grid .lg-tile { padding: 12px; } }
+
+/* ---------- Scroll-Fortschrittsbalken ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--green), var(--green-bright));
+  z-index: 300;
+  transition: width .08s linear;
+}
