@@ -27,10 +27,11 @@ Texte, Logos, Brand-Guidelines) hat hier nichts verloren.
   Pills, Formulare, Animationen kommen von dort. Änderungen an dieser Datei nur nach Absprache
   mit Freddy – niemals nebenbei.
 - Seiten-spezifisches CSS gehört in ein `<style>`-Tag im `<head>` der jeweiligen Seite.
-- **Farben:** ausschließlich die CSS-Variablen (`var(--green)` = #0BAE7F usw.). Keine neuen
-  Hex-Werte erfinden. Kein Lila, kein GreenCareers-Grün.
-- **Schriften:** DM Sans (Fließtext + Headlines) und Poppins (Buttons/Eyebrows) via Google
-  Fonts – der `<link>` aus `index.html` wird 1:1 übernommen.
+- **Farben:** ausschließlich die CSS-Variablen laut Guideline (`var(--green)` = #0CAE80,
+  Viridian #006F53, Night Forest #06211A, Platinum #F4F4F5; Tangerine #F58220 nur als
+  seltener Akzent). Keine neuen Hex-Werte erfinden. Kein Lila, kein GreenCareers-Grün.
+- **Schriften:** ausschließlich DM Sans (laut Brand-Guideline) via Google Fonts – der
+  `<link>` aus `index.html` wird 1:1 übernommen. Kein Poppins, keine weiteren Fonts.
 - **Logo:** Blatt-SVG + Wortmarke "Greenfield" – Markup aus `index.html` kopieren.
 - Header und Footer sind auf allen fertigen Seiten identisch → aus `index.html` kopieren
   und nur den aktiven Nav-Link anpassen.
