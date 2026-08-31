@@ -96,6 +96,57 @@
     });
   }
 
+  /* ---------- Orbit: Hover/Fokus tauscht den Text in der Mitte ---------- */
+  var orbitText = document.getElementById('orbitText');
+  if (orbitText) {
+    var orbitDefault = orbitText.textContent;
+    document.querySelectorAll('.orbit-item').forEach(function (item) {
+      function show() { orbitText.textContent = item.getAttribute('data-text') || orbitDefault; }
+      function hide() { orbitText.textContent = orbitDefault; }
+      item.addEventListener('mouseenter', show);
+      item.addEventListener('focus', show);
+      item.addEventListener('mouseleave', hide);
+      item.addEventListener('blur', hide);
+    });
+  }
+
+  /* ---------- Karte: sanfter 3D-Tilt bei Mausbewegung ---------- */
+  var fineMotion = window.matchMedia('(pointer: fine)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (fineMotion) {
+    document.querySelectorAll('.map-visual').forEach(function (vis) {
+      var tilt = document.createElement('div');
+      tilt.className = 'map-tilt';
+      while (vis.firstChild) tilt.appendChild(vis.firstChild);
+      vis.appendChild(tilt);
+      vis.addEventListener('mousemove', function (e) {
+        var r = vis.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5;
+        var y = (e.clientY - r.top) / r.height - 0.5;
+        tilt.style.transform = 'rotateY(' + (x * 6) + 'deg) rotateX(' + (-y * 6) + 'deg)';
+      });
+      vis.addEventListener('mouseleave', function () {
+        tilt.style.transform = 'none';
+      });
+    });
+  }
+
+  /* ---------- Phone-Mockups: Animation starten, sobald sichtbar ---------- */
+  var phones = document.querySelectorAll('.phone-mock');
+  if (phones.length && 'IntersectionObserver' in window) {
+    var pio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('play');
+          pio.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    phones.forEach(function (p) { pio.observe(p); });
+  } else {
+    phones.forEach(function (p) { p.classList.add('play'); });
+  }
+
   /* ---------- Formulare (alle mit data-webhook) ----------
      Jedes Formular mit data-webhook="https://hook.eu1.make.com/…" wird
      als JSON an Make gesendet. Erfolgs-Box: nächstes .form-success-Element

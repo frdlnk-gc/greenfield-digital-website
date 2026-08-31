@@ -7,6 +7,11 @@
   <meta name="description" content="Über 750 Kunden aus der grünen Branche vertrauen Greenfield Digital: echte Referenzen mit Bewerbungszahlen, Zeit bis zur Einstellung und besetzten Stellen.">
   <!-- TODO vor Go-Live auf greenfield-digital.de: noindex entfernen! -->
   <meta name="robots" content="noindex">
+  <meta property="og:title" content="Kundenstimmen & Ergebnisse – Greenfield Digital">
+  <meta property="og:description" content="Über 750 Kunden aus der grünen Branche vertrauen Greenfield Digital: echte Referenzen mit Bewerbungszahlen, Zeit bis zur Einstellung und besetzten Stellen.">
+  <meta property="og:type" content="website">
+  <!-- TODO Go-Live: og:image-Domain auf greenfield-digital.de umstellen -->
+  <meta property="og:image" content="https://frdlnk-gc.github.io/greenfield-digital-website/assets/img/kunden-700.jpg">
   <meta name="theme-color" content="#0CAE80">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
@@ -57,6 +62,12 @@
     .pool-teaser h3 { margin: 4px 0 8px; }
     .pool-teaser p { max-width: 560px; }
     @media (max-width: 700px) { .pool-teaser { padding: 28px 22px; } .pool-teaser .btn { width: 100%; } }
+
+    @media (max-width: 380px) {
+      .google-card .g-left { padding: 36px 22px; }
+      .google-card .g-right { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .google-card .g-right img { max-width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -232,8 +243,8 @@
             <ul><li>117 qualifizierte Bewerbungen</li><li>60 Tage bis Einstellung</li><li>1 Verkaufsgärtner Zimmerpflanzen</li><li>1 Produktionsgärtner</li></ul>
           </article>
           <article class="ref-card reveal" style="--d:.2s">
-            <div class="ref-logo"><img src="assets/img/logo-spaeth.png" alt="Späth'sche Baumschulen Handel" loading="lazy"></div>
-            <h4>Späth'sche Baumschulen Handel</h4>
+            <div class="ref-logo"><img src="assets/img/logo-spaeth.png" alt="Späth’sche Baumschulen Handel" loading="lazy"></div>
+            <h4>Späth’sche Baumschulen Handel</h4>
             <p class="who">Holger Zahn – Geschäftsführer</p>
             <ul><li>226 qualifizierte Bewerbungen</li><li>62 Tage bis Einstellung</li><li>1 Gärtner für den Gartenservice</li><li>1 Leitung der Buchhaltung</li></ul>
           </article>
@@ -264,7 +275,7 @@
           </div>
           <div class="g-right">
             <img src="assets/img/logo-vivawest.png" alt="Vivawest" loading="lazy">
-            <img src="assets/img/logo-fu.png" alt="flöter &amp; uszkureit" loading="lazy">
+            <img src="assets/img/logo-fu.png" alt="Flöter &amp; Uszkureit" loading="lazy">
             <img src="assets/img/logo-stadtgruen.png" alt="Stadtgrün Potsdam" loading="lazy">
             <img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen" loading="lazy">
             <img src="assets/img/logo-wisag.png" alt="WISAG" loading="lazy">
@@ -417,7 +428,7 @@
         </div>
       </div>
       <div class="legal">
-        <span>© 2026 Greenfield Digital. Alle Rechte vorbehalten.</span>
+        <span>© 2026 Greenfield Digital GmbH. Alle Rechte vorbehalten.</span>
         <span style="display:flex; gap:24px;">
           <a href="datenschutz.html">Datenschutz</a>
           <a href="agb.html">AGB</a>

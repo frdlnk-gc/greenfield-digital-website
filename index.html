@@ -271,6 +271,12 @@
       .google-card .g-right { border-left: 0; border-top: 1px solid var(--line); }
       .insta-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     }
+
+    @media (max-width: 380px) {
+      .google-card .g-left { padding: 36px 22px; }
+      .google-card .g-right { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .google-card .g-right img { max-width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -322,7 +328,7 @@
             <div class="bg" aria-hidden="true"></div>
             <div class="hero-content">
               <span class="pill pill--glow"><span class="dot"></span>Marktführer im Grünen Recruiting</span>
-              <h1>Unser Herz schlägt für <span class="accent">grünes&nbsp;Wachstum.</span></h1>
+              <h1>Unser Herz schlägt für <span class="accent">grünes Wachstum.</span></h1>
               <p class="sub">Jetzt qualifizierte Fachkräfte im Grünen in 45 Tagen einstellen – mit 100%-Garantie.</p>
               <div class="hero-btns">
                 <a class="btn btn--white is-green-text" href="#kontakt">Kostenloses Gespräch vereinbaren</a>
@@ -391,13 +397,58 @@
       </div>
     </section>
 
-    <!-- ================= LEISTUNGEN ================= -->
+    <!-- ================= MARKTFÜHRER + ORBIT ================= -->
+    <section class="section" id="marktfuehrer" style="padding-top:40px;">
+      <div class="container">
+        <div class="mf-grid">
+          <div class="reveal">
+            <span class="pill">Der Marktführer</span>
+            <h2>Der <span class="mark-u">Marktführer<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span> für grünes Wachstum im DACH-Raum</h2>
+            <p style="margin-top:18px;">Wir bringen die grüne Branche in Sichtbarkeit. Durch gezieltes Recruiting, Marketing und digitale Lösungen stärken wir dein Wachstum – mit Erfahrung aus über 700 Projekten.</p>
+            <p style="margin-top:24px;"><a class="btn-link" href="ueber-uns.html" style="font-size:1.06rem;">Jetzt mehr erfahren <span class="arr">→</span></a></p>
+            <div class="partner-mini" style="box-shadow:var(--shadow-sm); border:1px solid var(--line);">
+              <span>Exklusiver Verbandspartner</span>
+              <img src="assets/img/partner-1.png" alt="Verbandspartner – Die Experten für Garten &amp; Landschaft">
+              <img src="assets/img/partner-2.png" alt="Verband Deutscher Garten-Center">
+              <img src="assets/img/partner-3.png" alt="Bund deutscher Baumschulen e.V.">
+            </div>
+          </div>
+          <div class="orbit reveal" id="orbit" style="--d:.15s">
+            <span class="orbit-ring r1" aria-hidden="true"></span>
+            <span class="orbit-ring r2" aria-hidden="true"></span>
+            <div class="orbit-center">
+              <span class="oc-leaf" aria-hidden="true"><svg viewBox="0 0 56 94" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><path d="M28 2 C40 14 55 32 56 54 C56.6 66 45 76 28 81 C11 76 -0.6 66 0 54 C1 32 16 14 28 2 Z"/><path d="M28 7 V94"/></svg></span>
+              <strong>Ihr Unternehmen<br>im Mittelpunkt</strong>
+              <p id="orbitText">Individuelle Strategien aus einer Hand – alles zahlt auf dein Wachstum ein.</p>
+            </div>
+            <a class="orbit-item oi-1" href="recruiting.html" data-text="Qualifizierte Fachkräfte finden und für deinen Betrieb begeistern.">
+              <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              <span><b>Recruiting</b><small>Fachkräfte gewinnen</small></span>
+            </a>
+            <a class="orbit-item oi-2" href="social-media.html" data-text="Sichtbarkeit und Vertrauen bei Fachkräften und Kunden aufbauen.">
+              <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1.6"/></svg></span>
+              <span><b>Social Media</b><small>Marke sichtbar machen</small></span>
+            </a>
+            <a class="orbit-item oi-3" href="neukundengewinnung.html" data-text="Mehr Kunden durch gezielte Online-Kampagnen mit klarer Wirkung.">
+              <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+              <span><b>Neukunden&shy;gewinnung</b><small>Planbar wachsen</small></span>
+            </a>
+            <a class="orbit-item oi-4" href="digitalisierung.html" data-text="Digitale Abläufe und KI, die Zeit sparen und Prozesse beschleunigen.">
+              <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+              <span><b>Digitalisierung &amp; KI</b><small>Prozesse neu gedacht</small></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KERNKOMPETENZEN ================= -->
     <section class="section section--tint" id="leistungen">
       <div class="container">
         <div class="section-head reveal">
           <span class="pill">Unsere Leistungen</span>
-          <h2>Der <span class="mark-u">Marktführer<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span> für grünes Wachstum im DACH-Raum</h2>
-          <p class="sub">Wir bringen die grüne Branche in Sichtbarkeit. Durch gezieltes Recruiting, Marketing und digitale Lösungen stärken wir dein Wachstum – mit Erfahrung aus über 700 Projekten.</p>
+          <h2>Unsere Kernkompetenzen – Ihre <span class="mark-u">Lösungen<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+          <p class="sub">Vier Disziplinen, ein Ziel: dein Wachstum. Jede Leistung funktioniert für sich – zusammen entfalten sie ihre volle Wirkung.</p>
         </div>
 
         <div class="services-grid">
@@ -447,33 +498,33 @@
       </div>
       <div class="marquee reveal">
         <div class="marquee-track">
-          <img src="assets/img/logo-vivawest.png" alt="Vivawest">
-          <img src="assets/img/logo-wisag.png" alt="WISAG">
-          <img src="assets/img/logo-stadtgruen.png" alt="Stadtgrün Potsdam">
-          <img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen">
-          <img src="assets/img/logo-freiraum.png" alt="Freiraum">
-          <img src="assets/img/logo-fu.png" alt="flöter &amp; uszkureit">
-          <img src="assets/img/logo-scheldmann.png" alt="Scheidtmann">
-          <img src="assets/img/logo-spaeth.png" alt="Späth">
-          <img src="assets/img/logo-huben.png" alt="Pflanzenhandel Huben">
-          <img src="assets/img/logo-blumenmetzger.png" alt="Blumen Metzger">
-          <img src="assets/img/logo-streb.png" alt="Streb">
-          <img src="assets/img/logo-stanze.png" alt="Stanze Gartencenter">
-          <img src="assets/img/logo-jensen.png" alt="Jensen Landschaftsarchitekten">
+          <img src="assets/img/logo-vivawest.png" alt="Vivawest" loading="lazy">
+          <img src="assets/img/logo-wisag.png" alt="WISAG" loading="lazy">
+          <img src="assets/img/logo-stadtgruen.png" alt="Stadtgrün Potsdam" loading="lazy">
+          <img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen" loading="lazy">
+          <img src="assets/img/logo-freiraum.png" alt="Freiraum" loading="lazy">
+          <img src="assets/img/logo-fu.png" alt="Flöter &amp; Uszkureit" loading="lazy">
+          <img src="assets/img/logo-scheldmann.png" alt="Scheidtmann" loading="lazy">
+          <img src="assets/img/logo-spaeth.png" alt="Späth" loading="lazy">
+          <img src="assets/img/logo-huben.png" alt="Pflanzenhandel Huben" loading="lazy">
+          <img src="assets/img/logo-blumenmetzger.png" alt="Blumen Metzger" loading="lazy">
+          <img src="assets/img/logo-streb.png" alt="Streb" loading="lazy">
+          <img src="assets/img/logo-stanze.png" alt="Stanze Gartencenter" loading="lazy">
+          <img src="assets/img/logo-jensen.png" alt="Jensen Landschaftsarchitekten" loading="lazy">
           <!-- Zweiter Durchlauf für die Endlos-Schleife -->
-          <img src="assets/img/logo-vivawest.png" alt="">
-          <img src="assets/img/logo-wisag.png" alt="">
-          <img src="assets/img/logo-stadtgruen.png" alt="">
-          <img src="assets/img/logo-woerlein.png" alt="">
-          <img src="assets/img/logo-freiraum.png" alt="">
-          <img src="assets/img/logo-fu.png" alt="">
-          <img src="assets/img/logo-scheldmann.png" alt="">
-          <img src="assets/img/logo-spaeth.png" alt="">
-          <img src="assets/img/logo-huben.png" alt="">
-          <img src="assets/img/logo-blumenmetzger.png" alt="">
-          <img src="assets/img/logo-streb.png" alt="">
-          <img src="assets/img/logo-stanze.png" alt="">
-          <img src="assets/img/logo-jensen.png" alt="">
+          <img src="assets/img/logo-vivawest.png" alt="" loading="lazy">
+          <img src="assets/img/logo-wisag.png" alt="" loading="lazy">
+          <img src="assets/img/logo-stadtgruen.png" alt="" loading="lazy">
+          <img src="assets/img/logo-woerlein.png" alt="" loading="lazy">
+          <img src="assets/img/logo-freiraum.png" alt="" loading="lazy">
+          <img src="assets/img/logo-fu.png" alt="" loading="lazy">
+          <img src="assets/img/logo-scheldmann.png" alt="" loading="lazy">
+          <img src="assets/img/logo-spaeth.png" alt="" loading="lazy">
+          <img src="assets/img/logo-huben.png" alt="" loading="lazy">
+          <img src="assets/img/logo-blumenmetzger.png" alt="" loading="lazy">
+          <img src="assets/img/logo-streb.png" alt="" loading="lazy">
+          <img src="assets/img/logo-stanze.png" alt="" loading="lazy">
+          <img src="assets/img/logo-jensen.png" alt="" loading="lazy">
         </div>
       </div>
 
@@ -493,12 +544,12 @@
             <a class="btn-link" href="https://www.google.com/search?q=Greenfield+Digital+K%C3%B6ln+Bewertungen" target="_blank" rel="noopener">Alle ansehen <span class="arr">→</span></a>
           </div>
           <div class="g-right">
-            <img src="assets/img/logo-vivawest.png" alt="Vivawest">
-            <img src="assets/img/logo-fu.png" alt="flöter &amp; uszkureit">
-            <img src="assets/img/logo-stadtgruen.png" alt="Stadtgrün Potsdam">
-            <img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen">
-            <img src="assets/img/logo-wisag.png" alt="WISAG">
-            <img src="assets/img/logo-freiraum.png" alt="Freiraum">
+            <img src="assets/img/logo-vivawest.png" alt="Vivawest" loading="lazy">
+            <img src="assets/img/logo-fu.png" alt="Flöter &amp; Uszkureit" loading="lazy">
+            <img src="assets/img/logo-stadtgruen.png" alt="Stadtgrün Potsdam" loading="lazy">
+            <img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen" loading="lazy">
+            <img src="assets/img/logo-wisag.png" alt="WISAG" loading="lazy">
+            <img src="assets/img/logo-freiraum.png" alt="Freiraum" loading="lazy">
           </div>
         </div>
       </div>
@@ -509,13 +560,13 @@
       <div class="container">
         <div class="map-grid">
           <div class="map-visual reveal">
-            <img src="assets/img/dach-karte.jpg" alt="Karte des DACH-Raums mit Standorten von Greenfield-Partnerbetrieben">
-            <span class="map-dot" style="top:22%; left:33%" aria-hidden="true"></span>
-            <span class="map-dot" style="top:46%; left:24%" aria-hidden="true"></span>
-            <span class="map-dot" style="top:63%; left:52%" aria-hidden="true"></span>
-            <span class="map-dot" style="top:84%; left:74%" aria-hidden="true"></span>
-            <span class="map-dot" style="top:34%; left:58%" aria-hidden="true"></span>
-            <span class="map-dot" style="top:88%; left:30%" aria-hidden="true"></span>
+            <img src="assets/img/dach-karte.jpg" alt="Karte des DACH-Raums mit Standorten von Greenfield-Partnerbetrieben" loading="lazy">
+            <span class="map-dot" style="top:22%; left:33%" tabindex="0" role="img" aria-label="Partnerbetriebe: Großraum Hamburg"><span class="tip">Großraum Hamburg</span></span>
+            <span class="map-dot" style="top:46%; left:24%" tabindex="0" role="img" aria-label="Partnerbetriebe: Rheinland & Ruhrgebiet"><span class="tip">Rheinland &amp; Ruhrgebiet</span></span>
+            <span class="map-dot" style="top:63%; left:52%" tabindex="0" role="img" aria-label="Partnerbetriebe: Franken & Bayern"><span class="tip">Franken &amp; Bayern</span></span>
+            <span class="map-dot" style="top:84%; left:74%" tabindex="0" role="img" aria-label="Partnerbetriebe: Österreich"><span class="tip">Österreich</span></span>
+            <span class="map-dot" style="top:34%; left:58%" tabindex="0" role="img" aria-label="Partnerbetriebe: Berlin & Brandenburg"><span class="tip">Berlin &amp; Brandenburg</span></span>
+            <span class="map-dot" style="top:88%; left:30%" tabindex="0" role="img" aria-label="Partnerbetriebe: Schweiz"><span class="tip">Schweiz</span></span>
           </div>
           <div>
             <div class="section-head left reveal" style="margin-bottom:34px;">
@@ -566,7 +617,7 @@
           <div class="bg" aria-hidden="true"></div>
           <span class="tag">Neuanlage eines privaten Gartenparadieses</span>
           <div class="who">
-            <span class="logo-chip"><img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen"></span>
+            <span class="logo-chip"><img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen" loading="lazy"></span>
             <div>
               <strong>Wörlein Baumschulen</strong>
               <span>Partnerbetrieb aus der grünen Branche</span>
@@ -591,7 +642,7 @@
 
         <div class="contact-card card reveal">
           <div class="founder-strip">
-            <img src="assets/img/frederik-linke.jpg" alt="Frederik Linke">
+            <img src="assets/img/frederik-linke.jpg" alt="Frederik Linke" loading="lazy">
             <div>
               <strong>Frederik Linke</strong>
               <span>Geschäftsführer von Greenfield Digital</span>
@@ -730,6 +781,7 @@
           <ul>
             <li><a href="ueber-uns.html">Über uns</a></li>
             <li><a href="ergebnisse.html">Erfolgsgeschichten</a></li>
+            <li><a href="bewerberpool.html">Bewerberpool</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="karriere.html">Karriere</a></li>
           </ul>
@@ -753,7 +805,7 @@
         </div>
       </div>
       <div class="legal">
-        <span>© 2026 Greenfield Digital. Alle Rechte vorbehalten.</span>
+        <span>© 2026 Greenfield Digital GmbH. Alle Rechte vorbehalten.</span>
         <span style="display:flex; gap:24px;">
           <a href="datenschutz.html">Datenschutz</a>
           <a href="agb.html">AGB</a>

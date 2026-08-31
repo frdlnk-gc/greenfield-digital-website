@@ -79,6 +79,16 @@ Buttons durch – Formular-Sendungen nie an bloßes Laden koppeln).
 5. Konflikte in `foundation.css` oder `index.html` → kurz im Slack-Channel
    **#team-greenfield-digital** klären statt drüberbügeln.
 
+## Interaktive Komponenten (Foundation)
+
+- **Orbit** (`.orbit`, Startseite): 4 schwebende Service-Karten um „Ihr Unternehmen im
+  Mittelpunkt"; Hover tauscht den Text in der Mitte (JS in `main.js`).
+- **DACH-Karte**: pulsierende Punkte mit Hover-/Fokus-Tooltips (Regionsnamen, keine Zahlen!)
+  + sanfter 3D-Tilt bei Mausbewegung (nur pointer:fine, respektiert reduced-motion).
+- **Phone-Mockups**: animieren beim Scroll-Einstieg (Balken wachsen, Karten sliden,
+  Benachrichtigungs-Toast loopt).
+- Favicon = weißes Blatt auf Primärgrün (`assets/img/favicon.svg/.png`, apple-touch-icon).
+
 ## Seitenstatus (Stand 31.08.2026)
 
 Alle Seiten sind gebaut: Startseite, Recruiting, Neukundengewinnung, Social Media,
