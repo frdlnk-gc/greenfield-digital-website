@@ -79,6 +79,10 @@ Buttons durch – Formular-Sendungen nie an bloßes Laden koppeln).
 
 ## Offene Punkte (Stand 31.08.2026)
 
+- **GO-LIVE-CHECKLISTE:** `<meta name="robots" content="noindex">` aus `index.html` entfernen,
+  sobald die Seite auf greenfield-digital.de läuft (steht dort nur für die Entwurfsphase
+  auf github.io).
+
 - Unterseiten sind Platzhalter – Ausbau nach Freigabe der Startseite (Reihenfolge: Freddy).
 - Design-Frames fehlen laut Spec noch für: **Über uns**, **Digitalisierung**.
 - Team-Namen im Design sind Platzhalter (Untitled UI) → echte Team-Daten von Freddy nötig.
