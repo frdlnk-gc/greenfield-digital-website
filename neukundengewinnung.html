@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neukundengewinnung – Greenfield Digital</title>
+  <meta name="description" content="Planbar Neukunden gewinnen in Pflanzenhandel, Gartenbau und GaLaBau.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/foundation.css">
+  <!--
+    PLATZHALTER-SEITE.
+    Diese Unterseite wird nach Freigabe der Startseite gemäß docs/DESIGN-SPEC.md
+    ("SEITE: neukundengewinnung.html") gebaut. Bitte Aufbau, Formular-Regeln und Tabus aus AGENTS.md beachten.
+  -->
+  <style>
+    .ph-wrap {
+      min-height: calc(100vh - var(--nav-h));
+      display: flex; align-items: center; justify-content: center;
+      padding: calc(var(--nav-h) + 40px) 24px 60px;
+      background:
+        radial-gradient(600px 400px at 85% 10%, rgba(11,174,127,.07), transparent),
+        radial-gradient(500px 380px at 10% 90%, rgba(11,174,127,.06), transparent);
+    }
+    .ph-card { max-width: 560px; text-align: center; padding: 56px 44px; }
+    .ph-card h1 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); margin-bottom: 14px; }
+    .ph-card p { color: var(--muted); margin-bottom: 30px; }
+  </style>
+</head>
+<body>
+  <header class="site-nav" id="nav">
+    <div class="inner">
+      <a class="brand" href="index.html" aria-label="Greenfield Digital – Startseite">
+        <span class="mark"><svg viewBox="0 0 56 94" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 2 C40 14 55 32 56 54 C56.6 66 45 76 28 81 C11 76 -0.6 66 0 54 C1 32 16 14 28 2 Z"/><path d="M28 7 V94"/><path d="M28 19 L41 9 M28 31 L52 20 M28 44 L55 33 M28 57 L53 47 M28 69 L48 60 M28 78 L40 71"/><path d="M28 19 L15 9 M28 31 L4 20 M28 44 L1 33 M28 57 L3 47 M28 69 L8 60 M28 78 L16 71"/></svg></span>
+        <span class="word">Greenfield</span>
+      </a>
+      <a class="btn btn--outline" href="index.html">Zurück zur Startseite</a>
+    </div>
+  </header>
+  <main class="ph-wrap">
+    <div class="ph-card card">
+      <span class="pill">In Arbeit</span>
+      <h1>Neukundengewinnung</h1>
+      <p>Planbar Neukunden gewinnen in Pflanzenhandel, Gartenbau und GaLaBau.<br><br>Diese Unterseite entsteht gerade – das Design steht bereits fest.</p>
+      <a class="btn btn--primary" href="index.html#kontakt">Jetzt Kontakt aufnehmen</a>
+    </div>
+  </main>
+  <script>
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  </script>
+</body>
+</html>
