@@ -145,7 +145,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.55rem); }
 .mark-u svg path {
   fill: none;
   stroke: var(--green);
-  stroke-width: 10;
+  stroke-width: 14;
   stroke-linecap: round;
   stroke-dasharray: 240;
   stroke-dashoffset: 240;
