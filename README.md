@@ -24,6 +24,7 @@ Server verhält sich das Formular wie live.)
 | `lp/` | Ausgekoppelte Landingpages (gleiches CI, eigene Themen) |
 | `docs/DESIGN-SPEC.md` | Seitenaufbau aller Unterseiten aus dem Figma-Design |
 | `AGENTS.md` | Team-Handbuch – **vor dem Arbeiten lesen** |
+| `docs/ONBOARDING.md` | Einstieg für neue Mitarbeitende (Codex-Setup, Regeln, Aufgaben) |
 
 ## Mitarbeiten
 

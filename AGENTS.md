@@ -72,6 +72,8 @@ Buttons durch – Formular-Sendungen nie an bloßes Laden koppeln).
 
 ## Zusammenarbeit (Freddy + Janni + Steffi)
 
+Neu im Projekt? → Schritt-für-Schritt-Einstieg in [`docs/ONBOARDING.md`](docs/ONBOARDING.md).
+
 1. **Vor jedem Arbeiten:** `git pull`.
 2. **Nur die eigenen Seiten anfassen.** Wer `recruiting.html` baut, ändert nicht nebenbei
    `index.html` oder die Foundation.
