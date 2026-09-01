@@ -23,7 +23,7 @@
   <style>
     .stats-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
     @media (max-width: 1024px) { .stats-grid-4 { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 560px) { .stats-grid-4 { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .stats-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
   </style>
 </head>
 <body>
@@ -103,7 +103,7 @@
           <h2>Wofür wir <span class="mark-u">stehen<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
           <p class="sub">Diese Prinzipien leiten uns in allem, was wir tun – für dich, für uns und für die grüne Branche.</p>
         </div>
-        <div class="steps-grid cols-3">
+        <div class="steps-grid cols-3 m-carousel">
           <div class="step-card reveal">
             <span class="num">✦</span>
             <h4>Nachhaltiges Wachstum</h4>
@@ -202,20 +202,28 @@
     </section>
     <section class="section " id="bewerben">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="pill">Initiativbewerbung</span>
+        <div class="contact-split">
+          <div class="reveal">
+            <div class="section-head">
+              <span class="pill">Initiativbewerbung</span>
           <h2>Passende Stelle nicht gefunden? Bewirb dich <span class="mark-u">initiativ!<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
           <p class="sub">Du brennst für die grüne Branche und möchtest bei uns durchstarten? Dann zeig uns, wer du bist – wir freuen uns auf deine Bewerbung.</p>
-        </div>
-        <div class="contact-card card reveal">
-          <div class="founder-strip">
+            </div>
+            <div class="founder-strip">
             <img src="assets/img/frederik-linke.jpg" alt="Frederik Linke">
             <div>
               <strong>Frederik Linke</strong>
               <span>Geschäftsführer von Greenfield Digital</span>
             </div>
           </div>
-          <form data-webhook="https://hook.eu1.make.com/wmkdkgrwjhk398vxmnmn8k2fd4ig7qcc" novalidate>
+            <div class="trust-dots" style="margin-top:4px;">
+              <span>Persönliche Antwort</span>
+                  <span>Schnelles Feedback</span>
+                  <span>Faires Verfahren</span>
+            </div>
+          </div>
+          <div class="contact-card card reveal" style="--d:.12s">
+            <form data-webhook="https://hook.eu1.make.com/wmkdkgrwjhk398vxmnmn8k2fd4ig7qcc" novalidate>
             <input type="hidden" name="stelle" id="bw-stelle" value="Initiativbewerbung">
             <div class="form-grid">
               <div class="field">
@@ -249,7 +257,7 @@
               </div>
               <div class="field full">
                 <label for="bw-motivation">Warum möchtest du bei uns arbeiten?</label>
-                <textarea id="bw-motivation" name="motivation" rows="5" placeholder="Erzähl uns kurz von dir …"></textarea>
+                <textarea id="bw-motivation" name="motivation" rows="3" placeholder="Erzähl uns kurz von dir …"></textarea>
               </div>
               <div class="field full">
                 <label for="bw-unterlagen">Link zu deinen Unterlagen (Lebenslauf – optional)</label>
@@ -262,18 +270,14 @@
               <div class="full">
                 <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Bewerbung absenden</button>
                 <p class="form-note">Deine Daten werden vertraulich behandelt und ausschließlich für deine Bewerbung verwendet</p>
-                <div class="trust-dots form-trust">
-                  <span>Persönliche Antwort</span>
-                  <span>Schnelles Feedback</span>
-                  <span>Faires Verfahren</span>
-                </div>
               </div>
             </div>
           </form>
-          <div class="form-success" hidden>
+            <div class="form-success" hidden>
             <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
             <h3>Bewerbung erhalten!</h3>
             <p>Vielen Dank. Wir melden uns zeitnah persönlich bei dir.</p>
+          </div>
           </div>
         </div>
       </div>

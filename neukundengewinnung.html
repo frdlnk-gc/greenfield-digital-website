@@ -33,10 +33,15 @@
     }
     .tp-list h4 { margin-bottom: 4px; }
     .tp-list p { font-size: .98rem; }
-    @media (max-width: 900px) { .tp-grid { grid-template-columns: 1fr; } .phone-mock { display: none; } }
+    @media (max-width: 900px) {
+      .tp-grid { grid-template-columns: 1fr; gap: 30px; }
+      .phone-mock { width: min(270px, 76vw); margin-top: 6px; }
+      .phone-mock .screen { min-height: 430px; }
+      .pm-toast { right: -4px; top: 70px; font-size: .76rem; }
+    }
     .stats-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
     @media (max-width: 1024px) { .stats-grid-4 { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 560px) { .stats-grid-4 { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .stats-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
     .tp-check {
       flex: 0 0 26px; height: 26px; margin-top: 4px;
       border-radius: 50%;
@@ -106,7 +111,7 @@
           <span class="pill">Unser Vorgehen</span>
           <h2>Planbar Neukunden zu gewinnen ist schwer – wir machen es <span class="mark-u">einfach<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
         </div>
-        <div class="steps-grid cols-3">
+        <div class="steps-grid cols-3 m-carousel">
           <div class="step-card reveal">
             <span class="num">01</span>
             <h4>Zielgruppe definieren</h4>
@@ -162,25 +167,26 @@
               <span class="island"></span>
               <div class="screen">
                 <div class="statusbar"><span>9:41</span><span class="sb-icons"><i class="i2"></i><i class="i2" style="height:7px"></i><i class="i1"></i></span></div>
-                <div class="reel">
-                  <img src="assets/img/gen-reel.jpg" alt="">
-                  <div class="cap"><i style="width:82%"></i><i class="c2"></i></div>
-                  <div class="acts" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 8.5-8.5 8.38 8.38 0 0 1 8.5 8.5z"/></svg>
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                  </div>
-                </div>
-                <div class="pm-job">
-                  <span class="tagline">Deine Kampagne · aktiv</span>
-                  <b>Gartenneuanlage angefragt</b>
-                  <small>Privatkunde · in deiner Region</small>
+                <div class="app-head"><b>Deine Anfragen</b><span class="live"><i></i>Live</span></div>
+                <div class="pm-job" style="margin-top:0;">
+                  <span class="tagline">Neu eingegangen</span>
+                  <b>Gartenneuanlage · Privatkunde</b>
+                  <small>qualifiziert · in deiner Region</small>
                   <div class="pm-btn">Termin ansehen</div>
                 </div>
-                <div class="pm-person">
-                  <span class="av">FA</span>
-                  <span><b>Anfrage qualifiziert</b><small>Termin steht im Kalender</small></span>
-                  <span class="ok"></span>
+                <div class="pm-feed">
+                  <ul>
+                    <li><span class="av">GA</span><span><b>Gartenneuanlage</b><small>Privatkunde · qualifiziert</small></span><span class="ok"></span></li>
+                    <li><span class="av">PF</span><span><b>Pflasterarbeiten</b><small>Privatkunde · Termin gebucht</small></span><span class="ok"></span></li>
+                    <li><span class="av">DB</span><span><b>Dachbegrünung</b><small>Gewerbekunde · qualifiziert</small></span><span class="ok"></span></li>
+                    <li><span class="av">HP</span><span><b>Heckenpflege</b><small>Privatkunde · Rückruf vereinbart</small></span><span class="ok"></span></li>
+                    <li><span class="av">TB</span><span><b>Teichbau</b><small>Privatkunde · qualifiziert</small></span><span class="ok"></span></li>
+                    <li><span class="av">GA</span><span><b>Gartenneuanlage</b><small>Privatkunde · qualifiziert</small></span><span class="ok"></span></li>
+                    <li><span class="av">PF</span><span><b>Pflasterarbeiten</b><small>Privatkunde · Termin gebucht</small></span><span class="ok"></span></li>
+                    <li><span class="av">DB</span><span><b>Dachbegrünung</b><small>Gewerbekunde · qualifiziert</small></span><span class="ok"></span></li>
+                    <li><span class="av">HP</span><span><b>Heckenpflege</b><small>Privatkunde · Rückruf vereinbart</small></span><span class="ok"></span></li>
+                    <li><span class="av">TB</span><span><b>Teichbau</b><small>Privatkunde · qualifiziert</small></span><span class="ok"></span></li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -240,69 +246,30 @@
         </div>
       </div>
     </section>
-    <section class="section" id="region">
+        <section class="section section--tint" id="kontakt">
       <div class="container">
-        <div class="map-grid">
-          <div class="map-visual reveal">
-            <img src="assets/img/dach-karte.jpg" alt="Karte des DACH-Raums mit Standorten von Greenfield-Partnerbetrieben" loading="lazy">
-            <span class="map-dot" style="top:22%; left:33%" tabindex="0" role="img" aria-label="Partnerbetriebe: Großraum Hamburg"><span class="tip">Großraum Hamburg</span></span>
-            <span class="map-dot" style="top:46%; left:24%" tabindex="0" role="img" aria-label="Partnerbetriebe: Rheinland & Ruhrgebiet"><span class="tip">Rheinland &amp; Ruhrgebiet</span></span>
-            <span class="map-dot" style="top:63%; left:52%" tabindex="0" role="img" aria-label="Partnerbetriebe: Franken & Bayern"><span class="tip">Franken &amp; Bayern</span></span>
-            <span class="map-dot" style="top:84%; left:74%" tabindex="0" role="img" aria-label="Partnerbetriebe: Österreich"><span class="tip">Österreich</span></span>
-            <span class="map-dot" style="top:34%; left:58%" tabindex="0" role="img" aria-label="Partnerbetriebe: Berlin & Brandenburg"><span class="tip">Berlin &amp; Brandenburg</span></span>
-            <span class="map-dot" style="top:88%; left:30%" tabindex="0" role="img" aria-label="Partnerbetriebe: Schweiz"><span class="tip">Schweiz</span></span>
-          </div>
-          <div>
-            <div class="section-head left reveal" style="margin-bottom:34px;">
-              <span class="pill">Greenfield in Zahlen</span>
-              <h2>Verwurzelt im gesamten DACH-Raum</h2>
-            </div>
-            <div class="map-stats">
-              <div class="stat-card reveal">
-                <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></span>
-                <div class="num"><span data-count="700">0</span>+</div>
-                <div class="label">Partnerbetriebe</div>
-                <p class="desc">ausschließlich in der grünen Branche</p>
-              </div>
-              <div class="stat-card reveal" style="--d:.1s">
-                <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8L12 2z"/></svg></span>
-                <div class="num"><span data-count="20">0</span>+</div>
-                <div class="label">Experten im Team</div>
-                <p class="desc">Recruiting, Marketing, Branding &amp; Development</p>
-              </div>
-              <div class="stat-card reveal" style="--d:.15s">
-                <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
-                <div class="num"><span data-count="9">0</span>+</div>
-                <div class="label">Jahre Erfahrung</div>
-                <p class="desc">aus und für die Grüne Branche</p>
-              </div>
-              <div class="stat-card reveal" style="--d:.25s">
-                <span class="icon-chip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3.4.9-4.5 2.3A5.6 5.6 0 0 0 7.5 3 5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg></span>
-                <div class="num"><span data-count="92">0</span>%</div>
-                <div class="label">unserer Kunden</div>
-                <p class="desc">vertrauen uns in mehr als einer Dienstleistung</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section section--tint" id="kontakt">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="pill">Jetzt Unterstützung anfordern</span>
+        <div class="contact-split">
+          <div class="reveal">
+            <div class="section-head">
+              <span class="pill">Jetzt Unterstützung anfordern</span>
           <h2>Du benötigst Unterstützung?</h2>
           <p class="sub">Lass uns über dein Wachstum sprechen. Im kostenlosen Erstgespräch entwickeln wir deine Strategie.</p>
-        </div>
-        <div class="contact-card card reveal">
-          <div class="founder-strip">
+            </div>
+            <div class="founder-strip">
             <img src="assets/img/frederik-linke.jpg" alt="Frederik Linke">
             <div>
               <strong>Frederik Linke</strong>
               <span>Geschäftsführer von Greenfield Digital</span>
             </div>
           </div>
-          <form data-webhook="https://hook.eu1.make.com/dpi3yxzn8knq3wimr36vg9hg64oz5l7h" novalidate>
+            <div class="trust-dots" style="margin-top:4px;">
+              <span>Unverbindlich</span>
+                  <span>Kostenlos</span>
+                  <span>48h Antwortzeit</span>
+            </div>
+          </div>
+          <div class="contact-card card reveal" style="--d:.12s">
+            <form data-webhook="https://hook.eu1.make.com/dpi3yxzn8knq3wimr36vg9hg64oz5l7h" novalidate>
             <div class="form-grid">
               <div class="field">
                 <label for="nk-name">Name *</label>
@@ -322,34 +289,24 @@
               </div>
               <div class="field full">
                 <label for="nk-nachricht">Deine Nachricht (optional)</label>
-                <textarea id="nk-nachricht" name="nachricht" rows="5" placeholder="Erzähl uns mehr über dein Projekt..."></textarea>
+                <textarea id="nk-nachricht" name="nachricht" rows="3" placeholder="Erzähl uns mehr über dein Projekt..."></textarea>
               </div>
               <div class="hp-field" aria-hidden="true">
                 <label for="nk-website">Website</label>
                 <input type="text" id="nk-website" name="website" tabindex="-1" autocomplete="off">
               </div>
-              <div class="full note-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                <div>
-                  <strong>Schnelle Antwort garantiert</strong>
-                  <p>Wir melden uns innerhalb von 48 Stunden persönlich bei dir zurück</p>
-                </div>
-              </div>
+              
               <div class="full">
                 <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Kostenlose Beratung anfragen</button>
                 <p class="form-note">Deine Daten werden vertraulich behandelt und nicht an Dritte weitergegeben</p>
-                <div class="trust-dots form-trust">
-                  <span>Unverbindlich</span>
-                  <span>Kostenlos</span>
-                  <span>48h Antwortzeit</span>
-                </div>
               </div>
             </div>
           </form>
-          <div class="form-success" hidden>
+            <div class="form-success" hidden>
             <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
             <h3>Danke für deine Anfrage!</h3>
             <p>Wir haben alles erhalten und melden uns innerhalb von 48 Stunden persönlich bei dir.</p>
+          </div>
           </div>
         </div>
       </div>
@@ -362,20 +319,20 @@
         </div>
         <div class="faq">
           <details class="reveal">
-            <summary>Wie schnell kommen die ersten Anfragen?</summary>
-            <div class="faq-body">Die ersten qualifizierten Anfragen kommen in der Regel innerhalb der ersten zwei Wochen nach Kampagnenstart – abhängig von Region und Angebot.</div>
+            <summary>Für welche Betriebe funktioniert die Neukundengewinnung?</summary>
+            <div class="faq-body">Für Betriebe der grünen Branche – Garten- und Landschaftsbau, Baumschulen, Gartencenter, Gartenbau und verwandte Bereiche – vom Familienbetrieb bis zum Mittelständler.</div>
           </details>
           <details class="reveal">
-            <summary>Für welche Betriebe funktioniert das?</summary>
-            <div class="faq-body">Für Betriebe aus Pflanzenhandel, Gartenbau, GaLaBau und Dachbegrünung, die planbar wachsen wollen – vom Familienbetrieb bis zum Mittelständler.</div>
-          </details>
-          <details class="reveal">
-            <summary>Woher weiß ich, dass die Leads etwas taugen?</summary>
+            <summary>Woher weiß ich, dass die Anfragen etwas taugen?</summary>
             <div class="faq-body">Wir qualifizieren jede Anfrage vor, bevor sie bei dir landet. Du sprichst nur mit Interessenten, die zu deinem Angebot und deiner Region passen.</div>
           </details>
           <details class="reveal">
-            <summary>Was kostet die Neukundengewinnung?</summary>
-            <div class="faq-body">Das hängt von Zielen und Region ab. Im kostenlosen Erstgespräch bekommst du ein transparentes Angebot ohne versteckte Kosten.</div>
+            <summary>Welche Kosten entstehen?</summary>
+            <div class="faq-body">Die Kosten variieren je nach Umfang und Anforderungen deines Projekts. Im unverbindlichen Beratungsgespräch erstellen wir dir ein individuelles Angebot.</div>
+          </details>
+          <details class="reveal">
+            <summary>Muss ich langfristige Verträge eingehen?</summary>
+            <div class="faq-body">Nein – bei uns gibt es keine festen Vertragslaufzeiten. Du kannst unsere Unterstützung jederzeit in Anspruch nehmen.</div>
           </details>
           <details class="reveal">
             <summary>Wie viel Aufwand habe ich selbst?</summary>

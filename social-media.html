@@ -273,20 +273,28 @@
     </section>
     <section class="section section--tint" id="kontakt">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="pill">In der grünen Branche zu Hause</span>
+        <div class="contact-split">
+          <div class="reveal">
+            <div class="section-head">
+              <span class="pill">In der grünen Branche zu Hause</span>
           <h2>Greenfield Digital – sprich mit uns</h2>
           <p class="sub">Lass uns gemeinsam deine Marke sichtbar machen. Im kostenlosen Erstgespräch klären wir deinen Bedarf.</p>
-        </div>
-        <div class="contact-card card reveal">
-          <div class="founder-strip">
+            </div>
+            <div class="founder-strip">
             <img src="assets/img/frederik-linke.jpg" alt="Frederik Linke">
             <div>
               <strong>Frederik Linke</strong>
               <span>Geschäftsführer von Greenfield Digital</span>
             </div>
           </div>
-          <form data-webhook="https://hook.eu1.make.com/dpi3yxzn8knq3wimr36vg9hg64oz5l7h" novalidate>
+            <div class="trust-dots" style="margin-top:4px;">
+              <span>Unverbindlich</span>
+                  <span>Kostenlos</span>
+                  <span>48h Antwortzeit</span>
+            </div>
+          </div>
+          <div class="contact-card card reveal" style="--d:.12s">
+            <form data-webhook="https://hook.eu1.make.com/dpi3yxzn8knq3wimr36vg9hg64oz5l7h" novalidate>
             <div class="form-grid">
               <div class="field">
                 <label for="sm-name">Name *</label>
@@ -306,34 +314,24 @@
               </div>
               <div class="field full">
                 <label for="sm-nachricht">Deine Nachricht (optional)</label>
-                <textarea id="sm-nachricht" name="nachricht" rows="5" placeholder="Erzähl uns mehr über dein Projekt..."></textarea>
+                <textarea id="sm-nachricht" name="nachricht" rows="3" placeholder="Erzähl uns mehr über dein Projekt..."></textarea>
               </div>
               <div class="hp-field" aria-hidden="true">
                 <label for="sm-website">Website</label>
                 <input type="text" id="sm-website" name="website" tabindex="-1" autocomplete="off">
               </div>
-              <div class="full note-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                <div>
-                  <strong>Schnelle Antwort garantiert</strong>
-                  <p>Wir melden uns innerhalb von 48 Stunden persönlich bei dir zurück</p>
-                </div>
-              </div>
+              
               <div class="full">
                 <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Kostenlose Beratung anfragen</button>
                 <p class="form-note">Deine Daten werden vertraulich behandelt und nicht an Dritte weitergegeben</p>
-                <div class="trust-dots form-trust">
-                  <span>Unverbindlich</span>
-                  <span>Kostenlos</span>
-                  <span>48h Antwortzeit</span>
-                </div>
               </div>
             </div>
           </form>
-          <div class="form-success" hidden>
+            <div class="form-success" hidden>
             <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
             <h3>Danke für deine Anfrage!</h3>
             <p>Wir haben alles erhalten und melden uns innerhalb von 48 Stunden persönlich bei dir.</p>
+          </div>
           </div>
         </div>
       </div>

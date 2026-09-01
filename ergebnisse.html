@@ -145,7 +145,7 @@
           <h2>Echte Betriebe. Echte <span class="mark-u">Ergebnisse.<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
           <p class="sub">Ein Auszug aus über 700 Partnerschaften – mit dem, was am Ende zählt: Bewerbungen, Geschwindigkeit und Einstellungen.</p>
         </div>
-        <div class="ref-grid">
+        <div class="ref-grid m-carousel">
           <article class="ref-card reveal" style="--d:.0s">
             <div class="ref-logo"><img src="assets/img/logo-freiraum.png" alt="FREIRAUM Gartenarchitektur GmbH" loading="lazy"></div>
             <h4>FREIRAUM Gartenarchitektur GmbH</h4>
@@ -286,20 +286,28 @@
     </section>
     <section class="section" id="kontakt">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="pill">Werde unsere nächste Erfolgsgeschichte</span>
+        <div class="contact-split">
+          <div class="reveal">
+            <div class="section-head">
+              <span class="pill">Werde unsere nächste Erfolgsgeschichte</span>
           <h2>Du benötigst Unterstützung?</h2>
           <p class="sub">Lass uns über deine Ziele sprechen. Im kostenlosen Erstgespräch zeigen wir dir, was möglich ist.</p>
-        </div>
-        <div class="contact-card card reveal">
-          <div class="founder-strip">
+            </div>
+            <div class="founder-strip">
             <img src="assets/img/frederik-linke.jpg" alt="Frederik Linke">
             <div>
               <strong>Frederik Linke</strong>
               <span>Geschäftsführer von Greenfield Digital</span>
             </div>
           </div>
-          <form data-webhook="https://hook.eu1.make.com/dpi3yxzn8knq3wimr36vg9hg64oz5l7h" novalidate>
+            <div class="trust-dots" style="margin-top:4px;">
+              <span>Unverbindlich</span>
+                  <span>Kostenlos</span>
+                  <span>48h Antwortzeit</span>
+            </div>
+          </div>
+          <div class="contact-card card reveal" style="--d:.12s">
+            <form data-webhook="https://hook.eu1.make.com/dpi3yxzn8knq3wimr36vg9hg64oz5l7h" novalidate>
             <div class="form-grid">
               <div class="field">
                 <label for="erg-name">Name *</label>
@@ -319,34 +327,24 @@
               </div>
               <div class="field full">
                 <label for="erg-nachricht">Deine Nachricht (optional)</label>
-                <textarea id="erg-nachricht" name="nachricht" rows="5" placeholder="Erzähl uns mehr über dein Projekt..."></textarea>
+                <textarea id="erg-nachricht" name="nachricht" rows="3" placeholder="Erzähl uns mehr über dein Projekt..."></textarea>
               </div>
               <div class="hp-field" aria-hidden="true">
                 <label for="erg-website">Website</label>
                 <input type="text" id="erg-website" name="website" tabindex="-1" autocomplete="off">
               </div>
-              <div class="full note-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                <div>
-                  <strong>Schnelle Antwort garantiert</strong>
-                  <p>Wir melden uns innerhalb von 48 Stunden persönlich bei dir zurück</p>
-                </div>
-              </div>
+              
               <div class="full">
                 <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Kostenlose Beratung anfragen</button>
                 <p class="form-note">Deine Daten werden vertraulich behandelt und nicht an Dritte weitergegeben</p>
-                <div class="trust-dots form-trust">
-                  <span>Unverbindlich</span>
-                  <span>Kostenlos</span>
-                  <span>48h Antwortzeit</span>
-                </div>
               </div>
             </div>
           </form>
-          <div class="form-success" hidden>
+            <div class="form-success" hidden>
             <div class="check-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
             <h3>Danke für deine Anfrage!</h3>
             <p>Wir haben alles erhalten und melden uns innerhalb von 48 Stunden persönlich bei dir.</p>
+          </div>
           </div>
         </div>
       </div>
