@@ -75,6 +75,10 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && navLinks.classList.contains('open')) setMenu(false);
     });
+    /* Beim Wechsel auf Desktop-Breite (z. B. Tablet-Rotation) Menü schließen */
+    window.matchMedia('(min-width: 821px)').addEventListener('change', function (e) {
+      if (e.matches) setMenu(false);
+    });
   }
 
   /* ---------- Scroll-Reveal ---------- */

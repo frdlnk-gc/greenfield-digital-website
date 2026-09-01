@@ -84,12 +84,25 @@ Neu im Projekt? → Schritt-für-Schritt-Einstieg in [`docs/ONBOARDING.md`](docs
 
 ## Interaktive Komponenten (Foundation)
 
+- **Mobiles Menü** (≤820px): vollflächiges Night-Forest-Panel (`.nav-links` wird per CSS
+  zum Panel), Burger morpht zum X (3 `span.nb-line` – kein SVG!), „Leistungen" als
+  aufgeklapptes Akkordeon, unten CTA + Anrufen/E-Mail (fügt `main.js` automatisch ein).
+  `body.nav-open` steuert Scroll-Lock + Header-Umfärbung. Nichts davon in Seiten
+  duplizieren – Markup-Muster aus `index.html` kopieren reicht.
 - **Orbit** (`.orbit`, Startseite): 4 schwebende Service-Karten um „Ihr Unternehmen im
-  Mittelpunkt"; Hover tauscht den Text in der Mitte (JS in `main.js`).
-- **DACH-Karte**: pulsierende Punkte mit Hover-/Fokus-Tooltips (Regionsnamen, keine Zahlen!)
-  + sanfter 3D-Tilt bei Mausbewegung (nur pointer:fine, respektiert reduced-motion).
+  Mittelpunkt"; Hover tauscht den Text in der Mitte (JS in `main.js`). Ab ≤1024px
+  Diamant-Anordnung: rundes Zentrum in der Mitte, Karten oben/unten/links/rechts.
+- **DACH-Karte**: 40 weiße Puls-Punkte auf echten Städte-Positionen (keine Tooltips,
+  keine Zahlen!) + sanfter 3D-Tilt (nur pointer:fine, respektiert reduced-motion).
+  Punkte-Liste ist in index.html und ueber-uns.html identisch – bei Änderung beide pflegen.
+- **Karussell-Punkte**: jedes `.m-carousel` bekommt auf Mobile automatisch klickbare
+  Dots (JS in `main.js`) – nichts manuell einbauen.
 - **Phone-Mockups**: animieren beim Scroll-Einstieg (Balken wachsen, Karten sliden,
   Benachrichtigungs-Toast loopt).
+- **Instagram-Sektion** (Startseite): statisch eingebettete echte Posts von
+  @greenfield_digital. Aktualisieren = neue Thumbnails quadratisch (640px, q80) nach
+  `assets/img/insta/insta-1..6.jpg` + die 6 Permalinks in `index.html` tauschen
+  (Reels bekommen den `.reel-badge`). Kein API-Zugriff, bewusst statisch.
 - Favicon = weißes Blatt auf Primärgrün (`assets/img/favicon.svg/.png`, apple-touch-icon).
 
 ## Seitenstatus (Stand 31.08.2026)
