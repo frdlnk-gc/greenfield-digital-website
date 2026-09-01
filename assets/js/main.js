@@ -28,29 +28,52 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---------- Burger-Menü (mobil) ---------- */
+  /* ---------- Menü-Panel (mobil) ---------- */
   var burger = document.getElementById('burger');
   var navLinks = document.getElementById('navLinks');
   if (burger && navLinks) {
-    burger.addEventListener('click', function () {
-      var open = navLinks.classList.toggle('open');
+    /* Abschluss-Bereich des Panels: CTA + direkte Kontaktwege */
+    var foot = document.createElement('li');
+    foot.className = 'nav-panel-foot';
+    var ctaHref = document.getElementById('kontakt') ? '#kontakt' : 'index.html#kontakt';
+    foot.innerHTML =
+      '<a class="btn btn--primary" href="' + ctaHref + '">Kostenloses Gespräch vereinbaren</a>' +
+      '<div class="npf-contact">' +
+      '<a href="tel:+4922195018825"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Anrufen</a>' +
+      '<a href="mailto:hello@greenfield-digital.de"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>E-Mail</a>' +
+      '</div>';
+    navLinks.appendChild(foot);
+
+    function setMenu(open) {
+      navLinks.classList.toggle('open', open);
+      document.body.classList.toggle('nav-open', open);
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      /* Leistungen-Akkordeon standardmäßig aufgeklappt – ein Tipp weniger */
+      if (open) {
+        var drop = navLinks.querySelector('.has-drop');
+        if (drop) drop.classList.add('open');
+      }
+    }
+
+    burger.addEventListener('click', function () {
+      setMenu(!navLinks.classList.contains('open'));
     });
-    /* Menü schließen, wenn ein Link geklickt wird */
     navLinks.addEventListener('click', function (e) {
       var link = e.target.closest('a');
       if (!link) return;
       var parentDrop = link.closest('.has-drop');
       var isMobile = window.matchMedia('(max-width: 820px)').matches;
-      /* Auf mobil öffnet der Eltern-Link erst das Untermenü */
-      if (isMobile && parentDrop && link.parentElement === parentDrop && !parentDrop.classList.contains('open')) {
+      /* Auf mobil klappt der Eltern-Punkt nur das Untermenü auf/zu */
+      if (isMobile && parentDrop && link.parentElement === parentDrop) {
         e.preventDefault();
-        parentDrop.classList.add('open');
+        parentDrop.classList.toggle('open');
         return;
       }
-      navLinks.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false');
+      setMenu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) setMenu(false);
     });
   }
 
@@ -158,6 +181,40 @@
   } else {
     phones.forEach(function (p) { p.classList.add('play'); });
   }
+
+  /* ---------- Karussell-Punkte (mobil, für jedes .m-carousel) ---------- */
+  document.querySelectorAll('.m-carousel').forEach(function (car) {
+    var items = car.children;
+    if (items.length < 2) return;
+    var dots = document.createElement('div');
+    dots.className = 'm-dots' + (items.length > 9 ? ' many' : '');
+    for (var i = 0; i < items.length; i++) {
+      (function (idx) {
+        var d = document.createElement('button');
+        d.type = 'button';
+        d.setAttribute('aria-label', 'Zu Karte ' + (idx + 1));
+        d.addEventListener('click', function () {
+          items[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        });
+        dots.appendChild(d);
+      })(i);
+    }
+    car.parentElement.insertBefore(dots, car.nextSibling);
+    function update() {
+      var mid = car.scrollLeft + car.clientWidth / 2;
+      var best = 0, bestDist = Infinity;
+      for (var i = 0; i < items.length; i++) {
+        var c = items[i].offsetLeft + items[i].offsetWidth / 2;
+        var dist = Math.abs(c - mid);
+        if (dist < bestDist) { bestDist = dist; best = i; }
+      }
+      for (var j = 0; j < dots.children.length; j++) {
+        dots.children[j].classList.toggle('on', j === best);
+      }
+    }
+    car.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
+    update();
+  });
 
   /* ---------- Formulare (alle mit data-webhook) ----------
      Jedes Formular mit data-webhook="https://hook.eu1.make.com/…" wird

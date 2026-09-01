@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kundenstimmen & Ergebnisse – Greenfield Digital</title>
-  <meta name="description" content="Über 750 Kunden aus der grünen Branche vertrauen Greenfield Digital: echte Referenzen mit Bewerbungszahlen, Zeit bis zur Einstellung und besetzten Stellen.">
+  <meta name="description" content="Über 700 Betriebe aus der grünen Branche vertrauen Greenfield Digital: echte Referenzen mit Bewerbungszahlen, Zeit bis zur Einstellung und besetzten Stellen.">
   <!-- TODO vor Go-Live auf greenfield-digital.de: noindex entfernen! -->
   <meta name="robots" content="noindex">
   <meta property="og:title" content="Kundenstimmen & Ergebnisse – Greenfield Digital">
-  <meta property="og:description" content="Über 750 Kunden aus der grünen Branche vertrauen Greenfield Digital: echte Referenzen mit Bewerbungszahlen, Zeit bis zur Einstellung und besetzten Stellen.">
+  <meta property="og:description" content="Über 700 Betriebe aus der grünen Branche vertrauen Greenfield Digital: echte Referenzen mit Bewerbungszahlen, Zeit bis zur Einstellung und besetzten Stellen.">
   <meta property="og:type" content="website">
   <!-- TODO Go-Live: og:image-Domain auf greenfield-digital.de umstellen -->
   <meta property="og:image" content="https://frdlnk-gc.github.io/greenfield-digital-website/assets/img/kunden-700.jpg">
@@ -58,6 +58,42 @@
       .google-card .g-right { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .google-card .g-right img { max-width: 100%; }
     }
+
+    /* Aggregierte Ergebnis-Zahlen über den Referenzen */
+    .agg-band {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 20px 64px;
+      padding: 30px 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow-sm);
+    }
+    .agg-band > div { text-align: center; min-width: 150px; }
+    .agg-band b {
+      display: block;
+      font-size: 2.1rem; font-weight: 800; line-height: 1.1;
+      color: var(--green-700); letter-spacing: -0.02em;
+    }
+    .agg-band .agg-label { font-size: .92rem; color: var(--muted); font-weight: 600; }
+    .agg-note {
+      text-align: center;
+      color: var(--muted); font-size: .84rem;
+      margin: 12px 0 38px;
+    }
+    @media (max-width: 700px) {
+      .agg-band { gap: 8px; padding: 20px 12px; justify-content: space-between; flex-wrap: nowrap; }
+      .agg-band > div { min-width: 0; flex: 1 1 0; }
+      .agg-band b { font-size: 1.32rem; }
+      .agg-band .agg-label { font-size: .7rem; display: block; line-height: 1.25; margin-top: 3px; }
+      .agg-note { margin-bottom: 28px; }
+
+      .ref-card { padding: 20px 18px; }
+      .ref-card h4 { font-size: .98rem; }
+      .ref-card .who { font-size: .82rem; margin-bottom: 12px; }
+      .ref-card li { font-size: .88rem; }
+      .testi-card { min-height: 280px; }
+    }
   </style>
 </head>
 <body>
@@ -90,7 +126,7 @@
       <div style="display:flex; align-items:center; gap:10px;">
         <a class="btn btn--primary nav-cta-desktop" href="#kontakt">Jetzt starten</a>
         <button class="nav-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <span class="nb-line" aria-hidden="true"></span><span class="nb-line" aria-hidden="true"></span><span class="nb-line" aria-hidden="true"></span>
         </button>
       </div>
     </div>
@@ -105,7 +141,7 @@
           <div class="hero-inner">
             <span class="pill pill--glow"><span class="dot"></span>Wir halten, was wir versprechen</span>
             <h1>Kundenstimmen aus der <span class="accent">Grünen Branche</span></h1>
-            <p class="sub">Über 750 Kunden vertrauen bereits auf unsere Expertise – und das aus gutem Grund.</p>
+            <p class="sub">Über 700 Betriebe aus der grünen Branche vertrauen auf unsere Arbeit – und das aus gutem Grund.</p>
             <div class="hero-actions"><a class="btn btn--white is-green-text" href="#kontakt">Werde unsere nächste Erfolgsgeschichte</a><a class="btn btn--ghost" href="#referenzen">Zu den Referenzen<span class="arr">→</span></a></div>
           </div>
           <div class="partner-mini reveal" style="--d:.2s">
@@ -115,36 +151,55 @@
         </div>
       </div>
     </section>
-    <section class="section section--tint" id="kundenstimmen">
+    <section class="section section--tint" style="padding-top:64px; padding-bottom:64px;">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="pill">Kundenstimmen</span>
-          <h2>Das sagen unsere <span class="mark-u">Kunden<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
-          <p class="sub">Über 730 zufriedene Unternehmen vertrauen auf unsere Expertise</p>
-        </div>
-        <div class="testi-card reveal">
-          <div class="bg" aria-hidden="true"></div>
-          <span class="tag">Neuanlage eines privaten Gartenparadieses</span>
-          <div class="who">
-            <span class="logo-chip"><img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen"></span>
-            <div>
-              <strong>Wörlein Baumschulen</strong>
-              <span>Partnerbetrieb aus der grünen Branche</span>
+        <div class="google-card card reveal">
+          <div class="g-left">
+            <svg width="42" height="42" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
+            <div class="g-score"><span style="color:var(--green)">4.9</span> <small>/5</small></div>
+            <div class="g-stars" aria-label="5 von 5 Sternen">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
+            <div class="g-sub">40+ Google Bewertungen</div>
+            <a class="btn-link" href="https://www.google.com/search?q=Greenfield+Digital+K%C3%B6ln+Bewertungen" target="_blank" rel="noopener">Alle ansehen <span class="arr">→</span></a>
           </div>
-        </div>
-        <div class="testi-more reveal" hidden>
-          <a class="btn-link" href="ergebnisse.html" style="font-size:1.1rem;">Weitere Kundenstimmen <span class="arr">→</span></a>
+          <div class="g-right">
+            <img src="assets/img/logo-vivawest.png" alt="Vivawest" loading="lazy">
+            <img src="assets/img/logo-fu.png" alt="Flöter &amp; Uszkureit" loading="lazy">
+            <img src="assets/img/logo-stadtgruen.png" alt="Stadtgrün Potsdam" loading="lazy">
+            <img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen" loading="lazy">
+            <img src="assets/img/logo-wisag.png" alt="WISAG" loading="lazy">
+            <img src="assets/img/logo-freiraum.png" alt="Freiraum" loading="lazy">
+          </div>
         </div>
       </div>
     </section>
-    <section class="section" id="referenzen">
+    <section class="section" id="referenzen" style="padding-top:56px;">
       <div class="container">
         <div class="section-head reveal">
-          <span class="pill">Mehr Zufriedenheiten</span>
+          <span class="pill">Kundenstimmen</span>
           <h2>Echte Betriebe. Echte <span class="mark-u">Ergebnisse.<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
           <p class="sub">Ein Auszug aus über 700 Partnerschaften – mit dem, was am Ende zählt: Bewerbungen, Geschwindigkeit und Einstellungen.</p>
         </div>
+        <div class="agg-band reveal">
+          <div>
+            <b><span data-count="1900" data-sep=".">0</span>+</b>
+            <span class="agg-label">qualifizierte Bewerbungen</span>
+          </div>
+          <div>
+            <b><span data-count="47">0</span></b>
+            <span class="agg-label">Einstellungen</span>
+          </div>
+          <div>
+            <b><span data-count="14">0</span> Tage</b>
+            <span class="agg-label">schnellste Besetzung</span>
+          </div>
+        </div>
+        <p class="agg-note reveal">Alle Werte stammen aus den 16 hier gezeigten Projekten.</p>
         <div class="ref-grid m-carousel">
           <article class="ref-card reveal" style="--d:.0s">
             <div class="ref-logo"><img src="assets/img/logo-freiraum.png" alt="FREIRAUM Gartenarchitektur GmbH" loading="lazy"></div>
@@ -245,29 +300,22 @@
         </div>
       </div>
     </section>
-    <section class="section section--tint" style="padding-top:64px; padding-bottom:64px;">
+    <section class="section section--tint" id="praxis">
       <div class="container">
-        <div class="google-card card reveal">
-          <div class="g-left">
-            <svg width="42" height="42" viewBox="0 0 48 48" aria-label="Google"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>
-            <div class="g-score"><span style="color:var(--green)">4.9</span> <small>/5</small></div>
-            <div class="g-stars" aria-label="5 von 5 Sternen">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div class="section-head reveal">
+          <span class="pill">Aus der Praxis</span>
+          <h2>Arbeit, die man sehen kann</h2>
+          <p class="sub">Projekte wie dieses entstehen jeden Tag bei unseren Partnerbetrieben.</p>
+        </div>
+        <div class="testi-card reveal">
+          <div class="bg" aria-hidden="true"></div>
+          <span class="tag">Neuanlage eines privaten Gartenparadieses</span>
+          <div class="who">
+            <span class="logo-chip"><img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen"></span>
+            <div>
+              <strong>Wörlein Baumschulen</strong>
+              <span>Partnerbetrieb aus der grünen Branche</span>
             </div>
-            <div class="g-sub">40+ Google Bewertungen</div>
-            <a class="btn-link" href="https://www.google.com/search?q=Greenfield+Digital+K%C3%B6ln+Bewertungen" target="_blank" rel="noopener">Alle ansehen <span class="arr">→</span></a>
-          </div>
-          <div class="g-right">
-            <img src="assets/img/logo-vivawest.png" alt="Vivawest" loading="lazy">
-            <img src="assets/img/logo-fu.png" alt="Flöter &amp; Uszkureit" loading="lazy">
-            <img src="assets/img/logo-stadtgruen.png" alt="Stadtgrün Potsdam" loading="lazy">
-            <img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen" loading="lazy">
-            <img src="assets/img/logo-wisag.png" alt="WISAG" loading="lazy">
-            <img src="assets/img/logo-freiraum.png" alt="Freiraum" loading="lazy">
           </div>
         </div>
       </div>

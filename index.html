@@ -41,9 +41,6 @@
                  float-y 7s calc(var(--od, 0s) + .6s) ease-in-out infinite;
     }
     @keyframes oi-pop { from { opacity: 0; transform: translateY(26px) scale(.92); } to { opacity: 1; transform: none; } }
-    @media (max-width: 1024px) {
-      .orbit .orbit-item, .orbit.in .orbit-item { opacity: 1; animation: none; }
-    }
 
     /* ----- Hero ----- */
     .hero { padding: calc(var(--nav-h) + 28px) 0 40px; }
@@ -252,7 +249,7 @@
     }
     .insta-tile {
       position: relative;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 1 / 1;
       border-radius: var(--r-md);
       overflow: hidden;
       background-size: cover;
@@ -261,12 +258,31 @@
       transition: transform .35s ease, box-shadow .35s ease;
     }
     .insta-tile:hover { transform: translateY(-6px) scale(1.02); box-shadow: var(--shadow-md); }
-    .insta-tile--brand {
-      background: var(--grad-deep);
+    .insta-tile::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: rgba(6, 33, 26, 0);
+      transition: background .3s ease;
+    }
+    .insta-tile .ig-ov {
+      position: absolute; inset: 0; z-index: 1;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      opacity: 0; transform: scale(.75);
+      transition: opacity .3s ease, transform .3s ease;
+    }
+    .insta-tile .ig-ov svg { width: 34px; height: 34px; filter: drop-shadow(0 4px 14px rgba(0, 0, 0, .35)); }
+    .insta-tile:hover::after { background: rgba(6, 33, 26, .42); }
+    .insta-tile:hover .ig-ov { opacity: 1; transform: none; }
+    .insta-tile .reel-badge {
+      position: absolute; top: 10px; right: 10px; z-index: 1;
+      width: 26px; height: 26px; border-radius: 50%;
+      background: rgba(6, 33, 26, .55);
+      backdrop-filter: blur(4px);
       display: flex; align-items: center; justify-content: center;
       color: #fff;
     }
-    .insta-tile--brand svg { width: 44px; height: 44px; }
+    .insta-tile .reel-badge svg { width: 13px; height: 13px; }
 
     /* ----- Responsive Startseite ----- */
     @media (max-width: 1024px) {
@@ -318,15 +334,10 @@
       .side-card .heart-bubble { width: 38px; height: 38px; margin-bottom: 8px; }
       .side-card .heart-bubble svg { width: 18px; height: 18px; }
       .services-grid.m-carousel > * { min-height: 400px !important; }
-      .orbit-center { padding: 22px 20px 18px; }
-      .orbit-center strong { font-size: 1.1rem; }
-      .orbit-center p { font-size: .82rem; }
-      .orbit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-      .orbit-center { grid-column: 1 / -1; margin-bottom: 4px; }
-      .orbit-item { margin-bottom: 0 !important; padding: 12px 12px; gap: 9px; }
-      .orbit-item b { font-size: .82rem; }
-      .orbit-item small { font-size: .7rem; }
-      .orbit-item .icon-chip { width: 32px; height: 32px; flex-basis: 32px; border-radius: 9px; }
+      .orbit { gap: 8px 6px; padding: 12px 0 4px; }
+      .orbit-item { max-width: 118px; padding: 11px 7px; }
+      .orbit-item b { font-size: .76rem; line-height: 1.2; }
+      .orbit-item .icon-chip { width: 32px; height: 32px; border-radius: 9px; }
       .orbit-item .icon-chip svg { width: 15px; height: 15px; }
       .google-card .g-left { padding: 30px 20px; gap: 6px; }
       .google-card .g-score { font-size: 2.2rem; }
@@ -369,7 +380,7 @@
       <div style="display:flex; align-items:center; gap:10px;">
         <a class="btn btn--primary nav-cta-desktop" href="#kontakt">Jetzt starten</a>
         <button class="nav-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <span class="nb-line" aria-hidden="true"></span><span class="nb-line" aria-hidden="true"></span><span class="nb-line" aria-hidden="true"></span>
         </button>
       </div>
     </div>
@@ -621,31 +632,46 @@
         <div class="map-grid">
           <div class="map-visual reveal">
             <img src="assets/img/dach-karte.jpg" alt="Karte des DACH-Raums mit Standorten von Greenfield-Partnerbetrieben" loading="lazy">
-            <span class="map-dot" style="top:16%; left:38%; --dd:0.0s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:20%; left:30%; --dd:0.3s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:24%; left:44%; --dd:0.7s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:27%; left:24%; --dd:1.0s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:30%; left:55%; --dd:1.4s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:33%; left:36%; --dd:1.8s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:36%; left:62%; --dd:2.1s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:40%; left:28%; --dd:2.4s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:43%; left:47%; --dd:0.0s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:47%; left:22%; --dd:0.4s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:50%; left:38%; --dd:0.7s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:53%; left:55%; --dd:1.0s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:57%; left:30%; --dd:1.4s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:60%; left:44%; --dd:1.8s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:64%; left:52%; --dd:2.1s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:67%; left:36%; --dd:2.5s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:71%; left:47%; --dd:0.0s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:75%; left:40%; --dd:0.3s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:80%; left:68%; --dd:0.7s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:84%; left:76%; --dd:1.0s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:87%; left:62%; --dd:1.4s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:88%; left:28%; --dd:1.8s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:91%; left:34%; --dd:2.1s" aria-hidden="true"></span>
-            <span class="map-dot" style="top:78%; left:55%; --dd:2.4s" aria-hidden="true"></span>
-          
+            <span class="map-dot" style="top:4%; left:38%; --dd:0.0s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:6%; left:57%; --dd:0.3s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:13%; left:41%; --dd:0.7s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:17%; left:32%; --dd:1.0s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:15%; left:24%; --dd:1.4s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:24%; left:69%; --dd:1.8s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:26%; left:38%; --dd:2.1s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:32%; left:24%; --dd:2.4s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:28%; left:27%; --dd:0.0s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:38%; left:16%; --dd:0.3s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:37%; left:18%; --dd:0.7s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:36%; left:21%; --dd:1.0s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:41%; left:17%; --dd:1.4s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:45%; left:18%; --dd:1.8s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:46%; left:13%; --dd:2.1s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:48%; left:19%; --dd:2.4s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:40%; left:35%; --dd:0.0s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:38%; left:63%; --dd:0.3s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:40%; left:72%; --dd:0.7s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:42%; left:52%; --dd:1.0s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:52%; left:28%; --dd:1.4s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:56%; left:14%; --dd:1.8s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:55%; left:40%; --dd:2.1s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:60%; left:50%; --dd:2.4s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:59%; left:27%; --dd:0.0s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:66%; left:32%; --dd:0.3s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:63%; left:25%; --dd:0.7s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:75%; left:20%; --dd:1.0s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:70%; left:39%; --dd:1.4s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:70%; left:47%; --dd:1.8s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:74%; left:52%; --dd:2.1s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:64%; left:58%; --dd:2.4s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:79%; left:30%; --dd:0.0s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:82%; left:79%; --dd:0.3s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:84%; left:92%; --dd:0.7s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:86%; left:72%; --dd:1.0s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:89%; left:62%; --dd:1.4s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:92%; left:88%; --dd:1.8s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:88%; left:24%; --dd:2.1s" aria-hidden="true"></span>
+            <span class="map-dot" style="top:93%; left:18%; --dd:2.4s" aria-hidden="true"></span>
           </div>
           <div>
             <div class="section-head left reveal" style="margin-bottom:34px;">
@@ -689,7 +715,7 @@
         <div class="section-head reveal">
           <span class="pill">Kundenstimmen</span>
           <h2>Das sagen unsere <span class="mark-u">Kunden<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
-          <p class="sub">Über 730 zufriedene Unternehmen vertrauen auf unsere Expertise</p>
+          <p class="sub">Über 700 Betriebe aus der grünen Branche vertrauen auf unsere Arbeit</p>
         </div>
 
         <div class="testi-card reveal">
@@ -795,17 +821,33 @@
     <section class="section" style="padding-top:64px; padding-bottom:64px;">
       <div class="container">
         <div class="section-head reveal" style="margin-bottom:38px;">
+          <span class="pill">@greenfield_digital</span>
           <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);">Folge uns auf Instagram</h2>
         </div>
         <div class="insta-grid reveal">
-          <a class="insta-tile" style="background-image:url('assets/img/gen-baumschule.jpg')" href="https://www.instagram.com/greenfield_digital/" target="_blank" rel="noopener" aria-label="Greenfield Digital auf Instagram"></a>
-          <a class="insta-tile insta-tile--brand" href="https://www.instagram.com/greenfield_digital/" target="_blank" rel="noopener" aria-label="Greenfield Digital auf Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <a class="insta-tile" style="background-image:url('assets/img/insta/insta-1.jpg')" href="https://www.instagram.com/greenfield_digital/p/DciiVQljcWn/" target="_blank" rel="noopener" aria-label="Instagram-Beitrag von Greenfield Digital ansehen">
+            <span class="ig-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
           </a>
-          <a class="insta-tile" style="background-image:url('assets/img/blog-3.jpg')" href="https://www.instagram.com/greenfield_digital/" target="_blank" rel="noopener" aria-label="Greenfield Digital auf Instagram"></a>
-          <a class="insta-tile" style="background-image:url('assets/img/gen-social.jpg')" href="https://www.instagram.com/greenfield_digital/" target="_blank" rel="noopener" aria-label="Greenfield Digital auf Instagram"></a>
-          <a class="insta-tile" style="background-image:url('assets/img/gen-gartencenter.jpg')" href="https://www.instagram.com/greenfield_digital/" target="_blank" rel="noopener" aria-label="Greenfield Digital auf Instagram"></a>
-          <a class="insta-tile" style="background-image:url('assets/img/cta-bg.jpg')" href="https://www.instagram.com/greenfield_digital/" target="_blank" rel="noopener" aria-label="Greenfield Digital auf Instagram"></a>
+          <a class="insta-tile" style="background-image:url('assets/img/insta/insta-2.jpg')" href="https://www.instagram.com/greenfield_digital/reel/DcTYbLftJno/" target="_blank" rel="noopener" aria-label="Instagram-Reel von Greenfield Digital ansehen">
+            <span class="reel-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            <span class="ig-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+          </a>
+          <a class="insta-tile" style="background-image:url('assets/img/insta/insta-3.jpg')" href="https://www.instagram.com/greenfield_digital/p/DcL1TXrjZd1/" target="_blank" rel="noopener" aria-label="Instagram-Beitrag von Greenfield Digital ansehen">
+            <span class="ig-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+          </a>
+          <a class="insta-tile" style="background-image:url('assets/img/insta/insta-4.jpg')" href="https://www.instagram.com/greenfield_digital/reel/DcBGLKXNB6b/" target="_blank" rel="noopener" aria-label="Instagram-Reel von Greenfield Digital ansehen">
+            <span class="reel-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            <span class="ig-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+          </a>
+          <a class="insta-tile" style="background-image:url('assets/img/insta/insta-5.jpg')" href="https://www.instagram.com/greenfield_digital/p/Db767fADd8s/" target="_blank" rel="noopener" aria-label="Instagram-Beitrag von Greenfield Digital ansehen">
+            <span class="ig-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+          </a>
+          <a class="insta-tile" style="background-image:url('assets/img/insta/insta-6.jpg')" href="https://www.instagram.com/greenfield_digital/p/DbsgqNrtr6S/" target="_blank" rel="noopener" aria-label="Instagram-Beitrag von Greenfield Digital ansehen">
+            <span class="ig-ov" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+          </a>
+        </div>
+        <div class="reveal" style="text-align:center; margin-top:30px;">
+          <a class="btn btn--outline" href="https://www.instagram.com/greenfield_digital/" target="_blank" rel="noopener">Auf Instagram folgen</a>
         </div>
       </div>
     </section>
