@@ -32,12 +32,13 @@ Texte, Logos, Brand-Guidelines) hat hier nichts verloren.
   seltener Akzent). Keine neuen Hex-Werte erfinden. Kein Lila, kein GreenCareers-Grün.
 - **Schriften:** ausschließlich DM Sans (laut Brand-Guideline) via Google Fonts – der
   `<link>` aus `index.html` wird 1:1 übernommen. Kein Poppins, keine weiteren Fonts.
-- **Logo:** Das Blatt ist der ORIGINAL-Markenpfad (extrahiert aus dem Logo der alten
-  Website) und liegt als SVG-Sprite direkt nach `<body>` (`<path id="gf-leaf">`).
-  Eingebunden wird es über `<svg viewBox="1391 119 463 761" fill="currentColor"><use href="#gf-leaf"/></svg>`
-  – Markup aus `index.html` kopieren (Sprite + Verwendungen). **Das Blatt niemals
-  nachzeichnen, ersetzen oder "verbessern"** – gleiche Regel wie bei Referenzen.
-  Wortmarke "Greenfield" = Text in DM Sans.
+- **Logo:** Das Blatt ist der ORIGINAL-Markenpfad aus der CI-Datei (Guidelines-PDF,
+  als Vektor extrahiert) und liegt als SVG-Sprite direkt nach `<body>` (`<g id="gf-leaf">`).
+  Eingebunden wird es über `<svg viewBox="65 14.41 28.3 46.17" fill="currentColor"><use href="#gf-leaf"/></svg>`
+  – Markup aus `index.html` kopieren (Sprite + Verwendungen). Auch die Favicons
+  (`assets/img/favicon.svg/.png`, `apple-touch-icon.png`) tragen dieses Blatt.
+  **Das Blatt niemals nachzeichnen, ersetzen oder "verbessern"** – gleiche Regel
+  wie bei Referenzen. Wortmarke "Greenfield" = Text in DM Sans.
 - Header und Footer sind auf allen fertigen Seiten identisch → aus `index.html` kopieren
   und nur den aktiven Nav-Link anpassen.
 
