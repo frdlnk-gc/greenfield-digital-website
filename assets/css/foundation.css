@@ -176,8 +176,17 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.55rem); }
 .btn .arr { transition: transform .25s ease; display: inline-flex; }
 .btn:hover .arr { transform: translateX(4px); }
 
-.btn--primary { background: var(--green); color: #fff; }
+.btn--primary { background: var(--green); color: #fff; position: relative; overflow: hidden; }
+.btn--primary::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: -80%;
+  width: 50%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, .3), transparent);
+  transform: skewX(-20deg);
+  transition: left .55s ease;
+  pointer-events: none;
+}
 .btn--primary:hover { background: var(--green-600); transform: translateY(-2px); box-shadow: var(--shadow-green); }
+.btn--primary:hover::before { left: 130%; }
 
 .btn--white { background: #fff; color: var(--ink); }
 .btn--white:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(0, 0, 0, .22); }
@@ -324,8 +333,8 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.55rem); }
 /* ---------- Scroll-Reveal ---------- */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1);
+  transform: translateY(26px) scale(.985);
+  transition: opacity .9s cubic-bezier(.16, 1, .3, 1), transform .9s cubic-bezier(.16, 1, .3, 1);
   transition-delay: var(--d, 0s);
   will-change: opacity, transform;
 }
@@ -512,6 +521,7 @@ body.nav-open .scroll-progress { opacity: 0; }
   position: absolute; inset: 0;
   background-size: cover; background-position: center;
   transform: scale(1.02);
+  animation: slow-zoom 26s ease-in-out infinite alternate;
 }
 .cta-band .bg::after {
   content: ""; position: absolute; inset: 0;
@@ -808,6 +818,14 @@ ul.checks li::before {
 .faq details[open] summary { color: var(--green-700); }
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq .faq-body { padding: 0 24px 20px; color: var(--text); }
+/* Sanftes Auf-/Zuklappen in Browsern, die es können – sonst wie gehabt */
+.faq { interpolate-size: allow-keywords; }
+.faq details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition: block-size .38s ease, content-visibility .38s allow-discrete;
+}
+.faq details[open]::details-content { block-size: auto; }
 
 /* ---------- Phone-Mockup (realistisch) ---------- */
 .phone-mock {
@@ -1029,6 +1047,21 @@ ul.checks li::before {
   animation: pulse-ring 2.8s ease-out infinite;
   animation-delay: var(--dd, 0s);
 }
+/* Beim Scroll-Einstieg baut sich das Kunden-Netz Punkt für Punkt auf */
+.map-visual.reveal .map-dot { opacity: 0; transform: scale(0); }
+.map-visual.reveal .map-dot::after { opacity: 0; animation: none; }
+.map-visual.reveal.in .map-dot {
+  animation:
+    dot-in .55s calc(var(--dd, 0s) * .9) cubic-bezier(.2, 1.4, .4, 1) forwards,
+    dot-breathe 2.8s calc(var(--dd, 0s) + 1.4s) ease-in-out infinite;
+}
+.map-visual.reveal.in .map-dot::after {
+  animation: pulse-ring 2.8s calc(var(--dd, 0s) + 1.4s) ease-out infinite;
+}
+@keyframes dot-in {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
 @keyframes dot-breathe {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.25); }
@@ -1053,6 +1086,10 @@ ul.checks li::before {
   transition: transform 8s ease;
 }
 .testi-card:hover .bg { transform: scale(1.05); }
+/* Ohne Hover (Touch) lebt das Bild von selbst */
+@media (hover: none) {
+  .testi-card .bg { animation: slow-zoom 24s ease-in-out infinite alternate; }
+}
 .testi-card .bg::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(185deg, rgba(6, 28, 20, .12) 55%, rgba(6, 28, 20, .78));
