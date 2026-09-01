@@ -109,6 +109,17 @@ Neu im Projekt? → Schritt-für-Schritt-Einstieg in [`docs/ONBOARDING.md`](docs
   @greenfield_digital. Aktualisieren = neue Thumbnails quadratisch (640px, q80) nach
   `assets/img/insta/insta-1..6.jpg` + die 6 Permalinks in `index.html` tauschen
   (Reels bekommen den `.reel-badge`). Kein API-Zugriff, bewusst statisch.
+- **Reel-Rail** (`.reel-rail.m-carousel`, auf social-media + ergebnisse): horizontale
+  9:16-Karten mit ECHTEN Kunden-Posts (Cover in `assets/img/reels/`, 480×854, q80),
+  jede Karte verlinkt den Original-Beitrag auf Instagram. Neue Inhalte = Cover-Bild
+  rein + `<a class="reel-card">` nach dem Muster ergänzen (Reels: Play-Badge, Posts:
+  IG-Badge). NIE Inhalte zeigen, die dem Kunden schaden könnten (z.&nbsp;B.
+  Trauer-/Krisenpostings) – vorher jedes Cover ansehen.
+- **CTA-Band-Hintergründe:** jede Seite hat bewusst ein EIGENES Bild (nicht überall
+  cta-bg.jpg) – bei neuen Seiten ein noch unbenutztes Motiv aus `assets/img/` wählen,
+  das nicht schon woanders auf derselben Seite vorkommt.
+- **Phone-Mockup:** `.phone-mock .screen` hat echtes iPhone-Verhältnis (9/19.5) samt
+  Seitentasten/Glare per CSS – Proportionen nicht überschreiben.
 - Favicon = weißes Blatt auf Primärgrün (`assets/img/favicon.svg/.png`, apple-touch-icon).
 
 ## Seitenstatus (Stand 31.08.2026)

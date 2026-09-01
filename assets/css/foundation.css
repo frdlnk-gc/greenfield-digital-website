@@ -829,17 +829,34 @@ ul.checks li::before {
 
 /* ---------- Phone-Mockup (realistisch) ---------- */
 .phone-mock {
-  width: min(310px, 82vw);
+  width: min(300px, 78vw);
   margin: 0 auto;
-  background: linear-gradient(160deg, #17211D, #060A08);
-  border-radius: 48px;
-  padding: 9px;
+  background: linear-gradient(160deg, #222E29, #0A100D 55%, #131C18);
+  border-radius: 54px;
+  padding: 10px;
   box-shadow:
-    0 40px 90px rgba(6, 33, 26, .38),
-    inset 0 1px 1px rgba(255, 255, 255, .18),
-    inset 0 -1px 1px rgba(0, 0, 0, .6);
+    0 44px 96px rgba(6, 33, 26, .4),
+    0 12px 28px rgba(6, 33, 26, .22),
+    inset 0 1.5px 1px rgba(255, 255, 255, .22),
+    inset 0 -1.5px 1.5px rgba(0, 0, 0, .65);
   position: relative;
   animation: phone-float 9s ease-in-out infinite;
+}
+/* Seitentasten: links Lautstärke (dupliziert per Schatten), rechts Power */
+.phone-mock::before {
+  content: ""; position: absolute;
+  left: -2.5px; top: 118px;
+  width: 3px; height: 34px;
+  border-radius: 2px 0 0 2px;
+  background: #1C2823;
+  box-shadow: 0 48px 0 0 #1C2823;
+}
+.phone-mock::after {
+  content: ""; position: absolute;
+  right: -2.5px; top: 168px;
+  width: 3px; height: 64px;
+  border-radius: 0 2px 2px 0;
+  background: #1C2823;
 }
 @keyframes phone-float {
   0%, 100% { transform: perspective(1300px) rotateY(-9deg) rotateX(2.5deg) translateY(0); }
@@ -847,10 +864,24 @@ ul.checks li::before {
 }
 .phone-mock .screen {
   background: #F7FAF8;
-  border-radius: 40px;
+  border-radius: 44px;
   overflow: hidden;
   display: flex; flex-direction: column;
   position: relative;
+  aspect-ratio: 9 / 19.5; /* echtes iPhone-Display-Verhältnis */
+}
+/* Display-Reflexion + Home-Indicator */
+.phone-mock .screen::after {
+  content: ""; position: absolute; inset: 0; z-index: 6;
+  background: linear-gradient(115deg, transparent 42%, rgba(255, 255, 255, .07) 47%, rgba(255, 255, 255, .11) 50%, rgba(255, 255, 255, .04) 54%, transparent 60%);
+  pointer-events: none;
+}
+.phone-mock .screen::before {
+  content: ""; position: absolute; z-index: 7;
+  bottom: 7px; left: 50%; transform: translateX(-50%);
+  width: 104px; height: 4px; border-radius: 99px;
+  background: rgba(6, 33, 26, .28);
+  pointer-events: none;
 }
 .phone-mock .app-head {
   display: flex; align-items: center; justify-content: space-between;
@@ -871,11 +902,11 @@ ul.checks li::before {
 .phone-mock .pm-feed {
   position: relative;
   overflow: hidden;
-  margin: 0 10px 12px;
-  flex: none;
-  height: 225px;
-  -webkit-mask-image: linear-gradient(180deg, #000 78%, transparent);
-  mask-image: linear-gradient(180deg, #000 78%, transparent);
+  margin: 0 10px 16px;
+  flex: 1 1 auto;
+  min-height: 0;
+  -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent);
+  mask-image: linear-gradient(180deg, #000 80%, transparent);
 }
 .phone-mock .pm-feed ul { animation: feed-scroll 14s linear infinite; }
 .phone-mock .pm-feed li {
@@ -1506,6 +1537,57 @@ ul.checks li::before {
 .logo-grid .lg-tile:hover img { filter: none; opacity: 1; }
 @media (max-width: 1024px) { .logo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .logo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } .logo-grid .lg-tile { padding: 12px; } }
+
+/* ---------- Reel-Rail: echte Kunden-Inhalte im Hochformat ---------- */
+.reel-rail {
+  display: flex; gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 4px 18px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.reel-rail::-webkit-scrollbar { display: none; }
+.reel-card {
+  position: relative;
+  flex: 0 0 205px;
+  aspect-ratio: 9 / 16;
+  border-radius: 18px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  box-shadow: var(--shadow-md);
+  transition: transform .3s ease, box-shadow .3s ease;
+  isolation: isolate;
+}
+.reel-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.reel-card::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(6, 33, 26, .08), transparent 30%, transparent 52%, rgba(6, 33, 26, .62));
+}
+.reel-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.reel-card:hover img { transform: scale(1.05); }
+.reel-card .rc-badge {
+  position: absolute; top: 10px; right: 10px; z-index: 2;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: rgba(6, 33, 26, .5);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+}
+.reel-card .rc-badge svg { width: 14px; height: 14px; }
+.reel-card .rc-who {
+  position: absolute; left: 12px; right: 12px; bottom: 11px; z-index: 2;
+  color: #fff; font-size: .8rem; font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .45);
+}
+@media (max-width: 700px) {
+  .reel-rail.m-carousel > * { flex: 0 0 56%; }
+}
 
 /* ---------- Scroll-Fortschrittsbalken ---------- */
 .scroll-progress {

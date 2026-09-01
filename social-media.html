@@ -61,6 +61,18 @@
       background-color: var(--platinum);
     }
     @media (max-width: 900px) { .case-grid, .ph-grid { grid-template-columns: 1fr; } }
+    .case-second {
+      margin: 26px auto 0;
+      max-width: 720px;
+      text-align: center;
+      color: var(--text);
+      font-size: 1.02rem;
+      background: var(--mint-soft);
+      border: 1px solid rgba(12, 174, 128, .18);
+      border-radius: var(--r-md);
+      padding: 16px 22px;
+    }
+    .case-second b { color: var(--green-700); font-weight: 700; }
   </style>
 </head>
 <body>
@@ -149,37 +161,40 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="pill">Case Study</span>
-          <h2>Von 0 auf 430.000 Views in <span class="mark-u">4 Monaten<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+          <h2>Von 0 auf 430.000 Views in <span class="mark-u">3 Monaten<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+          <p class="sub">Grün Team GmbH – GaLaBau-Betrieb mit über 50 Mitarbeitenden, spezialisiert auf Großprojekte, Tierschutzmaßnahmen und naturnahe Aufforstung.</p>
         </div>
         <div class="case-grid">
           <div class="case-col reveal">
             <span class="case-tag">Herausforderung</span>
             <h4>Ausgangslage des Betriebs</h4>
             <ul class="checks is-neutral">
-              <li>Keine Reichweite</li>
-              <li>Kaum Bewerbungen</li>
-              <li>Schwache Arbeitgebermarke</li>
+              <li>Zu wenige Bewerbungen</li>
+              <li>Ländlicher Standort</li>
+              <li>Stärken als Arbeitgeber unsichtbar</li>
             </ul>
           </div>
           <div class="case-col reveal" style="--d:.12s">
             <span class="case-tag">Lösung</span>
             <h4>Unser Vorgehen</h4>
             <ul class="checks">
-              <li>Content-Strategie &amp; Plan</li>
-              <li>Professionelle Produktion</li>
-              <li>Performance-gesteuerte Ausspielung</li>
+              <li>Professionell produzierte Social-Media-Videos</li>
+              <li>Echter Arbeitsalltag statt Hochglanz</li>
+              <li>Zielgerichtete Ausspielung an Wunschkandidaten</li>
             </ul>
           </div>
           <div class="case-col is-highlight reveal" style="--d:.24s">
             <span class="case-tag">Ergebnis</span>
-            <h4>Nach 4 Monaten</h4>
+            <h4>Nach 3 Monaten</h4>
             <ul class="checks on-dark">
-              <li>430.000+ Views</li>
-              <li>Deutlich mehr Bewerbungen</li>
-              <li>Starke regionale Marke</li>
+              <li>430.000+ zusätzliche Views</li>
+              <li>320&#8202;% Follower-Wachstum</li>
+              <li>7,3&#215; mehr Aufrufe als im ganzen Jahr davor</li>
+              <li>1 virales Video mit 170.000+ Views</li>
             </ul>
           </div>
         </div>
+        <p class="case-second reveal">Auch beim <b>Gartencenter Streb</b>: über <b>300.000 Views</b>, <b>200&#8202;% Follower-Wachstum</b> und <b>5&#215; h&#246;here Reichweite</b> auf Instagram &#8211; in 4 Monaten.</p>
       </div>
     </section>
     <section class="section section--tint">
@@ -227,23 +242,64 @@
     <section class="section" id="kundenstimmen">
       <div class="container">
         <div class="section-head reveal">
-          <span class="pill">Kundenstimmen</span>
-          <h2>Betriebe wie deiner <span class="mark-u">vertrauen uns<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
-          <p class="sub">Über 700 Partnerschaften in der grünen Branche – hier ein Einblick in die Praxis</p>
+          <span class="pill">Unsere Arbeit auf Instagram</span>
+          <h2>Echte Reels. Echte <span class="mark-u">Betriebe.<svg viewBox="0 0 240 24" preserveAspectRatio="none" aria-hidden="true"><path d="M6 16 C 60 8, 175 6, 234 13"/></svg></span></h2>
+          <p class="sub">Ein Blick in die Feeds unserer Kunden &#8211; jeder Beitrag f&#252;hrt direkt zum Original auf Instagram.</p>
         </div>
-        <div class="testi-card reveal">
-          <div class="bg" aria-hidden="true"></div>
-          <span class="tag">Starke Social-Media-Präsenz in der grünen Branche</span>
-          <div class="who">
-            <span class="logo-chip"><img src="assets/img/logo-woerlein.png" alt="Wörlein Baumschulen"></span>
-            <div>
-              <strong>Wörlein Baumschulen</strong>
-              <span>Partnerbetrieb aus der grünen Branche</span>
-            </div>
-          </div>
+        <div class="reel-rail m-carousel">
+          <a class="reel-card reveal" style="--d:.0s" href="https://www.instagram.com/gruen_team_gmbh/p/DZfAlWWDELO/" target="_blank" rel="noopener" aria-label="Instagram-Beitrag von @gruen_team_gmbh ansehen">
+            <img src="assets/img/reels/reel-gruenteam-1.jpg" alt="Instagram-Beitrag von @gruen_team_gmbh" loading="lazy">
+            <span class="rc-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+            <span class="rc-who">@gruen_team_gmbh</span>
+          </a>
+          <a class="reel-card reveal" style="--d:.1s" href="https://www.instagram.com/baumschulehuben/reel/DcdT-NckVeh/" target="_blank" rel="noopener" aria-label="Instagram-Reel von @baumschulehuben ansehen">
+            <img src="assets/img/reels/reel-huben-1.jpg" alt="Instagram-Reel von @baumschulehuben" loading="lazy">
+            <span class="rc-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            <span class="rc-who">@baumschulehuben</span>
+          </a>
+          <a class="reel-card reveal" style="--d:.2s" href="https://www.instagram.com/jensen_landschaftsarchitekten/p/DctQGDbjdVX/" target="_blank" rel="noopener" aria-label="Instagram-Beitrag von @jensen_landschaftsarchitekten ansehen">
+            <img src="assets/img/reels/reel-jensen-1.jpg" alt="Instagram-Beitrag von @jensen_landschaftsarchitekten" loading="lazy">
+            <span class="rc-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+            <span class="rc-who">@jensen_landschaftsarchitekten</span>
+          </a>
+          <a class="reel-card reveal" style="--d:.3s" href="https://www.instagram.com/gartengestaltung_schwingel/p/Dacp19qkSWJ/" target="_blank" rel="noopener" aria-label="Instagram-Beitrag von @gartengestaltung_schwingel ansehen">
+            <img src="assets/img/reels/reel-schwingel-1.jpg" alt="Instagram-Beitrag von @gartengestaltung_schwingel" loading="lazy">
+            <span class="rc-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+            <span class="rc-who">@gartengestaltung_schwingel</span>
+          </a>
+          <a class="reel-card reveal" style="--d:.0s" href="https://www.instagram.com/woerlein_baumschulen/p/DWHLdcyjVKo/" target="_blank" rel="noopener" aria-label="Instagram-Beitrag von @woerlein_baumschulen ansehen">
+            <img src="assets/img/reels/reel-woerlein-2.jpg" alt="Instagram-Beitrag von @woerlein_baumschulen" loading="lazy">
+            <span class="rc-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+            <span class="rc-who">@woerlein_baumschulen</span>
+          </a>
+          <a class="reel-card reveal" style="--d:.1s" href="https://www.instagram.com/blumen_metzger/p/Dcsm8cAjqLb/" target="_blank" rel="noopener" aria-label="Instagram-Beitrag von @blumen_metzger ansehen">
+            <img src="assets/img/reels/reel-metzger-2.jpg" alt="Instagram-Beitrag von @blumen_metzger" loading="lazy">
+            <span class="rc-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+            <span class="rc-who">@blumen_metzger</span>
+          </a>
+          <a class="reel-card reveal" style="--d:.2s" href="https://www.instagram.com/gruen_team_gmbh/reel/DcjD2uPCftM/" target="_blank" rel="noopener" aria-label="Instagram-Reel von @gruen_team_gmbh ansehen">
+            <img src="assets/img/reels/reel-gruenteam-3.jpg" alt="Instagram-Reel von @gruen_team_gmbh" loading="lazy">
+            <span class="rc-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            <span class="rc-who">@gruen_team_gmbh</span>
+          </a>
+          <a class="reel-card reveal" style="--d:.3s" href="https://www.instagram.com/baumschulehuben/p/Dca58JUnEAg/" target="_blank" rel="noopener" aria-label="Instagram-Beitrag von @baumschulehuben ansehen">
+            <img src="assets/img/reels/reel-huben-2.jpg" alt="Instagram-Beitrag von @baumschulehuben" loading="lazy">
+            <span class="rc-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+            <span class="rc-who">@baumschulehuben</span>
+          </a>
+          <a class="reel-card reveal" style="--d:.0s" href="https://www.instagram.com/jensen_landschaftsarchitekten/reel/DcrGzfukts0/" target="_blank" rel="noopener" aria-label="Instagram-Reel von @jensen_landschaftsarchitekten ansehen">
+            <img src="assets/img/reels/reel-jensen-2.jpg" alt="Instagram-Reel von @jensen_landschaftsarchitekten" loading="lazy">
+            <span class="rc-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            <span class="rc-who">@jensen_landschaftsarchitekten</span>
+          </a>
+          <a class="reel-card reveal" style="--d:.1s" href="https://www.instagram.com/gartengestaltung_schwingel/p/Dcs7lXLGigJ/" target="_blank" rel="noopener" aria-label="Instagram-Beitrag von @gartengestaltung_schwingel ansehen">
+            <img src="assets/img/reels/reel-schwingel-2.jpg" alt="Instagram-Beitrag von @gartengestaltung_schwingel" loading="lazy">
+            <span class="rc-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+            <span class="rc-who">@gartengestaltung_schwingel</span>
+          </a>
         </div>
         <div class="testi-more reveal">
-          <a class="btn-link" href="ergebnisse.html" style="font-size:1.1rem;">Weitere Kundenstimmen <span class="arr">→</span></a>
+          <a class="btn-link" href="ergebnisse.html" style="font-size:1.1rem;">Weitere Kundenstimmen <span class="arr">&#8594;</span></a>
         </div>
       </div>
     </section>
@@ -375,7 +431,7 @@
       </div>
     </section>
     <section class="cta-band">
-      <div class="bg" style="background-image:url('assets/img/cta-bg.jpg')" aria-hidden="true"></div>
+      <div class="bg" style="background-image:url('assets/img/gen-reel.jpg')" aria-hidden="true"></div>
       <div class="container reveal">
         <h2>Bereit, zum Platzhirsch zu werden?</h2>
         <p>Vereinbare jetzt ein kostenloses Erstgespräch und mach deine Marke sichtbar.</p>
